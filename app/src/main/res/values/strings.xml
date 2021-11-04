@@ -1,10 +1,12 @@
 <resources>
     <string name="app_name">DonAte</string>
+    <string name="DescLogo">Logo de DonAte</string>
     <!-- Strings related to login -->
     <string name="prompt_user">Usuario</string>
     <string name="prompt_password">Contraseña</string>
     <string name="prompt_password_again">Introduzca de nuevo la contraseña</string>
     <string name="Log_in">Log In</string>
     <string name="Registrarse">Registrarse</string>
+    <string name="cuentaReg">¿Todavía no tienes una cuenta?</string>
     <string name="email">email</string>
-</resources>
+    </resources>
