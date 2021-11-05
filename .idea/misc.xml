@@ -5,12 +5,16 @@
       <map>
         <entry key="..\:/Users/lktol/AndroidStudioProjects/donate/app/src/main/res/drawable/buttons.xml" value="0.18518518518518517" />
         <entry key="..\:/Users/lktol/AndroidStudioProjects/donate/app/src/main/res/drawable/ic_launcher_background.xml" value="0.18425925925925926" />
-        <entry key="..\:/Users/lktol/AndroidStudioProjects/donate/app/src/main/res/layout/activity_aboutus.xml" value="0.38697916666666665" />
+        <entry key="..\:/Users/lktol/AndroidStudioProjects/donate/app/src/main/res/drawable/windows.xml" value="0.403125" />
+        <entry key="..\:/Users/lktol/AndroidStudioProjects/donate/app/src/main/res/layout-w1240dp/activity_aboutus.xml" value="0.24866131191432397" />
+        <entry key="..\:/Users/lktol/AndroidStudioProjects/donate/app/src/main/res/layout-w936dp/activity_aboutus.xml" value="0.290234375" />
+        <entry key="..\:/Users/lktol/AndroidStudioProjects/donate/app/src/main/res/layout/activity_aboutus.xml" value="0.25" />
         <entry key="..\:/Users/lktol/AndroidStudioProjects/donate/app/src/main/res/layout/activity_chat.xml" value="0.38697916666666665" />
         <entry key="..\:/Users/lktol/AndroidStudioProjects/donate/app/src/main/res/layout/activity_chats.xml" value="0.38697916666666665" />
         <entry key="..\:/Users/lktol/AndroidStudioProjects/donate/app/src/main/res/layout/activity_donacionestl.xml" value="0.38697916666666665" />
         <entry key="..\:/Users/lktol/AndroidStudioProjects/donate/app/src/main/res/layout/activity_formreportes.xml" value="0.38697916666666665" />
         <entry key="..\:/Users/lktol/AndroidStudioProjects/donate/app/src/main/res/layout/activity_login.xml" value="0.33" />
+        <entry key="..\:/Users/lktol/AndroidStudioProjects/donate/app/src/main/res/layout/activity_main.xml" value="0.17300724637681159" />
         <entry key="..\:/Users/lktol/AndroidStudioProjects/donate/app/src/main/res/layout/activity_perfil.xml" value="0.38697916666666665" />
         <entry key="..\:/Users/lktol/AndroidStudioProjects/donate/app/src/main/res/layout/activity_postcreation.xml" value="0.38697916666666665" />
         <entry key="..\:/Users/lktol/AndroidStudioProjects/donate/app/src/main/res/layout/activity_postvisor.xml" value="0.38697916666666665" />
@@ -18,6 +22,7 @@
         <entry key="..\:/Users/lktol/AndroidStudioProjects/donate/app/src/main/res/layout/activity_ticketgestion.xml" value="0.38697916666666665" />
         <entry key="..\:/Users/lktol/AndroidStudioProjects/donate/app/src/main/res/layout/activity_tickettl.xml" value="0.38697916666666665" />
         <entry key="..\:/Users/lktol/AndroidStudioProjects/donate/app/src/main/res/layout/activity_ticketvisor.xml" value="0.38697916666666665" />
+        <entry key="..\:/Users/lktol/AndroidStudioProjects/donate/app/src/main/res/menu/navmenu.xml" value="0.38697916666666665" />
       </map>
     </option>
   </component>

@@ -9,4 +9,10 @@
     <string name="Registrarse">Registrarse</string>
     <string name="cuentaReg">¿Todavía no tienes una cuenta?</string>
     <string name="email">email</string>
+
+    <!-- Strings related to AboutUs -->
+    <string name="AboutUs">
+        \n\nEl objetivo principal del proyecto es llevar la solidaridad a un punto más cercado en la vida cotidiana, pretendemos ayudar a la gente que sufre necesidades alimenticias con una propuesta que acerca la caridad. Una solución rápida y sencilla para realizar donaciones.
+        \n\nAnte una situación precaria de algunas personas como es no poder adquirir una variedad de alimentos básicos y la dificultad que les supone hacerlo.
+        \n\nPor otro lado queremos dar una solución a los alimentos que serían desechados porque el ciudadano no vea un aprovechamiento de los mismos."</string>
     </resources>
