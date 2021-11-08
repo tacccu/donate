@@ -8,23 +8,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/white"
-        android:paddingLeft="@dimen/activity_horizontal_margin"
-        android:paddingTop="@dimen/activity_vertical_margin"
-        android:paddingRight="@dimen/activity_horizontal_margin"
-        android:paddingBottom="@dimen/activity_vertical_margin"
         tools:context=".ui.login.LoginActivity">
-
-        <androidx.fragment.app.FragmentContainerView
-            android:id="@+id/myNavHostFragment"
-            android:name="androidx.navigation.fragment.NavHostFragment"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:defaultNavHost="true"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:navGraph="@navigation/nav_graph"/>
 
         <Button
             android:id="@+id/buttonRegister"
@@ -34,7 +18,7 @@
             android:layout_marginTop="204dp"
             android:layout_marginEnd="32dp"
             android:background="@drawable/buttons"
-            android:text="@string/Registrarse"
+            android:text="@string/registrarse"
             android:textColor="#FFFFFF"
             android:textColorHighlight="#D770EF"
             android:textSize="12sp"
@@ -100,15 +84,15 @@
             android:layout_marginTop="8dp"
             android:layout_marginEnd="32dp"
             android:background="@drawable/buttons"
-            android:text="@string/Log_in"
+            android:text="@string/log_in"
             android:textColor="#FFFFFF"
             android:textColorHighlight="#D770EF"
-            android:textColorLink="@color/purple_200"
             android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword" />
+            app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword"
+            />
 
         <TextView
             android:id="@+id/LIusuario"
@@ -119,7 +103,7 @@
             android:layout_marginEnd="32dp"
             android:text="@string/prompt_user"
             android:textAlignment="textStart"
-            android:textColor="#000000"
+            android:textColor="@color/morado"
             android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
@@ -131,11 +115,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="32dp"
-            android:layout_marginTop="36dp"
+            android:layout_marginTop="32dp"
             android:layout_marginEnd="32dp"
             android:text="@string/prompt_password"
             android:textAlignment="textStart"
-            android:textColor="#000000"
+            android:textColor="@color/morado"
             android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"

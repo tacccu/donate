@@ -1,18 +1,27 @@
 <resources>
     <string name="app_name">DonAte</string>
-    <string name="DescLogo">Logo de DonAte</string>
+    <string name="DescLogo">Logo de la app</string>
     <!-- Strings related to login -->
-    <string name="prompt_user">Usuario</string>
-    <string name="prompt_password">Contraseña</string>
+    <string name="prompt_user">Usuario:</string>
+    <string name="prompt_password">Contraseña:</string>
+    <string name="log_in">Log In</string>
+    <!-- Strings related to register -->
+    <string name="registrarse">Registrate</string>
+    <string name="promt_email">Email:</string>
+    <string name="intr_email">Introduzca una cuenta de correo</string>
+    <string name="intr_user">Introduzca un nombre de usuario</string>
+    <string name="intr_telef">Introduzca un número de teléfono</string>
+    <string name="intr_contraseña">Introduzca una contraseña</string>
     <string name="prompt_password_again">Introduzca de nuevo la contraseña</string>
-    <string name="Log_in">Log In</string>
-    <string name="Registrarse">Registrarse</string>
-    <string name="cuentaReg">¿Todavía no tienes una cuenta?</string>
-    <string name="email">email</string>
+    <string name="selec_cuenta">Tipo de cuenta:</string>
+    <string name="cuenta_donan">Donante</string>
+    <string name="cuenta_donat">Donatario</string>
+    <string name="cuentaReg">¿Aún no tienes una cuenta?</string>
 
-    <!-- Strings related to AboutUs -->
-    <string name="AboutUs">
-        \n\nEl objetivo principal del proyecto es llevar la solidaridad a un punto más cercado en la vida cotidiana, pretendemos ayudar a la gente que sufre necesidades alimenticias con una propuesta que acerca la caridad. Una solución rápida y sencilla para realizar donaciones.
-        \n\nAnte una situación precaria de algunas personas como es no poder adquirir una variedad de alimentos básicos y la dificultad que les supone hacerlo.
-        \n\nPor otro lado queremos dar una solución a los alimentos que serían desechados porque el ciudadano no vea un aprovechamiento de los mismos."</string>
-    </resources>
+    <!-- Strings related to About Us-->
+    <string name="AboutUs">\n\n\n\nEl objetivo principal del proyecto es llevar la solidaridad a un punto más \n cercano en la vida cotidiana, pretendemos ayudar a la gente que sufre necesidades alimenticias con una propuesta que acerca la caridad, una solución rápida y sencilla para realizar donaciones.
+    \n\nOfrecemos una solución ante una situación precaria de algunas personas como es no poder adquirir una variedad de alimentos básicos y la dificultad que les supone hacerlo.
+    \n\nPor otro lado queremos poner remedio a los alimentos que serían desechados porque el ciudadano no vea un aprovechamiento de los mismos.</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
