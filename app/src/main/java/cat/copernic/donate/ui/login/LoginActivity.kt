@@ -22,7 +22,6 @@ class LoginActivity : AppCompatActivity() {
 
 
         binding.botonRegistro.setOnClickListener {
-            Log.i("LoginActivity", "He clicado boton registro")
             intent = Intent(this, RegistroActivity::class.java)
             startActivity(intent)
         }

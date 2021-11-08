@@ -7,6 +7,7 @@
     <!-- Strings related to register -->
     <string name="registrarse">Registrate</string>
     <string name="promt_email">Email:</string>
+    <string name="promt_movil">Teléfono móvil:</string>
     <string name="intr_email">Introduzca una cuenta de correo</string>
     <string name="intr_user">Introduzca un nombre de usuario</string>
     <string name="intr_telef">Introduzca un número de teléfono</string>
