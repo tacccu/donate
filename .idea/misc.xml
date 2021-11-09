@@ -5,8 +5,17 @@
       <map>
         <entry key="..\:/Users/lktol/AndroidStudioProjects/donate/app/src/main/res/layout/activity_aboutus.xml" value="0.33" />
         <entry key="..\:/Users/lktol/AndroidStudioProjects/donate/app/src/main/res/layout/activity_chat.xml" value="0.38697916666666665" />
+        <entry key="..\:/Users/lktol/AndroidStudioProjects/donate/app/src/main/res/layout/activity_donacionestl.xml" value="0.38697916666666665" />
         <entry key="..\:/Users/lktol/AndroidStudioProjects/donate/app/src/main/res/layout/activity_login.xml" value="0.38697916666666665" />
+        <entry key="..\:/Users/lktol/AndroidStudioProjects/donate/app/src/main/res/layout/activity_perfil.xml" value="0.38697916666666665" />
+        <entry key="..\:/Users/lktol/AndroidStudioProjects/donate/app/src/main/res/layout/activity_postvisor.xml" value="0.38697916666666665" />
         <entry key="..\:/Users/lktol/AndroidStudioProjects/donate/app/src/main/res/layout/fragment_aboutus.xml" value="0.38697916666666665" />
+        <entry key="..\:/Users/lktol/AndroidStudioProjects/donate/app/src/main/res/layout/fragment_chat_list.xml" value="0.38697916666666665" />
+        <entry key="..\:/Users/lktol/AndroidStudioProjects/donate/app/src/main/res/layout/fragment_perfil.xml" value="0.38697916666666665" />
+        <entry key="..\:/Users/lktol/AndroidStudioProjects/donate/app/src/main/res/layout/fragment_tldonaciones.xml" value="0.1" />
+        <entry key="..\:/Users/lktol/AndroidStudioProjects/donate/app/src/main/res/layout/nav_header.xml" value="0.38697916666666665" />
+        <entry key="..\:/Users/lktol/AndroidStudioProjects/donate/app/src/main/res/menu/navdrawer_menu.xml" value="0.21" />
+        <entry key="..\:/Users/lktol/AndroidStudioProjects/donate/app/src/main/res/menu/navmenu.xml" value="0.38697916666666665" />
         <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.201171875" />
         <entry key="app/src/main/res/drawable/buttons.xml" value="0.201171875" />
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.201171875" />
