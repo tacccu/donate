@@ -18,18 +18,22 @@ import cat.copernic.donate.ui.registro.RegistroActivity
 class LoginActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityLoginBinding
-    private lateinit var drawerLayout: DrawerLayout
+    //private lateinit var drawerLayout: DrawerLayout
 
     override fun onCreate(savedInstanceState: Bundle?) {
+
+        //Thread.sleep(2000) --> Comando para ralentizar la app y ver mejor el SplashScreen
+        setTheme(R.style.AppTheme)
         super.onCreate(savedInstanceState)
 
         //val binding = DataBindingUtil.setContentView<ActivityMainBinding>(this, R.layout.activity_login)
 
-        val navController = this.findNavController(R.id.myNavHostFragment)
+        //val navController = this.findNavController(R.id.myNavHostFragment)
         //drawerLayout = binding.drawerLayout
 
-        NavigationUI.setupActionBarWithNavController(this, navController, drawerLayout)
+        //NavigationUI.setupActionBarWithNavController(this, navController, drawerLayout)
         //NavigationUI.setupWithNavController(binding.navView, navController)
+
         //binding.RegisterButton.setOnClickListener {
         //    Log.i("LoginActivity", "He clicado boton registro")
         //    intent = Intent(this, RegistroActivity::class.java)
@@ -41,8 +45,8 @@ class LoginActivity : AppCompatActivity() {
 
     }
 
-    override fun onSupportNavigateUp(): Boolean {
-        val navController = this.findNavController(R.id.myNavHostFragment)
-        return NavigationUI.navigateUp(navController, drawerLayout)
-    }
+    //override fun onSupportNavigateUp(): Boolean {
+        //val navController = this.findNavController(R.id.myNavHostFragment)
+        //return NavigationUI.navigateUp(navController, drawerLayout)
+    //}
 }
