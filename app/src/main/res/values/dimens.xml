@@ -7,6 +7,4 @@
     <dimen name="ticketTit">25sp</dimen>
     <dimen name="ticketText">18sp</dimen>
     <dimen name="ticketPadding">4dp</dimen>
-    <!-- dimen chat contactos -->
-    <dimen name="chatContPadding">7dp</dimen>
 </resources>

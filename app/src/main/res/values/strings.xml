@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">DonAte</string>
+    <string name="DescLogo">Logo de la app</string>
     <!-- Strings related to login -->
     <string name="prompt_user">Usuario:</string>
     <string name="prompt_password">Contraseña:</string>
@@ -16,20 +17,34 @@
     <string name="selec_cuenta">Tipo de cuenta:</string>
     <string name="cuenta_donan">Donante</string>
     <string name="cuenta_donat">Donatario</string>
+    <string name="cuentaReg">¿Aún no tienes una cuenta?</string>
     <string-array name="tipoCuenta">
         <item>Donante</item>
         <item>Donatario</item>
     </string-array>
+    <!-- Strings related to Chat List-->
+    <string name="chatList">Chats</string>
+    <!-- Strings related to Posts-->
+    <string name="TLPosts">Posts</string>
+    <!-- Strings related to About Us-->
+    <string name="AboutUsTitle">About Us</string>
+    <string name="AboutUs">\n\n\n\nEl objetivo principal del proyecto es llevar la solidaridad a un punto más \n cercano en la vida cotidiana, pretendemos ayudar a la gente que sufre necesidades alimenticias con una propuesta que acerca la caridad, una solución rápida y sencilla para realizar donaciones.
+    \n\nOfrecemos una solución ante una situación precaria de algunas personas como es no poder adquirir una variedad de alimentos básicos y la dificultad que les supone hacerlo.
+    \n\nPor otro lado queremos poner remedio a los alimentos que serían desechados porque el ciudadano no vea un aprovechamiento de los mismos.</string>
+    <!-- Strings related to perfil-->
+    <string name="Perfil">Perfil</string>
+    <!-- Strings related to TL Tickets-->
+    <string name="TUsuario">Usuario: (usuario)</string>
+    <string name="TTitle">Título del reporte</string>
+    <string name="TDesc">Descripción del reporte</string>
     <string name="contentDescrip">
         Seleccine el tipo de cuenta que desea
     </string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <!-- Strings related to visor ticket -->
     <string name="titViTicket">El producto no correspondía con el de la descripción</string>
     <string name="userViTicket">Usuario: Manolo96\nNúmero de ticket: 001</string>
     <string name="userRepViTicket">Usuario reportado: Malex\nUsuario: Manolo96</string>
     <string name="razViTicket">razón: Problema con el producto\nUsuario: Manolo96</string>
-    <string name="descpViTicket">Descripción: Cuando llegém el producto que querían ofrecerme no se
+    <string name="descpViTicket">Descripción: Cuando llegué el producto que querían ofrecerme no se
         correspondía con el de las fotos o la descripción del post ¡Por favor revísenlo!</string>
 </resources>

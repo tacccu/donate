@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/chatList"
+        android:title="@string/chatList" />
+    <item
+        android:id="@+id/TLDonaciones"
+        android:title="@string/TLPosts" />
+    <item
+        android:id="@+id/aboutus"
+        android:title="@string/AboutUsTitle" />
+    <item android:title="@string/Perfil" />
+</menu>
