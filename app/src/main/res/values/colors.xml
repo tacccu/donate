@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="morado">#E8A7FF</color>
-    <color name="morado_oscuro">#b577cc</color>
+    <color name="morado_oscuro">#AB47BC</color>
     <color name="morado_claro">#ffd9ff</color>
     <color name="gris_claro">#e2e2e2</color>
     <color name="gris">#858585</color>
