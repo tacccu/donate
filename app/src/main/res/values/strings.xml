@@ -28,6 +28,10 @@
     \n\nPor otro lado queremos poner remedio a los alimentos que serían desechados porque el ciudadano no vea un aprovechamiento de los mismos.</string>
     <!-- Strings related to perfil-->
     <string name="Perfil">Perfil</string>
+    <!-- Strings related to TL Tickets-->
+    <string name="TUsuario">Usuario: (usuario)</string>
+    <string name="TTitle">Título del reporte</string>
+    <string name="TDesc">Descripción del reporte</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
