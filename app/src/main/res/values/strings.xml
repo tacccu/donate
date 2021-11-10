@@ -23,5 +23,13 @@
     <string name="contentDescrip">
         Seleccine el tipo de cuenta que desea
     </string>
-
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <!-- Strings related to visor ticket -->
+    <string name="titViTicket">El producto no correspondía con el de la descripción</string>
+    <string name="userViTicket">Usuario: Manolo96\nNúmero de ticket: 001</string>
+    <string name="userRepViTicket">Usuario reportado: Malex\nUsuario: Manolo96</string>
+    <string name="razViTicket">razón: Problema con el producto\nUsuario: Manolo96</string>
+    <string name="descpViTicket">Descripción: Cuando llegém el producto que querían ofrecerme no se
+        correspondía con el de las fotos o la descripción del post ¡Por favor revísenlo!</string>
 </resources>

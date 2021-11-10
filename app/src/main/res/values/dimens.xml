@@ -3,4 +3,8 @@
     <dimen name="texto_general">16sp</dimen>
     <dimen name="texto_pequeño">12sp</dimen>
     <dimen name="intrTextRegistHeight">48dp</dimen>
+    <!-- diment visor ticket -->
+    <dimen name="ticketTit">25sp</dimen>
+    <dimen name="ticketText">18sp</dimen>
+    <dimen name="ticketPadding">4dp</dimen>
 </resources>
