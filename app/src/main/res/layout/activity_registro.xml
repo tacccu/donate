@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     xmlns:android="http://schemas.android.com/apk/res/android">
+
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
         <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" >
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
 
             <TextView
@@ -72,23 +74,8 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/intrEmailRegist" />
 
-            <TextView
-                android:id="@+id/userViewRegist3"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="32dp"
-                android:layout_marginTop="32dp"
-                android:layout_marginEnd="32dp"
-                android:ems="10"
-                android:text="@string/promt_movil"
-                android:textColor="@color/morado_oscuro"
-                android:textSize="@dimen/texto_general"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/editTextPhone" />
-
             <EditText
-                android:id="@+id/editTextPhone"
+                android:id="@+id/editTextUser"
                 android:layout_width="0dp"
                 android:layout_height="@dimen/intrTextRegistHeight"
                 android:layout_marginStart="32dp"
@@ -101,6 +88,129 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/userViewRegist" />
+
+
+            <TextView
+                android:id="@+id/telefViewRegist"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginEnd="32dp"
+                android:ems="10"
+                android:text="@string/promt_movil"
+                android:textColor="@color/morado_oscuro"
+                android:textSize="@dimen/texto_general"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/editTextUser" />
+
+            <EditText
+                android:id="@+id/editTextTelef"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/intrTextRegistHeight"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="32dp"
+                android:ems="10"
+                android:hint="@string/intr_telef"
+                android:inputType="phone"
+                android:textSize="@dimen/texto_pequeño"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/telefViewRegist" />
+
+            <TextView
+                android:id="@+id/contraViewRegist"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginEnd="32dp"
+                android:ems="10"
+                android:text="@string/prompt_password"
+                android:textColor="@color/morado_oscuro"
+                android:textSize="@dimen/texto_general"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/editTextTelef" />
+
+            <EditText
+                android:id="@+id/editTextContra"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/intrTextRegistHeight"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="32dp"
+                android:ems="10"
+                android:hint="@string/intr_telef"
+                android:inputType="phone"
+                android:textSize="@dimen/texto_pequeño"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/contraViewRegist" />
+
+            <TextView
+                android:id="@+id/contraAgainViewRegist"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginEnd="32dp"
+                android:ems="10"
+                android:text="@string/prompt_password_again"
+                android:textColor="@color/morado_oscuro"
+                android:textSize="@dimen/texto_general"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/editTextContra" />
+
+            <EditText
+                android:id="@+id/editTextContraAgain"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/intrTextRegistHeight"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="32dp"
+                android:ems="10"
+                android:hint="@string/prompt_password_again"
+                android:inputType="phone"
+                android:textSize="@dimen/texto_pequeño"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/contraAgainViewRegist" />
+
+            <TextView
+                android:id="@+id/TipoCuentaViewRegist"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginEnd="32dp"
+                android:ems="10"
+                android:text="@string/selec_cuenta"
+                android:textColor="@color/morado_oscuro"
+                android:textSize="@dimen/texto_general"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/editTextContraAgain" />
+
+            <Spinner
+                android:id="@+id/spinner"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="32dp"
+                android:text="@string/selec_cuenta"
+                android:textColor="@color/morado_oscuro"
+                android:textSize="@dimen/texto_general"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/TipoCuentaViewRegist" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>

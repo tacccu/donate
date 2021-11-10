@@ -3,14 +3,19 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.201171875" />
-        <entry key="app/src/main/res/drawable/buttons.xml" value="0.201171875" />
-        <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.201171875" />
-        <entry key="app/src/main/res/layout-w1240dp/activity_login.xml" value="0.166015625" />
-        <entry key="app/src/main/res/layout-w936dp/activity_login.xml" value="0.1890625" />
-        <entry key="app/src/main/res/layout/activity_aboutus.xml" value="0.128125" />
-        <entry key="app/src/main/res/layout/activity_login.xml" value="0.33" />
-        <entry key="app/src/main/res/layout/activity_registro.xml" value="0.22" />
+        <entry key="..\:/code/android/donate/app/src/main/res/layout/activity_aboutus.xml" value="0.20520833333333333" />
+        <entry key="..\:/code/android/donate/app/src/main/res/layout/activity_chat.xml" value="0.20520833333333333" />
+        <entry key="..\:/code/android/donate/app/src/main/res/layout/activity_chats.xml" value="0.20520833333333333" />
+        <entry key="..\:/code/android/donate/app/src/main/res/layout/activity_donacionestl.xml" value="0.20520833333333333" />
+        <entry key="..\:/code/android/donate/app/src/main/res/layout/activity_formreportes.xml" value="0.20520833333333333" />
+        <entry key="..\:/code/android/donate/app/src/main/res/layout/activity_login.xml" value="0.20520833333333333" />
+        <entry key="..\:/code/android/donate/app/src/main/res/layout/activity_perfil.xml" value="0.20520833333333333" />
+        <entry key="..\:/code/android/donate/app/src/main/res/layout/activity_postcreation.xml" value="0.20520833333333333" />
+        <entry key="..\:/code/android/donate/app/src/main/res/layout/activity_postvisor.xml" value="0.20520833333333333" />
+        <entry key="..\:/code/android/donate/app/src/main/res/layout/activity_registro.xml" value="0.41041666666666665" />
+        <entry key="..\:/code/android/donate/app/src/main/res/layout/activity_ticketgestion.xml" value="0.20520833333333333" />
+        <entry key="..\:/code/android/donate/app/src/main/res/layout/activity_tickettl.xml" value="0.20520833333333333" />
+        <entry key="..\:/code/android/donate/app/src/main/res/layout/activity_ticketvisor.xml" value="0.20520833333333333" />
       </map>
     </option>
   </component>
