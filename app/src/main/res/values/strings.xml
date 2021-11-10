@@ -16,10 +16,12 @@
     <string name="selec_cuenta">Tipo de cuenta:</string>
     <string name="cuenta_donan">Donante</string>
     <string name="cuenta_donat">Donatario</string>
-    <string-array
-        name="tipoCuenta">
+    <string-array name="tipoCuenta">
         <item>Donante</item>
         <item>Donatario</item>
     </string-array>
+    <string name="contentDescrip">
+        Seleccine el tipo de cuenta que desea
+    </string>
 
 </resources>

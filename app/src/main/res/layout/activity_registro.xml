@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <ScrollView
@@ -21,6 +22,7 @@
                 android:layout_marginEnd="32dp"
                 android:text="@string/registrarse"
                 android:textSize="40sp"
+                android:textColor="@color/black"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
@@ -170,13 +172,15 @@
             <EditText
                 android:id="@+id/editTextContraAgain"
                 android:layout_width="0dp"
-                android:layout_height="@dimen/intrTextRegistHeight"
+                android:layout_height="wrap_content"
                 android:layout_marginStart="32dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="32dp"
                 android:ems="10"
                 android:hint="@string/prompt_password_again"
+                android:hintTextColor="#757575"
                 android:inputType="phone"
+                android:minHeight="48dp"
                 android:textSize="@dimen/texto_pequeño"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="1.0"
@@ -199,18 +203,35 @@
                 app:layout_constraintTop_toBottomOf="@+id/editTextContraAgain" />
 
             <Spinner
-                android:id="@+id/spinner"
+                android:id="@+id/spinnerSelecCuenta"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="32dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="32dp"
+                android:minHeight="48dp"
                 android:text="@string/selec_cuenta"
                 android:textColor="@color/morado_oscuro"
                 android:textSize="@dimen/texto_general"
+                android:contentDescription="@string/contentDescrip"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/TipoCuentaViewRegist" />
+
+            <Button
+                android:id="@+id/botonRegistro"
+                android:backgroundTint="@color/morado_oscuro"
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginEnd="45dp"
+                android:text="@string/registrarse"
+                android:textColor="@color/morado_claro"
+                android:textSize="@dimen/texto_general"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/spinnerSelecCuenta"/>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>

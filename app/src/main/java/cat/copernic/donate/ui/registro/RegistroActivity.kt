@@ -18,7 +18,7 @@ class RegistroActivity : AppCompatActivity() {
 
         binding = DataBindingUtil.setContentView(this, R.layout.activity_registro)
 
-        val spinner = findViewById<Spinner>(R.id.spinner)
+        val spinner = findViewById<Spinner>(R.id.spinnerSelecCuenta)
 
         val tipoLista = resources.getStringArray(R.array.tipoCuenta)
         val adaptador = ArrayAdapter(this, android.R.layout.simple_spinner_item, tipoLista)
