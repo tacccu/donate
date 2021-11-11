@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ticketVisor">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingTop="10dp"
+            android:paddingBottom="17dp">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1.5dp"
+                android:background="@android:color/black" />
+
+            <TextView
+                android:id="@+id/titViTicket"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="14dp"
+                android:text="@string/titViTicket"
+                android:textColor="@color/black"
+                android:textSize="@dimen/ticketTit" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1.5dp"
+                android:background="@android:color/black" />
+
+            <TextView
+                android:id="@+id/userViTicket"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="@dimen/ticketPadding"
+                android:paddingTop="@dimen/ticketPadding"
+                android:paddingRight="@dimen/ticketPadding"
+                android:paddingBottom="@dimen/ticketPadding"
+                android:text="@string/userViTicket"
+
+                android:textColor="@color/black"
+                android:textSize="@dimen/ticketText" />
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1.5dp"
+                android:background="@android:color/black" />
+
+            <TextView
+                android:id="@+id/userRepViTicket"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="@dimen/ticketPadding"
+                android:paddingTop="@dimen/ticketPadding"
+                android:paddingRight="@dimen/ticketPadding"
+                android:paddingBottom="@dimen/ticketPadding"
+                android:text="@string/userRepViTicket"
+                android:textColor="@color/black"
+                android:textSize="@dimen/ticketText" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1.5dp"
+                android:background="@android:color/black" />
+
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="@dimen/ticketPadding"
+                android:paddingTop="@dimen/ticketPadding"
+                android:paddingRight="@dimen/ticketPadding"
+                android:paddingBottom="@dimen/ticketPadding"
+                android:text="@string/razViTicket"
+                android:textColor="@color/black"
+                android:textSize="@dimen/ticketText" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1.5dp"
+                android:background="@android:color/black" />
+
+            <TextView
+                android:id="@+id/textView7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="@dimen/ticketPadding"
+                android:paddingTop="@dimen/ticketPadding"
+                android:paddingRight="@dimen/ticketPadding"
+                android:paddingBottom="@dimen/ticketPadding"
+                android:text="@string/descpViTicket"
+                android:textColor="@color/black"
+                android:textSize="@dimen/ticketText" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1.5dp"
+                android:background="@android:color/black" />
+
+        </LinearLayout>
+    </ScrollView>
+</FrameLayout>

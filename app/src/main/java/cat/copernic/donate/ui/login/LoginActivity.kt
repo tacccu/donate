@@ -3,7 +3,6 @@ package cat.copernic.donate.ui.login
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.drawerlayout.widget.DrawerLayout
@@ -30,8 +29,10 @@ class LoginActivity : AppCompatActivity() {
         //val navController = this.findNavController(R.id.myNavHostFragment)
         //drawerLayout = binding.drawerLayout
 
-        //NavigationUI.setupActionBarWithNavController(this, navController, drawerLayout)
-        //NavigationUI.setupWithNavController(binding.navView, navController)
+        binding.botonRegistro.setOnClickListener {
+            intent = Intent(this, RegistroActivity::class.java)
+            startActivity(intent)
+        }
 
         //binding.RegisterButton.setOnClickListener {
         //    Log.i("LoginActivity", "He clicado boton registro")
