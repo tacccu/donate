@@ -10,7 +10,6 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.NavigationUI
 import cat.copernic.donate.R
 import cat.copernic.donate.databinding.ActivityLoginBinding
-//import cat.copernic.donate.navigation.databinding.ActivityMainBinding
 import cat.copernic.donate.ui.registro.RegistroActivity
 
 

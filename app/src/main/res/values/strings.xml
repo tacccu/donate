@@ -5,6 +5,7 @@
     <string name="prompt_user">Usuario:</string>
     <string name="prompt_password">Contraseña:</string>
     <string name="log_in">Log In</string>
+    <string name="OlvPass">¿Has olvidado la contraseña?</string>
     <!-- Strings related to register -->
     <string name="registrarse">Registrate</string>
     <string name="promt_email">Email:</string>
