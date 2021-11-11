@@ -5,12 +5,8 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
-import androidx.drawerlayout.widget.DrawerLayout
-import androidx.navigation.findNavController
-import androidx.navigation.ui.NavigationUI
 import cat.copernic.donate.R
 import cat.copernic.donate.databinding.ActivityLoginBinding
-//import cat.copernic.donate.navigation.databinding.ActivityMainBinding
 import cat.copernic.donate.ui.registro.RegistroActivity
 
 
@@ -20,9 +16,10 @@ class LoginActivity : AppCompatActivity() {
     //private lateinit var drawerLayout: DrawerLayout
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_login)
 
         //Thread.sleep(2000) --> Comando para ralentizar la app y ver mejor el SplashScreen
-        setTheme(R.style.AppTheme)
+        //setTheme(R.style.AppTheme)
         super.onCreate(savedInstanceState)
 
         //val binding = DataBindingUtil.setContentView<ActivityMainBinding>(this, R.layout.activity_login)
@@ -30,7 +27,7 @@ class LoginActivity : AppCompatActivity() {
         //val navController = this.findNavController(R.id.myNavHostFragment)
         //drawerLayout = binding.drawerLayout
 
-        binding.botonRegistro.setOnClickListener {
+        binding.buttonRegister.setOnClickListener {
             intent = Intent(this, RegistroActivity::class.java)
             startActivity(intent)
         }
