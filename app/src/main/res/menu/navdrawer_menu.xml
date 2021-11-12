@@ -1,15 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <item
-        android:id="@+id/chatList"
-        android:title="@string/chatList" />
-    <item
-        android:id="@+id/TLDonaciones"
-        android:title="@string/TLPosts" />
-    <item
-        android:id="@+id/aboutus"
-        android:title="@string/AboutUsTitle" />
-    <item android:title="@string/Perfil" />
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/chatList"
+            android:icon="@drawable/chat_icon"
+            android:title="@string/chatList" />
+        <item
+            android:id="@+id/TLDonaciones"
+            android:icon="@drawable/post_icon"
+            android:title="@string/TLPosts" />
+        <item
+            android:id="@+id/aboutus"
+            android:icon="@drawable/aboutus_icon"
+            android:title="@string/AboutUsTitle" />
+        <item
+            android:id="@+id/perfil"
+            android:icon="@drawable/profile_icon"
+            android:title="@string/Perfil" />
+    </group>
+
 </menu>
