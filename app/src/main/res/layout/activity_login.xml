@@ -10,6 +10,17 @@
         android:background="@color/white"
         tools:context=".ui.login.LoginActivity">
 
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/app_name"
+            android:textAlignment="center"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+
         <Button
             android:id="@+id/buttonRegister"
             android:layout_width="wrap_content"
@@ -40,12 +51,13 @@
             app:layout_constraintHorizontal_bias="0.497"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/logo" />
+            app:srcCompat="@drawable/logo"
+            tools:ignore="ImageContrastCheck" />
 
         <EditText
             android:id="@+id/editTextTextPersonName"
-            android:layout_height="wrap_content"
             android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginStart="32dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="32dp"
@@ -53,10 +65,13 @@
             android:ems="10"
             android:hint="@string/prompt_user"
             android:inputType="textPersonName"
+            android:minHeight="48dp"
             android:textColor="#000000"
+            android:textColorHint="#757575"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/LIusuario" />
+            app:layout_constraintTop_toBottomOf="@+id/LIusuario"
+            tools:ignore="DuplicateSpeakableTextCheck" />
 
         <EditText
             android:id="@+id/editTextTextPassword"
@@ -65,16 +80,19 @@
             android:layout_marginStart="32dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="32dp"
+            android:autofillHints="password"
             android:ems="10"
             android:hint="@string/prompt_password"
+            android:textColorHint="#757575"
             android:inputType="textPassword"
+            android:minHeight="48dp"
             android:singleLine="true"
-            android:textColor="#000000"
+            android:textColor="#757575"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.906"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView5"
-            android:autofillHints="password"/>
+            tools:ignore="DuplicateSpeakableTextCheck" />
 
         <Button
             android:id="@+id/buttonLogIn"
@@ -85,14 +103,13 @@
             android:layout_marginEnd="32dp"
             android:background="@drawable/buttons"
             android:text="@string/log_in"
-            android:textColor="#FFFFFF"
+            android:textColor="@color/white"
             android:textColorHighlight="#D770EF"
             android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword"
-            />
+            app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword" />
 
         <TextView
             android:id="@+id/LIusuario"
@@ -103,7 +120,7 @@
             android:layout_marginEnd="32dp"
             android:text="@string/prompt_user"
             android:textAlignment="textStart"
-            android:textColor="@color/morado"
+            android:textColor="#AB47BC"
             android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
@@ -119,7 +136,7 @@
             android:layout_marginEnd="32dp"
             android:text="@string/prompt_password"
             android:textAlignment="textStart"
-            android:textColor="@color/morado"
+            android:textColor="#AB47BC"
             android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
@@ -131,12 +148,26 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="164dp"
-            android:layout_marginEnd="24dp"
+            android:layout_marginEnd="84dp"
             android:text="@string/cuentaReg"
             android:textAlignment="center"
             android:textColor="#000000"
             android:textSize="12sp"
             app:layout_constraintEnd_toStartOf="@+id/buttonRegister"
+            app:layout_constraintTop_toBottomOf="@+id/buttonLogIn" />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="32dp"
+            android:background="@drawable/buttons"
+            android:text="@string/OlvPass"
+            android:textColor="#FFFFFF"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/buttonLogIn" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
