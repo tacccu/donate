@@ -22,6 +22,7 @@ class RegistroActivity : AppCompatActivity() {
 
         val tipoLista = resources.getStringArray(R.array.tipoCuenta)
         val adaptador = ArrayAdapter(this, android.R.layout.simple_spinner_item, tipoLista)
+        
         spinner.adapter = adaptador
 
 
