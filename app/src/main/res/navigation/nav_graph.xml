@@ -2,26 +2,4 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/nav_graph"
-    app:startDestination="@id/aboutus">
-
-    <fragment
-        android:id="@+id/aboutus"
-        android:name="cat.copernic.donate.aboutus"
-        android:label="fragment_aboutus" />
-    <fragment
-        android:id="@+id/perfil"
-        android:name="cat.copernic.donate.perfil"
-        android:label="fragment_perfil"
-        tools:layout="@layout/fragment_perfil" />
-    <fragment
-        android:id="@+id/chatList"
-        android:name="cat.copernic.donate.chatList"
-        android:label="fragment_chat_list"
-        tools:layout="@layout/fragment_chat_list" />
-    <fragment
-        android:id="@+id/TLDonaciones"
-        android:name="cat.copernic.donate.TLDonaciones"
-        android:label="fragment_tldonaciones"
-        tools:layout="@layout/fragment_tldonaciones" />
-</navigation>
+    android:id="@+id/nav_graph" />
