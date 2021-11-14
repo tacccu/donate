@@ -5,6 +5,7 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
+import cat.copernic.donate.MainActivity
 import cat.copernic.donate.R
 import cat.copernic.donate.databinding.ActivityLoginBinding
 import cat.copernic.donate.ui.registro.RegistroActivity
@@ -28,6 +29,10 @@ class LoginActivity : AppCompatActivity() {
         binding.buttonLogIn.setOnClickListener {
             intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
+        }
+
+        binding.olvidadoContra.setOnClickListener {
+
         }
 
 

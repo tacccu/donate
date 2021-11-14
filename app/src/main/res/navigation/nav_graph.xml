@@ -6,19 +6,23 @@
     app:startDestination="@id/TLDonaciones">
 
     <fragment
-        android:id="@+id/aboutus"
-        android:name="cat.copernic.donate.aboutus"
-        android:label="fragment_aboutus" />
-    <fragment
         android:id="@+id/perfil"
         android:name="cat.copernic.donate.perfil"
         android:label="fragment_perfil"
-        tools:layout="@layout/fragment_perfil" />
+        tools:layout="@layout/fragment_perfil" >
+        <action
+            android:id="@+id/action_perfil_to_TLDonaciones"
+            app:destination="@id/TLDonaciones" />
+    </fragment>
     <fragment
         android:id="@+id/chatList"
         android:name="cat.copernic.donate.chatList"
         android:label="fragment_chat_list"
-        tools:layout="@layout/fragment_chat_list" />
+        tools:layout="@layout/fragment_chat_list" >
+        <action
+            android:id="@+id/action_chatList_to_TLDonaciones"
+            app:destination="@id/TLDonaciones" />
+    </fragment>
     <fragment
         android:id="@+id/TLDonaciones"
         android:name="cat.copernic.donate.TLDonaciones"
@@ -33,13 +37,14 @@
         <action
             android:id="@+id/action_TLDonaciones_to_perfil"
             app:destination="@id/perfil" />
-        <action
-            android:id="@+id/action_TLDonaciones_to_aboutus"
-            app:destination="@id/aboutus" />
     </fragment>
     <fragment
         android:id="@+id/tltickets"
         android:name="cat.copernic.donate.tltickets"
         android:label="fragment_tltickets"
-        tools:layout="@layout/fragment_tltickets" />
+        tools:layout="@layout/fragment_tltickets" >
+        <action
+            android:id="@+id/action_tltickets_to_TLDonaciones"
+            app:destination="@id/TLDonaciones" />
+    </fragment>
 </navigation>

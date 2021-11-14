@@ -31,10 +31,12 @@
         <entry key="app/src/main/res/layout-w1240dp/activity_login.xml" value="0.166015625" />
         <entry key="app/src/main/res/layout-w936dp/activity_login.xml" value="0.1890625" />
         <entry key="app/src/main/res/layout/activity_aboutus.xml" value="0.128125" />
-        <entry key="app/src/main/res/layout/activity_login.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/activity_login.xml" value="0.22" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.1890625" />
         <entry key="app/src/main/res/layout/activity_registro.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragmentTicketVisor.xml" value="0.15" />
         <entry key="app/src/main/res/layout/fragment_ticket_visor.xml" value="0.2" />
+        <entry key="app/src/main/res/layout/fragment_tldonaciones.xml" value="0.1890625" />
       </map>
     </option>
   </component>
