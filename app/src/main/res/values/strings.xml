@@ -1,6 +1,10 @@
 <resources>
     <string name="app_name">DonAte</string>
     <string name="DescLogo">Logo de la app</string>
+
+    <!-- String Globales-->
+    <string name="user">Usuario</string>
+    <string name="email">usuario@email.com</string>
     <!-- Strings related to login -->
     <string name="prompt_user">Usuario:</string>
     <string name="prompt_password">Contraseña:</string>

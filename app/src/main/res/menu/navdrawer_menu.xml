@@ -4,11 +4,11 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/chatList"
+            android:id="@+id/chatContactos"
             android:icon="@drawable/chat_icon"
             android:title="@string/chatList" />
         <item
-            android:id="@+id/TLDonaciones"
+            android:id="@+id/FragmentDonaciones"
             android:icon="@drawable/post_icon"
             android:title="@string/TLPosts" />
         <item
@@ -19,6 +19,11 @@
             android:id="@+id/perfil"
             android:icon="@drawable/profile_icon"
             android:title="@string/Perfil" />
+        <item
+            android:id="@id/tltickets"
+            android:icon="@drawable/ticket"
+            android:title="Reports"/>
     </group>
+
 
 </menu>

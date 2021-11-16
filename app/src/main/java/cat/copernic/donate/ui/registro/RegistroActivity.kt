@@ -1,10 +1,12 @@
 package cat.copernic.donate.ui.registro
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.ArrayAdapter
 import android.widget.Spinner
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
+import cat.copernic.donate.MainActivity
 import cat.copernic.donate.R
 import cat.copernic.donate.databinding.ActivityRegistroBinding
 
@@ -24,6 +26,11 @@ class RegistroActivity : AppCompatActivity() {
         val adaptador = ArrayAdapter(this, android.R.layout.simple_spinner_item, tipoLista)
         
         spinner.adapter = adaptador
+
+        binding.botonRegistro.setOnClickListener {
+            intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+        }
 
 
     }

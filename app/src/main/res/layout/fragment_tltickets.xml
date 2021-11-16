@@ -25,6 +25,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="0"
+                    android:contentDescription="TODO"
+                    tools:ignore="ImageContrastCheck"
                     tools:src="@tools:sample/avatars" />
 
                 <LinearLayout
@@ -102,6 +104,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="0"
+                    tools:ignore="ImageContrastCheck"
                     tools:src="@tools:sample/avatars" />
 
                 <LinearLayout
