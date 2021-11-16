@@ -31,7 +31,11 @@ class LoginActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+        binding.olvidadoContra.setOnClickListener {
+
+        }
+
+
     }
 
 }
-

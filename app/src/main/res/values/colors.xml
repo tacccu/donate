@@ -5,7 +5,8 @@
     <color name="morado_claro">#ffd9ff</color>
     <color name="gris_claro">#e2e2e2</color>
     <color name="gris">#858585</color>
-    <color name="azul">#80d0e8ff</color>
+    <color name="azul">#badeff</color>
+    <color name="azul_claro">#CAE6FF</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 </resources>
