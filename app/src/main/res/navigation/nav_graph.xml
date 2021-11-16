@@ -3,43 +3,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/TLDonaciones">
-
+    app:startDestination="@id/fragmentDonaciones">
     <fragment
-        android:id="@+id/aboutus"
-        android:name="cat.copernic.donate.aboutus"
-        android:label="fragment_aboutus" />
-    <fragment
-        android:id="@+id/perfil"
-        android:name="cat.copernic.donate.perfil"
-        android:label="fragment_perfil"
-        tools:layout="@layout/fragment_perfil" />
-    <fragment
-        android:id="@+id/chatList"
-        android:name="cat.copernic.donate.chatList"
-        android:label="fragment_chat_list"
-        tools:layout="@layout/fragment_chat_list" />
-    <fragment
-        android:id="@+id/TLDonaciones"
-        android:name="cat.copernic.donate.TLDonaciones"
-        android:label="fragment_tldonaciones"
-        tools:layout="@layout/fragment_tldonaciones" >
-        <action
-            android:id="@+id/action_TLDonaciones_to_tltickets"
-            app:destination="@id/tltickets" />
-        <action
-            android:id="@+id/action_TLDonaciones_to_chatList"
-            app:destination="@id/chatList" />
-        <action
-            android:id="@+id/action_TLDonaciones_to_perfil"
-            app:destination="@id/perfil" />
-        <action
-            android:id="@+id/action_TLDonaciones_to_aboutus"
-            app:destination="@id/aboutus" />
-    </fragment>
-    <fragment
-        android:id="@+id/tltickets"
-        android:name="cat.copernic.donate.tltickets"
-        android:label="fragment_tltickets"
-        tools:layout="@layout/fragment_tltickets" />
+        android:id="@+id/fragmentDonaciones"
+        android:name="cat.copernic.donate.FragmentDonaciones"
+        android:label="fragment_donaciones"
+        tools:layout="@layout/fragment_donaciones" />
 </navigation>

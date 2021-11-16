@@ -5,9 +5,7 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
-import androidx.drawerlayout.widget.DrawerLayout
-import androidx.navigation.findNavController
-import androidx.navigation.ui.NavigationUI
+import cat.copernic.donate.MainActivity
 import cat.copernic.donate.R
 import cat.copernic.donate.databinding.ActivityLoginBinding
 import cat.copernic.donate.ui.registro.RegistroActivity
@@ -16,37 +14,28 @@ import cat.copernic.donate.ui.registro.RegistroActivity
 class LoginActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityLoginBinding
-    //private lateinit var drawerLayout: DrawerLayout
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_login)
 
-        //Thread.sleep(2000) --> Comando para ralentizar la app y ver mejor el SplashScreen
-        setTheme(R.style.AppTheme)
         super.onCreate(savedInstanceState)
 
-        //val binding = DataBindingUtil.setContentView<ActivityMainBinding>(this, R.layout.activity_login)
 
-        //val navController = this.findNavController(R.id.myNavHostFragment)
-        //drawerLayout = binding.drawerLayout
-
-        binding.botonRegistro.setOnClickListener {
+        binding.buttonRegister.setOnClickListener {
             intent = Intent(this, RegistroActivity::class.java)
             startActivity(intent)
         }
 
-        //binding.RegisterButton.setOnClickListener {
-        //    Log.i("LoginActivity", "He clicado boton registro")
-        //    intent = Intent(this, RegistroActivity::class.java)
-        //    startActivity(intent)
-        //}
+        binding.buttonLogIn.setOnClickListener {
+            intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+        }
 
-        //Menu start here
-        //NavigationUI.setupWithNavController(binding.navView, navController)
+        binding.olvidadoContra.setOnClickListener {
+
+        }
+
 
     }
 
-    //override fun onSupportNavigateUp(): Boolean {
-        //val navController = this.findNavController(R.id.myNavHostFragment)
-        //return NavigationUI.navigateUp(navController, drawerLayout)
-    //}
 }

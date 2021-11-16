@@ -14,7 +14,8 @@
     <string name="intr_user">Introduzca un nombre de usuario</string>
     <string name="intr_telef">Introduzca un número de teléfono</string>
     <string name="intr_contraseña">Introduzca una contraseña</string>
-    <string name="prompt_password_again">Introduzca de nuevo la contraseña</string>
+    <string name="prompt_password_again">Introduzca de nuevo la contraseña:</string>
+    <string name="intr_password_again">Introduzca de nuevo la contraseña</string>
     <string name="selec_cuenta">Tipo de cuenta:</string>
     <string name="cuenta_donan">Donante</string>
     <string name="cuenta_donat">Donatario</string>
@@ -48,4 +49,8 @@
     <string name="razViTicket">razón: Problema con el producto\nUsuario: Manolo96</string>
     <string name="descpViTicket">Descripción: Cuando llegué el producto que querían ofrecerme no se
         correspondía con el de las fotos o la descripción del post ¡Por favor revísenlo!</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <!-- Creacion de post -->
+    <string name="addImage">Añada una imagen de su donación</string>
 </resources>
