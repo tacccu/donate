@@ -49,4 +49,8 @@
     <string name="razViTicket">razón: Problema con el producto\nUsuario: Manolo96</string>
     <string name="descpViTicket">Descripción: Cuando llegué el producto que querían ofrecerme no se
         correspondía con el de las fotos o la descripción del post ¡Por favor revísenlo!</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <!-- Creacion de post -->
+    <string name="addImage">Añada una imagen de su donación</string>
 </resources>
