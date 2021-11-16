@@ -8,5 +8,18 @@
         android:id="@+id/fragmentDonaciones"
         android:name="cat.copernic.donate.FragmentDonaciones"
         android:label="fragment_donaciones"
-        tools:layout="@layout/fragment_donaciones" />
+        tools:layout="@layout/fragment_donaciones" >
+        <action
+            android:id="@+id/action_fragmentDonaciones_to_creacionPost"
+            app:destination="@id/creacionPost" />
+    </fragment>
+    <fragment
+        android:id="@+id/creacionPost"
+        android:name="cat.copernic.donate.creacionPost"
+        android:label="fragment_creacion_post"
+        tools:layout="@layout/fragment_creacion_post" >
+        <action
+            android:id="@+id/action_creacionPost_to_fragmentDonaciones"
+            app:destination="@id/fragmentDonaciones" />
+    </fragment>
 </navigation>
