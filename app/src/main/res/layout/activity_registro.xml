@@ -178,7 +178,7 @@
                 android:layout_marginEnd="32dp"
                 android:ems="10"
                 android:hint="@string/prompt_password_again"
-                android:hintTextColor="#757575"
+                android:textColorHint="#757575"
                 android:inputType="phone"
                 android:minHeight="48dp"
                 android:textSize="@dimen/texto_pequeño"
