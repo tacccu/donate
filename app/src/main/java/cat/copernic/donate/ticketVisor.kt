@@ -13,10 +13,10 @@ private const val ARG_PARAM2 = "param2"
 
 /**
  * A simple [Fragment] subclass.
- * Use the [ticketVisor.newInstance] factory method to
+ * Use the [ticket_visor.newInstance] factory method to
  * create an instance of this fragment.
  */
-class ticketVisor : Fragment() {
+class ticket_visor : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
@@ -44,12 +44,12 @@ class ticketVisor : Fragment() {
          *
          * @param param1 Parameter 1.
          * @param param2 Parameter 2.
-         * @return A new instance of fragment ticketVisor.
+         * @return A new instance of fragment ticket_visor.
          */
         // TODO: Rename and change types and number of parameters
         @JvmStatic
         fun newInstance(param1: String, param2: String) =
-            ticketVisor().apply {
+            ticket_visor().apply {
                 arguments = Bundle().apply {
                     putString(ARG_PARAM1, param1)
                     putString(ARG_PARAM2, param2)
