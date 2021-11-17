@@ -1,7 +1,6 @@
-package cat.copernic.donate.ui.posts
+package cat.copernic.donate.ui
 
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -18,7 +17,7 @@ private const val ARG_PARAM2 = "param2"
  * Use the [creacionPost.newInstance] factory method to
  * create an instance of this fragment.
  */
-class TLdonaciones : Fragment() {
+class creacionPost : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
@@ -36,13 +35,8 @@ class TLdonaciones : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        val view: View = inflater.inflate(R.layout.fragment_donaciones, container, false)
-        botonFragment = findViewById(R.layout.donaciones)
-        /*view.boton_fragment.setOnClickListener { view ->
-            Log.d("boton_fragment", "Selected")
-        }*/
+        return inflater.inflate(R.layout.fragment_creacion_post, container, false)
 
-        return view
     }
 
     companion object {

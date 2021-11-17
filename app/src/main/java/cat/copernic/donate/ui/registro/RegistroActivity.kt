@@ -6,9 +6,9 @@ import android.widget.ArrayAdapter
 import android.widget.Spinner
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
-import cat.copernic.donate.MainActivity
 import cat.copernic.donate.R
 import cat.copernic.donate.databinding.ActivityRegistroBinding
+import cat.copernic.donate.ui.posts.MainActivity
 
 class RegistroActivity : AppCompatActivity() {
 

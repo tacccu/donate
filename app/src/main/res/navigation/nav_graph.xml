@@ -7,7 +7,11 @@
     <fragment
         android:id="@+id/FragmentDonaciones"
         android:name="cat.copernic.donate.FragmentDonaciones"
-        android:label="fragment_donaciones" />
+        android:label="fragment_donaciones" >
+        <action
+            android:id="@+id/action_FragmentDonaciones_to_creacionPost"
+            app:destination="@id/creacionPost" />
+    </fragment>
     <fragment
         android:id="@+id/aboutus"
         android:name="cat.copernic.donate.aboutus"
@@ -22,4 +26,8 @@
         android:name="cat.copernic.donate.tltickets"
         android:label="fragment_tltickets"
         tools:layout="@layout/fragment_tltickets" />
+    <fragment
+        android:id="@+id/creacionPost"
+        android:name="cat.copernic.donate.ui.creacionPost"
+        android:label="creacionPost" />
 </navigation>
