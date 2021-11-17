@@ -37,9 +37,10 @@ class TLdonaciones : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         val view: View = inflater.inflate(R.layout.fragment_donaciones, container, false)
-        view.boton_fragment.setOnClickListener { view ->
+        botonFragment = findViewById(R.layout.donaciones)
+        /*view.boton_fragment.setOnClickListener { view ->
             Log.d("boton_fragment", "Selected")
-        }
+        }*/
 
         return view
     }
