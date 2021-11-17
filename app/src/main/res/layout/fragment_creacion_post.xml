@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context="creacionPost">
+    android:orientation="vertical" >
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/container"
@@ -114,6 +113,7 @@
             android:src="@android:drawable/ic_menu_send"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            tools:ignore="SpeakableTextPresentCheck" />
+            tools:ignore="SpeakableTextPresentCheck"
+            android:focusable="true" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </LinearLayout>

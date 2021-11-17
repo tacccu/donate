@@ -1,10 +1,12 @@
-package cat.copernic.donate
+package cat.copernic.donate.ui.posts
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import cat.copernic.donate.R
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -13,10 +15,10 @@ private const val ARG_PARAM2 = "param2"
 
 /**
  * A simple [Fragment] subclass.
- * Use the [TLDonaciones.newInstance] factory method to
+ * Use the [creacionPost.newInstance] factory method to
  * create an instance of this fragment.
  */
-class TLDonaciones : Fragment() {
+class TLdonaciones : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
@@ -34,7 +36,12 @@ class TLDonaciones : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_tldonaciones, container, true)
+        val view: View = inflater.inflate(R.layout.fragment_donaciones, container, false)
+        view.boton_fragment.setOnClickListener { view ->
+            Log.d("boton_fragment", "Selected")
+        }
+
+        return view
     }
 
     companion object {
@@ -44,12 +51,12 @@ class TLDonaciones : Fragment() {
          *
          * @param param1 Parameter 1.
          * @param param2 Parameter 2.
-         * @return A new instance of fragment TLDonaciones.
+         * @return A new instance of fragment creacionPost.
          */
         // TODO: Rename and change types and number of parameters
         @JvmStatic
         fun newInstance(param1: String, param2: String) =
-            TLDonaciones().apply {
+            creacionPost().apply {
                 arguments = Bundle().apply {
                     putString(ARG_PARAM1, param1)
                     putString(ARG_PARAM2, param2)
