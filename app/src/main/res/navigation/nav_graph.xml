@@ -14,7 +14,7 @@
         android:label="fragment_aboutus" />
     <fragment
         android:id="@+id/chatContactos"
-        android:name="cat.copernic.donate.ticket_visor"
+        android:name="cat.copernic.donate.chatContactos"
         android:label="fragment_chat_contactos"
         tools:layout="@layout/fragment_chat_contactos" />
     <fragment
