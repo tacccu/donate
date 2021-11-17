@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "155521826449",
+    "project_id": "prueba-lucasito",
+    "storage_bucket": "prueba-lucasito.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:155521826449:android:182ecd2cd59d4063ca0930",
+        "android_client_info": {
+          "package_name": "cat.copernic.lucas.prueba_firebase"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "155521826449-9r5im0j3i810qbk64pjdr7bj3c04sgkt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD8iy3FMD-ZwDW3lR_nW5gE0tlIldb_aRI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "155521826449-9r5im0j3i810qbk64pjdr7bj3c04sgkt.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
