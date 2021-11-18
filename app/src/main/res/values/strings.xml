@@ -40,6 +40,7 @@
     <!-- Strings related to perfil-->
     <string name="Perfil">Perfil</string>
     <!-- Strings related to TL Tickets-->
+    <string name="report">Report</string>
     <string name="TUsuario">Usuario: (usuario)</string>
     <string name="TTitle">Título del reporte</string>
     <string name="TDesc">Descripción del reporte</string>
@@ -57,4 +58,5 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <!-- Creacion de post -->
     <string name="addImage">Añada una imagen de su donación</string>
+
 </resources>

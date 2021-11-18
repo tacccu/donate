@@ -20,6 +20,9 @@ class LoginActivity : AppCompatActivity() {
 
         super.onCreate(savedInstanceState)
 
+        Thread.sleep(2000)
+        setTheme(R.style.Theme_DonAte)
+
 
         binding.buttonRegister.setOnClickListener {
             intent = Intent(this, RegistroActivity::class.java)
