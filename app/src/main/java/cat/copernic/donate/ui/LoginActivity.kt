@@ -1,4 +1,4 @@
-package cat.copernic.donate.ui.login
+package cat.copernic.donate.ui
 
 
 import android.content.Intent
@@ -7,8 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import cat.copernic.donate.R
 import cat.copernic.donate.databinding.ActivityLoginBinding
-import cat.copernic.donate.ui.posts.MainActivity
-import cat.copernic.donate.ui.registro.RegistroActivity
+import cat.copernic.donate.ui.MainActivity
 
 
 class LoginActivity : AppCompatActivity() {

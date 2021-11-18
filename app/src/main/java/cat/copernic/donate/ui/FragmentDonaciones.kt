@@ -1,4 +1,4 @@
-package cat.copernic.donate
+package cat.copernic.donate.ui
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import androidx.navigation.fragment.findNavController
+import cat.copernic.donate.R
 import cat.copernic.donate.ui.creacionPost
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 

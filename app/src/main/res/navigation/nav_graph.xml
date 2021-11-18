@@ -6,7 +6,7 @@
     app:startDestination="@id/FragmentDonaciones">
     <fragment
         android:id="@+id/FragmentDonaciones"
-        android:name="cat.copernic.donate.FragmentDonaciones"
+        android:name="cat.copernic.donate.ui.FragmentDonaciones"
         android:label="fragment_donaciones" >
         <action
             android:id="@+id/action_FragmentDonaciones_to_creacionPost"
@@ -14,16 +14,16 @@
     </fragment>
     <fragment
         android:id="@+id/aboutus"
-        android:name="cat.copernic.donate.aboutus"
+        android:name="cat.copernic.donate.ui.aboutus"
         android:label="fragment_aboutus" />
     <fragment
         android:id="@+id/chatContactos"
-        android:name="cat.copernic.donate.chatContactos"
+        android:name="cat.copernic.donate.ui.chatContactos"
         android:label="fragment_chat_contactos"
         tools:layout="@layout/fragment_chat_contactos" />
     <fragment
         android:id="@+id/tltickets"
-        android:name="cat.copernic.donate.tltickets"
+        android:name="cat.copernic.donate.ui.tltickets"
         android:label="fragment_tltickets"
         tools:layout="@layout/fragment_tltickets" />
     <fragment

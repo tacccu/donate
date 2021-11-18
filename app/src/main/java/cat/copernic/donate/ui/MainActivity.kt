@@ -1,5 +1,5 @@
 
-package cat.copernic.donate.ui.posts
+package cat.copernic.donate.ui
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity

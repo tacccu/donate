@@ -36,14 +36,15 @@
         <entry key="app/src/main/res/layout-w1240dp/activity_login.xml" value="0.166015625" />
         <entry key="app/src/main/res/layout-w936dp/activity_login.xml" value="0.1890625" />
         <entry key="app/src/main/res/layout/activity_aboutus.xml" value="0.128125" />
-        <entry key="app/src/main/res/layout/activity_login.xml" value="0.25" />
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.14" />
-        <entry key="app/src/main/res/layout/activity_registro.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_login.xml" value="0.2" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_registro.xml" value="0.22" />
         <entry key="app/src/main/res/layout/fragmentTicketVisor.xml" value="0.15" />
-        <entry key="app/src/main/res/layout/fragment_aboutus.xml" value="0.258984375" />
+        <entry key="app/src/main/res/layout/fragment_aboutus.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment_chat_contactos.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_creacion_post.xml" value="0.265625" />
-        <entry key="app/src/main/res/layout/fragment_donaciones.xml" value="0.16042780748663102" />
+        <entry key="app/src/main/res/layout/fragment_donaciones.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/fragment_perfil.xml" value="0.33" />
         <entry key="app/src/main/res/layout/fragment_ticket_visor.xml" value="0.2" />
         <entry key="app/src/main/res/layout/fragment_tldonaciones.xml" value="0.2" />
         <entry key="app/src/main/res/layout/nav_header.xml" value="0.1" />

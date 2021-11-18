@@ -14,7 +14,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/white"
-            tools:context="ui.registro.RegistroActivity">
+            tools:context=".ui.RegistroActivity">
 
 
             <TextView
@@ -240,19 +240,21 @@
 
             <Button
                 android:id="@+id/botonRegistro"
-                android:backgroundTint="@color/morado_oscuro"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
                 android:layout_marginStart="32dp"
                 android:layout_marginTop="32dp"
                 android:layout_marginEnd="45dp"
+                android:layout_marginBottom="7dp"
+                android:background="@drawable/buttons"
                 android:text="@string/registrarse"
-                android:theme="@style/Theme.DonAte"
                 android:textColor="@color/morado_claro"
                 android:textSize="@dimen/texto_general"
+                android:theme="@style/Theme.DonAte"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/spinnerSelecCuenta"/>
+                app:layout_constraintTop_toBottomOf="@+id/spinnerSelecCuenta" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
