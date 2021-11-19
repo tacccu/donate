@@ -11,23 +11,60 @@
         <action
             android:id="@+id/action_FragmentDonaciones_to_creacionPost"
             app:destination="@id/creacionPost" />
+        <action
+            android:id="@+id/action_FragmentDonaciones_to_perfil"
+            app:destination="@id/perfil" />
+        <action
+            android:id="@+id/action_FragmentDonaciones_to_aboutus"
+            app:destination="@id/aboutus" />
+        <action
+            android:id="@+id/action_FragmentDonaciones_to_tltickets"
+            app:destination="@id/tltickets" />
+        <action
+            android:id="@+id/action_FragmentDonaciones_to_chatContactos"
+            app:destination="@id/chatContactos" />
     </fragment>
     <fragment
         android:id="@+id/aboutus"
         android:name="cat.copernic.donate.ui.aboutus"
-        android:label="fragment_aboutus" />
+        android:label="fragment_aboutus" >
+        <action
+            android:id="@+id/action_aboutus_to_FragmentDonaciones"
+            app:destination="@id/FragmentDonaciones" />
+    </fragment>
+    <fragment
+        android:id="@+id/perfil"
+        android:name="cat.copernic.donate.ui.Perfil"
+        android:label="fragment_perfil"
+        tools:layout="@layout/fragment_perfil" >
+        <action
+            android:id="@+id/action_perfil_to_FragmentDonaciones"
+            app:destination="@id/FragmentDonaciones" />
+    </fragment>
     <fragment
         android:id="@+id/chatContactos"
         android:name="cat.copernic.donate.ui.chatContactos"
         android:label="fragment_chat_contactos"
-        tools:layout="@layout/fragment_chat_contactos" />
+        tools:layout="@layout/fragment_chat_contactos" >
+        <action
+            android:id="@+id/action_chatContactos_to_FragmentDonaciones"
+            app:destination="@id/FragmentDonaciones" />
+    </fragment>
     <fragment
         android:id="@+id/tltickets"
         android:name="cat.copernic.donate.ui.tltickets"
         android:label="fragment_tltickets"
-        tools:layout="@layout/fragment_tltickets" />
+        tools:layout="@layout/fragment_tltickets" >
+        <action
+            android:id="@+id/action_tltickets_to_FragmentDonaciones"
+            app:destination="@id/FragmentDonaciones" />
+    </fragment>
     <fragment
         android:id="@+id/creacionPost"
         android:name="cat.copernic.donate.ui.creacionPost"
-        android:label="creacionPost" />
+        android:label="creacionPost" >
+        <action
+            android:id="@+id/action_creacionPost_to_FragmentDonaciones"
+            app:destination="@id/FragmentDonaciones" />
+    </fragment>
 </navigation>

@@ -10,6 +10,7 @@
     <!-- dimen chat contactos -->
     <dimen name="chatContPadding">7dp</dimen>
     <!-- dimen fragment perfil -->
-    <dimen name="distEditATextView"></dimen>
-    <dimen name="distEditACostado"></dimen>
+    <dimen name="distEditATextViewGrande">24dp</dimen>
+    <dimen name="distEditATextViewPeque">12dp</dimen>
+    <dimen name="distEditACostado">72dp</dimen>
 </resources>

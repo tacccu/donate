@@ -44,10 +44,11 @@
         <entry key="app/src/main/res/layout/fragment_chat_contactos.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_creacion_post.xml" value="0.265625" />
         <entry key="app/src/main/res/layout/fragment_donaciones.xml" value="0.12449977767896843" />
-        <entry key="app/src/main/res/layout/fragment_perfil.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/fragment_perfil.xml" value="0.22" />
         <entry key="app/src/main/res/layout/fragment_ticket_visor.xml" value="0.2" />
         <entry key="app/src/main/res/layout/fragment_tldonaciones.xml" value="0.2" />
         <entry key="app/src/main/res/layout/nav_header.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/spinner_dropdown_item.xml" value="0.1" />
         <entry key="app/src/main/res/menu/navdrawer_menu.xml" value="0.22" />
       </map>
     </option>
