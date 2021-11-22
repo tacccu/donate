@@ -23,7 +23,7 @@
             android:name=".ui.registro.RegistroActivity"
             android:exported="true"
             android:label="@string/app_name"
-            android:theme="@style/Theme.DonAte">
+            android:theme="@style/Theme.DonAtelogin">
         </activity>
         <activity
             android:name=".MainActivity"

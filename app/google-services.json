@@ -1,33 +1,33 @@
 {
   "project_info": {
-    "project_number": "155521826449",
-    "project_id": "prueba-lucasito",
-    "storage_bucket": "prueba-lucasito.appspot.com"
+    "project_number": "985369157441",
+    "project_id": "donate-android",
+    "storage_bucket": "donate-android.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:155521826449:android:182ecd2cd59d4063ca0930",
+        "mobilesdk_app_id": "1:985369157441:android:57e4736960b8d4ee820bc0",
         "android_client_info": {
-          "package_name": "cat.copernic.lucas.prueba_firebase"
+          "package_name": "cat.copernic.donate"
         }
       },
       "oauth_client": [
         {
-          "client_id": "155521826449-9r5im0j3i810qbk64pjdr7bj3c04sgkt.apps.googleusercontent.com",
+          "client_id": "985369157441-qnahg1pee9ejl0qff0lmdpljpd497k2c.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyD8iy3FMD-ZwDW3lR_nW5gE0tlIldb_aRI"
+          "current_key": "AIzaSyB2GojfkV_jAFKH_ZXpnOSyB5Y4NN5hD3c"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "155521826449-9r5im0j3i810qbk64pjdr7bj3c04sgkt.apps.googleusercontent.com",
+              "client_id": "985369157441-qnahg1pee9ejl0qff0lmdpljpd497k2c.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

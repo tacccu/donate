@@ -20,6 +20,7 @@ private lateinit var drawerLayout: DrawerLayout
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState : Bundle?){
         super.onCreate(savedInstanceState)
+        setTheme(R.style.Theme_DonAte)
         val binding = DataBindingUtil.setContentView<ActivityMainBinding>(this, R.layout.activity_main)
 
         val navController = this.findNavController(R.id.myNavHostFragment)
