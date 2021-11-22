@@ -14,6 +14,10 @@ import cat.copernic.donate.databinding.ActivityMainBinding
 
 private lateinit var drawerLayout: DrawerLayout
 
+enum class ProviderType {
+    BASIC
+}
+
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
