@@ -34,12 +34,13 @@
     <string name="TLPosts">Posts</string>
     <!-- Strings related to About Us-->
     <string name="AboutUsTitle">About Us</string>
-    <string name="AboutUs">El objetivo principal del proyecto es llevar la solidaridad a un punto más \n cercano en la vida cotidiana, pretendemos ayudar a la gente que sufre necesidades alimenticias con una propuesta que acerca la caridad, una solución rápida y sencilla para realizar donaciones.
+    <string name="AboutUs">\n\n El objetivo principal del proyecto es llevar la solidaridad a un punto más \n cercano en la vida cotidiana, pretendemos ayudar a la gente que sufre necesidades alimenticias con una propuesta que acerca la caridad, una solución rápida y sencilla para realizar donaciones.
     \n\nOfrecemos una solución ante una situación precaria de algunas personas como es no poder adquirir una variedad de alimentos básicos y la dificultad que les supone hacerlo.
     \n\nPor otro lado queremos poner remedio a los alimentos que serían desechados porque el ciudadano no vea un aprovechamiento de los mismos.</string>
     <!-- Strings related to perfil-->
     <string name="Perfil">Perfil</string>
     <!-- Strings related to TL Tickets-->
+    <string name="report">Report</string>
     <string name="TUsuario">Usuario: (usuario)</string>
     <string name="TTitle">Título del reporte</string>
     <string name="TDesc">Descripción del reporte</string>
@@ -57,11 +58,5 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <!-- Creacion de post -->
     <string name="addImage">Añada una imagen de su donación</string>
-    <string name="inserNomPub">Inserte un nombre para la publicación</string>
-    <string name="insertDescriPost">Inserte una decripción para el post</string>
-    <string name="insertUbiHora">Inserte una hora</string>
-    <!-- Creacion de perfil -->
-    <string name="nombrePerfil">Inserte nombre completo</string>
-    <string name="emailPerfil">Inserte una dirección de email</string>
-    <string name="telefPerfil">Inserte un teléfono</string>
+
 </resources>
