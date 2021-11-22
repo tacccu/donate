@@ -9,4 +9,8 @@
     <dimen name="ticketPadding">4dp</dimen>
     <!-- dimen chat contactos -->
     <dimen name="chatContPadding">7dp</dimen>
+    <!-- dimen fragment perfil -->
+    <dimen name="distEditATextViewGrande">24dp</dimen>
+    <dimen name="distEditATextViewPeque">12dp</dimen>
+    <dimen name="distEditACostado">72dp</dimen>
 </resources>

@@ -1,19 +1,16 @@
 
-package cat.copernic.donate
+package cat.copernic.donate.ui
 
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
-import androidx.databinding.DataBindingUtil
+import androidx.databinding.DataBindingUtil.setContentView
 import androidx.drawerlayout.widget.DrawerLayout
-import androidx.fragment.app.Fragment
+import androidx.navigation.NavController
 import androidx.navigation.findNavController
-import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.NavigationUI
+import cat.copernic.donate.R
 import cat.copernic.donate.databinding.ActivityMainBinding
-import cat.copernic.donate.databinding.FragmentTldonacionesBinding
 
 private lateinit var drawerLayout: DrawerLayout
 
@@ -22,12 +19,14 @@ enum class ProviderType {
 }
 
 class MainActivity : AppCompatActivity() {
+
+    private lateinit var binding: ActivityMainBinding
+
     override fun onCreate(savedInstanceState : Bundle?){
         super.onCreate(savedInstanceState)
-        setTheme(R.style.Theme_DonAte)
-        val binding = DataBindingUtil.setContentView<ActivityMainBinding>(this, R.layout.activity_main)
-
-        val navController = this.findNavController(R.id.myNavHostFragment)
+        binding = setContentView(this, R.layout.activity_main)
+        val navHostFragment = supportFragmentManager.findFragmentById(R.id.myNavHostFragment) as NavHostFragment
+        val navController : NavController = navHostFragment.navController
 
         drawerLayout = binding.drawerLayout
         NavigationUI.setupActionBarWithNavController(this, navController)
@@ -39,4 +38,6 @@ class MainActivity : AppCompatActivity() {
         val navController = this.findNavController(R.id.myNavHostFragment)
         return NavigationUI.navigateUp(navController, drawerLayout)
     }
+
+
 }
