@@ -17,6 +17,10 @@ import cat.copernic.donate.databinding.FragmentTldonacionesBinding
 
 private lateinit var drawerLayout: DrawerLayout
 
+enum class ProviderType {
+    BASIC
+}
+
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState : Bundle?){
         super.onCreate(savedInstanceState)

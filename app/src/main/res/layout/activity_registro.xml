@@ -49,7 +49,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/tituloRegistro" />
 
             <EditText
-                android:id="@+id/intrEmailRegist"
+                android:id="@+id/emailEditTextR"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/intrTextRegistHeight"
                 android:layout_marginStart="32dp"
@@ -80,10 +80,10 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/intrEmailRegist" />
+                app:layout_constraintTop_toBottomOf="@+id/emailEditTextR" />
 
             <EditText
-                android:id="@+id/editTextUser"
+                android:id="@+id/userEditText"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/intrTextRegistHeight"
                 android:layout_marginStart="32dp"
@@ -114,10 +114,10 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/editTextUser" />
+                app:layout_constraintTop_toBottomOf="@+id/userEditText" />
 
             <EditText
-                android:id="@+id/editTextTelef"
+                android:id="@+id/phoneEditText"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/intrTextRegistHeight"
                 android:layout_marginStart="32dp"
@@ -148,10 +148,10 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/editTextTelef" />
+                app:layout_constraintTop_toBottomOf="@+id/phoneEditText" />
 
             <EditText
-                android:id="@+id/editTextContra"
+                android:id="@+id/passwordEditTextR"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/intrTextRegistHeight"
                 android:layout_marginStart="32dp"
@@ -182,10 +182,10 @@
                 android:textSize="@dimen/texto_general"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/editTextContra" />
+                app:layout_constraintTop_toBottomOf="@+id/passwordEditTextR" />
 
             <EditText
-                android:id="@+id/editTextContraAgain"
+                android:id="@+id/passwordEditTextR2"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="32dp"
@@ -217,7 +217,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/editTextContraAgain" />
+                app:layout_constraintTop_toBottomOf="@+id/passwordEditTextR2" />
 
             <!--TODO estilizar bonito el spinner y arreglar los colores de los edittext-->
             <Spinner
