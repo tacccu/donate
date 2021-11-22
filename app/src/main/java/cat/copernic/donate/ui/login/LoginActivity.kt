@@ -3,12 +3,15 @@ package cat.copernic.donate.ui.login
 
 import android.content.Intent
 import android.os.Bundle
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import cat.copernic.donate.MainActivity
+import cat.copernic.donate.ProviderType
 import cat.copernic.donate.R
 import cat.copernic.donate.databinding.ActivityLoginBinding
 import cat.copernic.donate.ui.registro.RegistroActivity
+import com.google.firebase.auth.FirebaseAuth
 
 
 class LoginActivity : AppCompatActivity() {
@@ -23,21 +26,55 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
 
+        //setup
+        setup()
+
+    }
+
+    private fun setup(){
+
         binding.buttonRegister.setOnClickListener {
             intent = Intent(this, RegistroActivity::class.java)
             startActivity(intent)
+
         }
 
         binding.buttonLogIn.setOnClickListener {
             intent = Intent(this, MainActivity::class.java)
-            startActivity(intent)
+
+            if(binding.emailEditText.text.isNotEmpty() && binding.passwordEditText.text.isNotEmpty() ){
+                FirebaseAuth.getInstance()
+                    .signInWithEmailAndPassword(binding.emailEditText.text.toString(), binding.passwordEditText.text.toString())
+                    .addOnCompleteListener{
+                        if(it.isSuccessful) {
+                            showMainL(it.result?.user?.email ?: "", ProviderType.BASIC)
+                        } else {
+                            showAlert()
+                        }
+                    }
+            }
         }
 
         binding.olvidadoContra.setOnClickListener {
 
         }
+    }
 
+    private fun showMainL(email: String, provider: ProviderType){
+        val intent = Intent(this, MainActivity::class.java).apply {
+            putExtra("email", email)
+            putExtra("provider", provider.name)
+        }
+        startActivity(intent)
+    }
 
+    private fun showAlert() {
+        val builder = AlertDialog.Builder(this)
+        builder.setTitle("Error")
+        builder.setMessage("Ha habido un error iniciando sesion")
+        builder.setPositiveButton("Aceptar", null)
+        val dialog: AlertDialog = builder.create()
+        dialog.show()
     }
 
 }

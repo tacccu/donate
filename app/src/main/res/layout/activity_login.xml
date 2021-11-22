@@ -37,7 +37,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.903"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword"
+            app:layout_constraintTop_toBottomOf="@+id/passwordEditText"
             tools:ignore="TextContrastCheck" />
 
         <ImageView
@@ -56,7 +56,7 @@
             tools:ignore="ImageContrastCheck" />
 
         <EditText
-            android:id="@+id/editTextTextPersonName"
+            android:id="@+id/emailEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="32dp"
@@ -65,7 +65,7 @@
             android:autofillHints="usuario"
             android:ems="10"
             android:hint="@string/prompt_user"
-            android:inputType="textPersonName"
+            android:inputType="textEmailAddress"
             android:minHeight="48dp"
             android:textColor="#000000"
             android:textColorHint="@color/gris_hint"
@@ -75,7 +75,7 @@
             tools:ignore="DuplicateSpeakableTextCheck" />
 
         <EditText
-            android:id="@+id/editTextTextPassword"
+            android:id="@+id/passwordEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="32dp"
@@ -110,7 +110,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword"
+            app:layout_constraintTop_toBottomOf="@+id/passwordEditText"
             tools:ignore="TextContrastCheck" />
 
         <TextView
@@ -143,7 +143,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName" />
+            app:layout_constraintTop_toBottomOf="@+id/emailEditText" />
 
         <TextView
             android:id="@+id/textView6"
@@ -172,6 +172,9 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/buttonLogIn"
             tools:ignore="TextContrastCheck" />
+
+
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
