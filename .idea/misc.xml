@@ -42,8 +42,8 @@
         <entry key="app/src/main/res/layout/fragmentTicketVisor.xml" value="0.15" />
         <entry key="app/src/main/res/layout/fragment_aboutus.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment_chat_contactos.xml" value="0.1" />
-        <entry key="app/src/main/res/layout/fragment_creacion_post.xml" value="0.265625" />
-        <entry key="app/src/main/res/layout/fragment_donaciones.xml" value="0.12449977767896843" />
+        <entry key="app/src/main/res/layout/fragment_creacion_post.xml" value="0.18" />
+        <entry key="app/src/main/res/layout/fragment_donaciones.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment_perfil.xml" value="0.22" />
         <entry key="app/src/main/res/layout/fragment_ticket_visor.xml" value="0.2" />
         <entry key="app/src/main/res/layout/fragment_tldonaciones.xml" value="0.2" />
