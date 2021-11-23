@@ -19,18 +19,14 @@ class RegistroActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
-
         binding = DataBindingUtil.setContentView(this, R.layout.activity_registro)
 
         val spinner = findViewById<Spinner>(R.id.spinnerSelecCuenta)
 
         val tipoLista = resources.getStringArray(R.array.tipoCuenta)
         val adaptador = ArrayAdapter(this, android.R.layout.simple_spinner_item, tipoLista)
-        
+
         spinner.adapter = adaptador
-
-
 
         //setup
         setupR()
@@ -47,25 +43,36 @@ class RegistroActivity : AppCompatActivity() {
                 && binding.phoneEditText.text.isNotEmpty()
                 && binding.passwordEditTextR.text.isNotEmpty()
                 && binding.passwordEditTextR2.text.isNotEmpty()){
-
-                    FirebaseAuth.getInstance()
-                        .createUserWithEmailAndPassword(binding.emailEditTextR.text.toString(), binding.passwordEditTextR.text.toString())
-                        .addOnCompleteListener{
-                            if(it.isSuccessful) {
-                                showMainR(it.result?.user?.email ?: "", ProviderType.BASIC)
-                            } else {
-                                showAlert()
+                    if (binding.passwordEditTextR.text == binding.passwordEditTextR2){
+                        FirebaseAuth.getInstance()
+                            .createUserWithEmailAndPassword(binding.emailEditTextR.text.toString(), binding.passwordEditTextR.text.toString())
+                            .addOnCompleteListener{
+                                if(it.isSuccessful) {
+                                    showMainR(it.result?.user?.email ?: "", ProviderType.BASIC)
+                                } else {
+                                    showAlert()
+                                }
                             }
-                        }
-                }
+                    } else {
+                        showAlert2()
+                    }
+            }
         }
-
     }
 
     private fun showAlert() {
         val builder = AlertDialog.Builder(this)
         builder.setTitle("Error")
         builder.setMessage("Ha habido un error registrando")
+        builder.setPositiveButton("Aceptar", null)
+        val dialog: AlertDialog = builder.create()
+        dialog.show()
+    }
+
+    private fun showAlert2() {
+        val builder = AlertDialog.Builder(this)
+        builder.setTitle("Error")
+        builder.setMessage("Las contraseñas no coinciden")
         builder.setPositiveButton("Aceptar", null)
         val dialog: AlertDialog = builder.create()
         dialog.show()

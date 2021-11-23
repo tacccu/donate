@@ -71,7 +71,7 @@ class LoginActivity : AppCompatActivity() {
     private fun showAlert() {
         val builder = AlertDialog.Builder(this)
         builder.setTitle("Error")
-        builder.setMessage("Ha habido un error iniciando sesion")
+        builder.setMessage("las credenciales no coinciden")
         builder.setPositiveButton("Aceptar", null)
         val dialog: AlertDialog = builder.create()
         dialog.show()
