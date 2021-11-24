@@ -1,15 +1,11 @@
 package cat.copernic.donate.ui
 
 import android.os.Bundle
+import android.view.*
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
-import android.widget.Button
-import androidx.navigation.fragment.findNavController
+import androidx.navigation.findNavController
+import androidx.navigation.ui.NavigationUI
 import cat.copernic.donate.R
-import cat.copernic.donate.ui.creacionPost
-import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -40,14 +36,26 @@ class FragmentDonaciones : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         // Inflate the layout for this fragment
-        val view: View = inflater.inflate(R.layout.fragment_donaciones, container, false)
+        /*val view: View = inflater.inflate(R.layout.fragment_donaciones, container, false)
         var botonFragment = view.findViewById<FloatingActionButton>(R.id.botonFragmentCrearPost)
 
         botonFragment.setOnClickListener {
             findNavController().navigate(R.id.action_FragmentDonaciones_to_creacionPost)
         }
 
-        return view
+        return view*/
+        setHasOptionsMenu(true)
+        return inflater.inflate(R.layout.fragment_donaciones, container, false)
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        super.onCreateOptionsMenu(menu, inflater)
+        inflater.inflate(R.menu.menu_donaciones, menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return NavigationUI.onNavDestinationSelected(item, requireView().findNavController())
+                || super.onOptionsItemSelected(item)
     }
 
     companion object {
