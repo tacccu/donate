@@ -43,7 +43,7 @@ class RegistroActivity : AppCompatActivity() {
                 && binding.phoneEditText.text.isNotEmpty()
                 && binding.passwordEditTextR.text.isNotEmpty()
                 && binding.passwordEditTextR2.text.isNotEmpty()){
-                    if (binding.passwordEditTextR.text == binding.passwordEditTextR2){
+                    if (binding.passwordEditTextR.text.toString() == binding.passwordEditTextR2.toString()){
                         FirebaseAuth.getInstance()
                             .createUserWithEmailAndPassword(binding.emailEditTextR.text.toString(), binding.passwordEditTextR.text.toString())
                             .addOnCompleteListener{
