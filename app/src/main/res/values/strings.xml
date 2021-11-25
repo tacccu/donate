@@ -58,5 +58,13 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <!-- Creacion de post -->
     <string name="addImage">Añada una imagen de su donación</string>
+    <string name="inserNomPub">Inserte un nombre para la publicación</string>
+    <string name="insertDescriPost">Inserte una decripción para el post</string>
+    <string name="insertUbiHora">Inserte una hora</string>
+    <!-- Creacion de perfil -->
+    <string name="nombrePerfil">Inserte nombre completo</string>
+    <string name="emailPerfil">Inserte una dirección de email</string>
+    <string name="telefPerfil">Inserte un teléfono</string>
+
 
 </resources>

@@ -1,4 +1,4 @@
-package cat.copernic.donate.ui.login
+package cat.copernic.donate.ui
 
 
 import android.content.Intent
@@ -6,11 +6,11 @@ import android.os.Bundle
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
-import cat.copernic.donate.MainActivity
-import cat.copernic.donate.ProviderType
 import cat.copernic.donate.R
 import cat.copernic.donate.databinding.ActivityLoginBinding
-import cat.copernic.donate.ui.registro.RegistroActivity
+import cat.copernic.donate.ui.MainActivity
+import cat.copernic.donate.ui.ProviderType
+import cat.copernic.donate.ui.RegistroActivity
 import com.google.firebase.auth.FirebaseAuth
 
 
