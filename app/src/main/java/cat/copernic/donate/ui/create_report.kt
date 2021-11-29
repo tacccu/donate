@@ -1,11 +1,11 @@
-package cat.copernic.donate
+package cat.copernic.donate.ui
 
-import android.content.Intent
 import android.os.Bundle
-import android.view.*
 import androidx.fragment.app.Fragment
-import androidx.navigation.findNavController
-import androidx.navigation.ui.NavigationUI
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import cat.copernic.donate.R
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -14,10 +14,10 @@ private const val ARG_PARAM2 = "param2"
 
 /**
  * A simple [Fragment] subclass.
- * Use the [chat.newInstance] factory method to
+ * Use the [create_report.newInstance] factory method to
  * create an instance of this fragment.
  */
-class chat : Fragment() {
+class create_report : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
@@ -35,21 +35,7 @@ class chat : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_chat, container, false)
-    }
-
-
-    //Para crear el Options menu
-    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
-        super.onCreateOptionsMenu(menu, inflater)
-        inflater.inflate(R.menu.menu_chat, menu)
-    }
-
-    //Tracta el item seleccionado yendo al fragment que tengamos identificado en el menu
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return NavigationUI.
-                onNavDestinationSelected(item, requireView().findNavController())
-                || super.onOptionsItemSelected(item)
+        return inflater.inflate(R.layout.fragment_create_report, container, false)
     }
 
     companion object {
@@ -59,12 +45,12 @@ class chat : Fragment() {
          *
          * @param param1 Parameter 1.
          * @param param2 Parameter 2.
-         * @return A new instance of fragment chat.
+         * @return A new instance of fragment create_report.
          */
         // TODO: Rename and change types and number of parameters
         @JvmStatic
         fun newInstance(param1: String, param2: String) =
-            chat().apply {
+            create_report().apply {
                 arguments = Bundle().apply {
                     putString(ARG_PARAM1, param1)
                     putString(ARG_PARAM2, param2)

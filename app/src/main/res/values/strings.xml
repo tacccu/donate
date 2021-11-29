@@ -67,4 +67,6 @@
     <string name="telefPerfil">Inserte un teléfono</string>
 
 
+    <!-- MISC -->
+    <string name="dona">Donaciones</string>
 </resources>
