@@ -5,9 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/gris_claro"
-    tools:context=".chat">
-
-    <!-- TODO: Update blank fragment layout -->
+    tools:context=".ui.chat">
 
     <ScrollView
         android:id="@+id/scrollView2"

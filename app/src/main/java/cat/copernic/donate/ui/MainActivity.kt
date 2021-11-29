@@ -12,6 +12,7 @@ import androidx.navigation.ui.NavigationUI
 import cat.copernic.donate.R
 import cat.copernic.donate.databinding.ActivityMainBinding
 
+
 private lateinit var drawerLayout: DrawerLayout
 
 enum class ProviderType {
