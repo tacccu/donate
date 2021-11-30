@@ -1,6 +1,5 @@
 package cat.copernic.donate.ui
 
-import android.net.Uri
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -8,24 +7,16 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
-import android.widget.Spinner
 import cat.copernic.donate.R
-import androidx.annotation.NonNull
-
-import com.google.android.gms.tasks.OnCompleteListener
-
-import com.google.firebase.auth.UserProfileChangeRequest
-
-import com.google.firebase.auth.FirebaseAuth
-
-import com.google.firebase.auth.FirebaseUser
+import cat.copernic.donate.databinding.FragmentPerfilBinding
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.auth.ktx.userProfileChangeRequest
 import com.google.firebase.ktx.Firebase
 
 
 class Perfil : Fragment() {
-
+    private var __binding: FragmentPerfilBinding? = null
+    private val binding get() = __binding!!
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
     }
@@ -34,17 +25,32 @@ class Perfil : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        __binding = FragmentPerfilBinding.inflate(inflater, container, false)
+
+        // Inflate the layout for this fragment
+        return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
         val user = Firebase.auth.currentUser
 
-        val profileUpdates = userProfileChangeRequest {
-            displayName = "Jane Q. User"
-            photoUri = Uri.parse("https://example.com/jane-q-user/profile.jpg")
+        binding.sendUpdateButton.setOnClickListener() {
+            if (user != null && binding.editTextPhone.text.isNotEmpty()) {
+                val profileUpdates = userProfileChangeRequest {
+                    var numTelef = binding.editTextPhone
+                }
+
+                user!!.updateProfile(profileUpdates)
+                    .addOnCompleteListener { task ->
+                        if (task.isSuccessful) {
+                            Log.d(tag, "User profile updated.")
+                        }
+                    }
+            }
         }
 
-        user!!.updateProfile(profileUpdates)
-
-        val t = inflater.inflate(R.layout.fragment_perfil, container, false)
-        val spinner = t.findViewById<Spinner>(R.id.spinnerSelecCuentaPerfil)
+        val spinner = binding.spinnerSelecCuentaPerfil
         spinner.adapter = context?.let {
             ArrayAdapter(
                 it,
@@ -52,8 +58,10 @@ class Perfil : Fragment() {
                 resources.getStringArray(R.array.tipoCuenta)
             )
         }
+    }
 
-        // Inflate the layout for this fragment
-        return t
+    override fun onDestroyView(){
+        super.onDestroyView()
+        __binding = null
     }
 }
