@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import cat.copernic.donate.R
 import com.google.android.material.floatingactionbutton.FloatingActionButton
+import cat.copernic.donate.databinding.FragmentCreaPostBinding
 import com.google.firebase.firestore.FirebaseFirestore
 
 // TODO: Rename parameter arguments, choose names that match
@@ -22,6 +23,7 @@ private const val ARG_PARAM2 = "param2"
 class creaPost : Fragment() {
 
     private val db = FirebaseFirestore.getInstance()
+    private lateinit var binding : creaPostBinding
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
@@ -41,20 +43,23 @@ class creaPost : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_crea_post, container, false)
+        /*return inflater.inflate(R.layout.fragment_crea_post, container, false)*/
 
         /*//val t = inflater.inflate(R.layout.fragment_perfil, container, false)
         val fab = findViewById<FloatingActionButton>(R.id.floatingActionButton)
-
-        val data = hashMapOf(
-            "Título" to tituloEditText.text.toString()
-        )
 
         fab.setOnClickListener{
 
         }*/
 
+        //val data = hashMapOf(
+        // "titulo" to tituloEditText.text.toString(),
+        // "descripcion" to descripcionEditText.text.toString(),
+        // "fecha" to timeEditText.text.toString())
+
         //FloatingActionButton fab = (FloatingActionButton) getView().findViewByid(R.id.floatingActionButton)
+        //fab.setOnClickListener{
+        //db.collection("donaciones").add(data)
     }
 
 

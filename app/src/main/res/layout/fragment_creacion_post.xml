@@ -82,7 +82,7 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <EditText
-                    android:id="@+id/editTextTextPersonName3"
+                    android:id="@+id/descripcionEditText"
                     android:layout_width="0dp"
                     android:layout_height="181dp"
                     android:layout_marginTop="20dp"
@@ -98,7 +98,7 @@
                     app:layout_constraintTop_toBottomOf="@+id/tituloEditText" />
 
                 <EditText
-                    android:id="@+id/editTextTime"
+                    android:id="@+id/timeEditText"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="12dp"
@@ -110,7 +110,7 @@
                     android:textSize="@dimen/texto_general"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName3" />
+                    app:layout_constraintTop_toBottomOf="@+id/descripcionEditText" />
 
                 <com.google.android.material.floatingactionbutton.FloatingActionButton
                     android:id="@+id/floatingActionButton"
@@ -124,7 +124,7 @@
                     android:src="@android:drawable/ic_menu_send"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/editTextTime"
+                    app:layout_constraintTop_toBottomOf="@+id/timeEditText"
                     tools:ignore="SpeakableTextPresentCheck" />
             </androidx.constraintlayout.widget.ConstraintLayout>
         </LinearLayout>
