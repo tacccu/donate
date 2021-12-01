@@ -7,10 +7,10 @@ import android.widget.Spinner
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
-import cat.copernic.donate.MainActivity
-import cat.copernic.donate.ProviderType
+import cat.copernic.donate.ui.MainActivity
 import cat.copernic.donate.R
 import cat.copernic.donate.databinding.ActivityRegistroBinding
+import cat.copernic.donate.ui.ProviderType
 import com.google.firebase.auth.FirebaseAuth
 
 class RegistroActivity : AppCompatActivity() {
@@ -38,14 +38,14 @@ class RegistroActivity : AppCompatActivity() {
         binding.botonRegistro.setOnClickListener {
 
 
-            if(binding.emailEditTextR.text.isNotEmpty()
-                && binding.userEditText.text.isNotEmpty()
-                && binding.phoneEditText.text.isNotEmpty()
-                && binding.passwordEditTextR.text.isNotEmpty()
-                && binding.passwordEditTextR2.text.isNotEmpty()){
-                    if (binding.passwordEditTextR.text.toString() == binding.passwordEditTextR2.toString()){
+            if(binding.intrEmailRegist.text.isNotEmpty()
+                && binding.editTextUser.text.isNotEmpty()
+                && binding.editTextTelef.text.isNotEmpty()
+                && binding.editTextContra.text.isNotEmpty()
+                && binding.editTextContraAgain.text.isNotEmpty()){
+                    if (binding.editTextContra.text.toString() == binding.editTextContraAgain.toString()){
                         FirebaseAuth.getInstance()
-                            .createUserWithEmailAndPassword(binding.emailEditTextR.text.toString(), binding.passwordEditTextR.text.toString())
+                            .createUserWithEmailAndPassword(binding.editTextUser.text.toString(), binding.editTextContra.text.toString())
                             .addOnCompleteListener{
                                 if(it.isSuccessful) {
                                     showMainR(it.result?.user?.email ?: "", ProviderType.BASIC)

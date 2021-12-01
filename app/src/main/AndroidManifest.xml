@@ -20,7 +20,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ui.RegistroActivity"
+            android:name=".ui.registro.RegistroActivity"
             android:exported="true"
             android:label="@string/app_name"
             android:theme="@style/Theme.DonAtelogin">

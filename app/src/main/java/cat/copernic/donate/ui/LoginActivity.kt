@@ -11,7 +11,7 @@ import cat.copernic.donate.R
 import cat.copernic.donate.databinding.ActivityLoginBinding
 import cat.copernic.donate.ui.MainActivity
 import cat.copernic.donate.ui.ProviderType
-import cat.copernic.donate.ui.RegistroActivity
+import cat.copernic.donate.ui.registro.RegistroActivity
 import cat.copernic.donate.viewmodel.LoginActivityViewModel
 import com.google.firebase.auth.FirebaseAuth
 
@@ -29,7 +29,7 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
         // Get the viewModel
-        var viewModel = ViewModelProvider(this).get(LoginActivityViewModel::class.java)
+        //var viewModel = ViewModelProvider(this).get(LoginActivityViewModel::class.java)
 
         //setup
         setup()
