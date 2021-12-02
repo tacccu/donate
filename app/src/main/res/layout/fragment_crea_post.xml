@@ -3,7 +3,7 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="com.example.android.navigation.creacionPost">
+    tools:context="cat.copernic.donate.ui.registro.creaPost">
 
     <ScrollView
         android:layout_width="match_parent"
