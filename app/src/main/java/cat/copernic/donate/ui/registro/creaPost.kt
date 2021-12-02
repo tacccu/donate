@@ -1,10 +1,12 @@
 package cat.copernic.donate.ui.registro
 
+import android.app.AlertDialog
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.databinding.DataBindingUtil
 import cat.copernic.donate.R
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import cat.copernic.donate.databinding.FragmentCreaPostBinding
@@ -23,7 +25,7 @@ private const val ARG_PARAM2 = "param2"
 class creaPost : Fragment() {
 
     private val db = FirebaseFirestore.getInstance()
-
+    private lateinit var binding: FragmentCreaPostBinding
 
     // TODO: Rename and change types of parameters
     private var param1: String? = null
@@ -43,24 +45,37 @@ class creaPost : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        /*return inflater.inflate(R.layout.fragment_crea_post, container, false)*/
-        binding = creaPost.inflate()
-        /*//val t = inflater.inflate(R.layout.fragment_perfil, container, false)
-        val fab = findViewById<FloatingActionButton>(R.id.floatingActionButton)
 
-        fab.setOnClickListener{
+        val binding: FragmentCreaPostBinding = DataBindingUtil.inflate(
+            inflater, R.layout.fragment_crea_post, container, false
+        )
+        val data = hashMapOf(
+            "titulo" to binding.tituloEditText.text.toString(),
+            "descripcion" to binding.descripcionEditText.text.toString(),
+            "fecha" to binding.timeEditText.text.toString())
 
-        }*/
 
-        //val data = hashMapOf(
-        // "titulo" to tituloEditText.text.toString(),
-        // "descripcion" to descripcionEditText.text.toString(),
-        // "fecha" to timeEditText.text.toString())
+        binding.floatingActionButton.setOnClickListener{
+            if(binding.tituloEditText.text.isNotEmpty()
+                && binding.descripcionEditText.text.isNotEmpty()
+                && binding.timeEditText.text.isNotEmpty()){
 
-        //FloatingActionButton fab = (FloatingActionButton) getView().findViewByid(R.id.floatingActionButton)
-        //fab.setOnClickListener{
-        //db.collection("donaciones").add(data)
+                    db.collection("Donaciones").add(data)
+            } else {
+                showAlert()
+            }
+
+    }
+        return binding.root
+}
+
+    private fun showAlert(){
+        val builder = AlertDialog.Builder(this)
+        builder.setTitle("Error")
+        builder.setMessage("Todos los campos son obligatorios!!!")
+        builder.setPositiveButton("OK", null)
+        val dialog: AlertDialog = builder.create()
+        dialog.show()
     }
 
 

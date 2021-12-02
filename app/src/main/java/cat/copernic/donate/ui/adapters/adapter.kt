@@ -11,6 +11,6 @@ import androidx.recyclerview.widget.RecyclerView
 import android.widget.Toast
 import cat.copernic.donate.ui.model.donacion
 
-class adapter(private val donaciones : ArrayList<donacion>) : RecyclerView.Adapter<adapter.MyViewHolder>(){
+//class adapter(private val donaciones : ArrayList<donacion>) : RecyclerView.Adapter<adapter.MyViewHolder>(){
 
-}
+//}
