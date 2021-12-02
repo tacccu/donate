@@ -62,7 +62,7 @@
     <string name="insertDescriPost">Inserte una decripción para el post</string>
     <string name="insertUbiHora">Inserte una hora</string>
     <!-- Creacion de perfil -->
-    <string name="nombrePerfil">Inserte nombre completo</string>
+    <string name="nombrePerfil">Inserte un nuevo nombre de usuario</string>
     <string name="emailPerfil">Inserte una dirección de email</string>
     <string name="telefPerfil">Inserte un teléfono</string>
 
