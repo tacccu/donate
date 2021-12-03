@@ -8,7 +8,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import cat.copernic.donate.R
-import com.google.android.material.floatingactionbutton.FloatingActionButton
 import cat.copernic.donate.databinding.FragmentCreaPostBinding
 import com.google.firebase.firestore.FirebaseFirestore
 
@@ -25,7 +24,6 @@ private const val ARG_PARAM2 = "param2"
 class creaPost : Fragment() {
 
     private val db = FirebaseFirestore.getInstance()
-    private lateinit var binding: FragmentCreaPostBinding
 
     // TODO: Rename and change types of parameters
     private var param1: String? = null
@@ -44,15 +42,11 @@ class creaPost : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
 
         val binding: FragmentCreaPostBinding = DataBindingUtil.inflate(
             inflater, R.layout.fragment_crea_post, container, false
         )
-        val data = hashMapOf(
-            "titulo" to binding.tituloEditText.text.toString(),
-            "descripcion" to binding.descripcionEditText.text.toString(),
-            "fecha" to binding.timeEditText.text.toString())
 
 
         binding.floatingActionButton.setOnClickListener{
@@ -60,7 +54,11 @@ class creaPost : Fragment() {
                 && binding.descripcionEditText.text.isNotEmpty()
                 && binding.timeEditText.text.isNotEmpty()){
 
-                    db.collection("Donaciones").add(data)
+                    db.collection("Donaciones").add(hashMapOf(
+                        "titulo" to binding.tituloEditText.text.toString(),
+                        "descripcion" to binding.descripcionEditText.text.toString(),
+                        "fecha" to binding.timeEditText.text.toString()
+                    ))
             } else {
                 showAlert()
             }
@@ -70,7 +68,7 @@ class creaPost : Fragment() {
 }
 
     private fun showAlert(){
-        val builder = AlertDialog.Builder(this)
+        val builder = AlertDialog.Builder(context)
         builder.setTitle("Error")
         builder.setMessage("Todos los campos son obligatorios!!!")
         builder.setPositiveButton("OK", null)
