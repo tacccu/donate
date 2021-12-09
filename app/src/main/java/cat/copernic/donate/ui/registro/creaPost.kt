@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import androidx.navigation.findNavController
 import cat.copernic.donate.R
 import cat.copernic.donate.databinding.FragmentCreaPostBinding
 import com.google.firebase.firestore.FirebaseFirestore
@@ -49,7 +50,7 @@ class creaPost : Fragment() {
         )
 
 
-        binding.floatingActionButton.setOnClickListener{
+        binding.floatingActionButton.setOnClickListener{view : View ->
             if(binding.tituloEditText.text.isNotEmpty()
                 && binding.descripcionEditText.text.isNotEmpty()
                 && binding.timeEditText.text.isNotEmpty()){
@@ -58,7 +59,9 @@ class creaPost : Fragment() {
                         "titulo" to binding.tituloEditText.text.toString(),
                         "descripcion" to binding.descripcionEditText.text.toString(),
                         "fecha" to binding.timeEditText.text.toString()
+
                     ))
+                view.findNavController().navigate(creaPostDirections.actionCreaPostToFragmentDonaciones())
             } else {
                 showAlert()
             }
