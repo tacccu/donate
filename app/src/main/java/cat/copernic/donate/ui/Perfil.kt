@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import cat.copernic.donate.R
 import cat.copernic.donate.databinding.FragmentPerfilBinding
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.auth.ktx.userProfileChangeRequest
 import com.google.firebase.firestore.FirebaseFirestore
@@ -37,24 +38,29 @@ class Perfil : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val user = Firebase.auth.currentUser
-        val uid = user?.getEmail()
+        val uid = user?.uid
+
 
         binding.sendUpdateButton.setOnClickListener() {
-            if (user != null ) {
-                val userUpdNumTelf = db.collection("usuarios").document(uid.toString())
-
-                if(binding.editTextTextPersonName5.text.toString().isNotEmpty()){
-                    userUpdNumTelf.update("usuario", binding.editTextTextPersonName5.text.toString())
+            if (user != null ) {// si hay un usuario logeado podremos modificar su información de perfil
+                Log.e(tag, "ENTRO ENTRO ENTRO ENTRO\nENTRO ENTRO ENTRO")
+                val userUpdPerfil = db.collection("usuarios").document(uid.toString())
+                
+                if(binding.editTextTextPersonName5.text.toString().isNotEmpty()){//nombre usuario
+                    Log.e(tag, "ENTRO ENTRO ENTRO ENTRO\nENTRO ENTRO ENTRO")
+                    userUpdPerfil.update("usuario", binding.editTextTextPersonName5.text.toString())
                 }
-                /*if(binding.editTextTextEmailAddress.text.toString().isNotEmpty()){
-                    user!!.updateEmail(binding.editTextTextEmailAddress.text.toString())
-                }*/
-                if(binding.editTextPhone.text.toString().isNotEmpty()){
-                    userUpdNumTelf.update("numTelef", binding.editTextPhone.text.toString())
+                if(binding.editTextTextEmailAddress.text.toString().isNotEmpty()){//email
+                    userUpdPerfil.update("usuario", binding.editTextTextEmailAddress.text.toString())
                 }
-                /*if(binding.editTextPhone.text.toString().isNotEmpty()){
-                    userUpdNumTelf.update("numTelef", binding.spinnerSelecCuentaPerfil.get)
-                }*/
+                if(binding.editTextPhone.text.toString().isNotEmpty()){//teléfono
+                    userUpdPerfil.update("numTelef", binding.editTextPhone.text.toString())
+                }
+                if(binding.spinnerSelecCuentaPerfil.selectedItem != db.collection("usuarios").document(uid.toString()).get()){
+                    userUpdPerfil.update("tipoCuent", binding.spinnerSelecCuentaPerfil.selectedItem.toString())
+                    Log.e(tag, "ENTRO ENTRO ENTRO ENTRO\nTIPO CUENTA TIPO CUENTA    ")
+                    //BUSCAR COMO COMPARAR QUE LOS VALORES SEAN SIMILARES POR ID
+                }
             }
         }
 
