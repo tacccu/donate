@@ -2,12 +2,12 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools" >
+
     <androidx.constraintlayout.widget.ConstraintLayout
 
         android:id="@+id/container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/white"
         tools:context=".ui.login.LoginActivity">
 
         <TextView
@@ -26,18 +26,18 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="32dp"
-            android:layout_marginTop="204dp"
+            android:layout_marginTop="32dp"
             android:layout_marginEnd="32dp"
             android:background="@drawable/buttons"
             android:text="@string/registrarse"
             android:textColor="#FFFFFF"
             android:textColorHighlight="#D770EF"
-            android:textSize="12sp"
 
+            android:textSize="12sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.903"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/passwordEditText"
+            app:layout_constraintTop_toBottomOf="@+id/olvidadoContra"
             tools:ignore="TextContrastCheck" />
 
         <ImageView
@@ -48,11 +48,11 @@
             android:layout_marginTop="32dp"
             android:layout_marginEnd="32dp"
             android:contentDescription="@string/DescLogo"
+            android:src="@drawable/logoicono"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.497"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            android:src="@drawable/logoicono"
             tools:ignore="ImageContrastCheck" />
 
         <EditText
@@ -111,7 +111,7 @@
             app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/passwordEditText"
-            tools:ignore="TextContrastCheck"/>
+            tools:ignore="TextContrastCheck" />
 
         <TextView
             android:id="@+id/LIusuario"
@@ -150,15 +150,14 @@
             android:layout_width="159dp"
             android:layout_height="20dp"
             android:layout_marginStart="32dp"
-            android:layout_marginTop="164dp"
-            android:layout_marginEnd="84dp"
+            android:layout_marginTop="45dp"
             android:text="@string/cuentaReg"
             android:textAlignment="center"
             android:textColor="#000000"
             android:textSize="12sp"
             app:layout_constraintEnd_toStartOf="@+id/buttonRegister"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/buttonLogIn" />
+            app:layout_constraintTop_toBottomOf="@+id/olvidadoContra" />
 
         <Button
             android:id="@+id/olvidadoContra"
@@ -174,8 +173,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/buttonLogIn"
             tools:ignore="TextContrastCheck" />
-
-
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

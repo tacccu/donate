@@ -6,11 +6,13 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.findNavController
 import cat.copernic.donate.R
 import cat.copernic.donate.databinding.FragmentCreaPostBinding
 import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.storage.StorageReference
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -25,6 +27,8 @@ private const val ARG_PARAM2 = "param2"
 class creaPost : Fragment() {
 
     private val db = FirebaseFirestore.getInstance()
+    lateinit var image : ImageView
+    lateinit var storageRef: StorageReference
 
     // TODO: Rename and change types of parameters
     private var param1: String? = null
@@ -66,9 +70,17 @@ class creaPost : Fragment() {
                 showAlert()
             }
 
-    }
+        }
+
+        binding.addImage.setOnClickListener{ view: View ->
+
+        }
         return binding.root
 }
+
+    fun ponerImagen() {
+        val pathReference = storageRef.child()
+    }
 
     private fun showAlert(){
         val builder = AlertDialog.Builder(context)

@@ -23,7 +23,7 @@ class LoginActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         Thread.sleep(2000)
-        setTheme(R.style.Theme_DonAtelogin)
+        setTheme(R.style.Theme_DonAte)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_login)
 
         super.onCreate(savedInstanceState)
