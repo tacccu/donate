@@ -1,6 +1,8 @@
 package cat.copernic.donate.ui.registro
 
 import android.app.AlertDialog
+import android.graphics.Bitmap
+import android.graphics.drawable.BitmapDrawable
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -11,8 +13,10 @@ import androidx.databinding.DataBindingUtil
 import androidx.navigation.findNavController
 import cat.copernic.donate.R
 import cat.copernic.donate.databinding.FragmentCreaPostBinding
+import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.storage.StorageReference
+import java.io.ByteArrayOutputStream
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -27,7 +31,7 @@ private const val ARG_PARAM2 = "param2"
 class creaPost : Fragment() {
 
     private val db = FirebaseFirestore.getInstance()
-    lateinit var image : ImageView
+    lateinit var imagen : ImageView
     lateinit var storageRef: StorageReference
 
     // TODO: Rename and change types of parameters
@@ -73,13 +77,25 @@ class creaPost : Fragment() {
         }
 
         binding.addImage.setOnClickListener{ view: View ->
-
+            ponerImagen(view)
         }
         return binding.root
 }
 
-    fun ponerImagen() {
-        val pathReference = storageRef.child()
+    fun ponerImagen(view: View) {
+        val pathReference = storageRef.child("images/donate.jpg")
+        val bitmap = (imagen.drawable as BitmapDrawable).bitmap
+        val baos = ByteArrayOutputStream()
+
+        bitmap.compress(Bitmap.CompressFormat.JPEG, 100, baos)
+        val data = baos.toByteArray()
+
+        val uploadTask = pathReference.putBytes(data)
+        uploadTask.addOnFailureListener{
+            Snackbar.make(view, R.string.error, Snackbar.LENGTH_LONG).show()
+        }.addOnSuccessListener {
+            Snackbar.make(view, R.string.success, Snackbar.LENGTH_LONG).show()
+        }
     }
 
     private fun showAlert(){

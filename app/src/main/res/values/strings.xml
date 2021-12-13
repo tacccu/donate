@@ -1,6 +1,8 @@
 <resources>
     <string name="app_name">DonAte</string>
     <string name="DescLogo">Logo de la app</string>
+    <string name="error">Error</string>
+    <string name="success">Succes!!!</string>
 
     <!-- String Globales-->
     <string name="user">Usuario</string>
