@@ -1,6 +1,7 @@
 package cat.copernic.donate.ui
 
 import android.os.Bundle
+import android.util.Log
 import android.view.*
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
@@ -9,16 +10,15 @@ import androidx.recyclerview.widget.RecyclerView
 import cat.copernic.donate.R
 import cat.copernic.donate.ui.adapters.adapter
 import cat.copernic.donate.ui.model.donacion
-import com.google.firebase.firestore.FirebaseFirestore
 import cat.copernic.donate.R.layout.fragment_donaciones
-import cat.copernic.donate.databinding.ActivityMainBinding
-import android.util.Log
+import cat.copernic.donate.databinding.FragmentDonaciones
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.databinding.DataBindingUtil.setContentView
-import androidx.navigation.findNavController
+import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.LinearLayoutManager
+import cat.copernic.donate.databinding.ActivityLoginBinding.inflate
+import com.google.firebase.firestore.*
 
 class FragmentDonaciones : Fragment() {
 
@@ -52,7 +52,7 @@ class FragmentDonaciones : Fragment() {
     private lateinit var postRecyclerView: RecyclerView
     private lateinit var postArrayList: ArrayList<donacion>
     private lateinit var postAdapter: adapter
-    private lateinit var dv: FirebaseFirestore
+    private lateinit var db: FirebaseFirestore
 
 
     override fun onCreateView(
@@ -60,8 +60,41 @@ class FragmentDonaciones : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-        val binding = ActivityMainBinding.inflate(layoutInflater)
+        //val binding = FragmentDonaciones.inflate(layoutInflater)
 
-        postRecyclerView = binding.drawerLayout
+        //postRecyclerView = binding.
+        postRecyclerView.layoutManager = LinearLayoutManager(context)
+        postRecyclerView.setHasFixedSize(true)
+        postArrayList = arrayListOf()
+        //postAdapter = postAdapter(postArrayList)
+
+        eventChangeListener()
+
+        //return binding.root
+        return null
+    }
+
+    private fun eventChangeListener() {
+
+        db = FirebaseFirestore.getInstance()
+        db.collection("posts").addSnapshotListener(object : EventListener<QuerySnapshot> {
+            override fun onEvent(value: QuerySnapshot?, error: FirebaseFirestoreException?) {
+                if (error != null) {
+                    Log.e("Firestore Error", error.message.toString())
+                    return
+                }
+                for (dc: DocumentChange in value?.documentChanges!!) {
+                    if (dc.type == DocumentChange.Type.ADDED) {
+                        postArrayList.add(dc.document.toObject(donacion::class.java))
+
+                    }
+                }
+                postAdapter.notifyDataSetChanged()
+            }
+        })
     }
 }
+
+
+
+
