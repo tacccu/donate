@@ -43,24 +43,15 @@ class Perfil : Fragment() {
 
         binding.sendUpdateButton.setOnClickListener() {
             if (user != null ) {// si hay un usuario logeado podremos modificar su información de perfil
-                Log.e(tag, "ENTRO ENTRO ENTRO ENTRO\nENTRO ENTRO ENTRO")
                 val userUpdPerfil = db.collection("usuarios").document(uid.toString())
                 
-                if(binding.editTextTextPersonName5.text.toString().isNotEmpty()){//nombre usuario
-                    Log.e(tag, "ENTRO ENTRO ENTRO ENTRO\nENTRO ENTRO ENTRO")
-                    userUpdPerfil.update("usuario", binding.editTextTextPersonName5.text.toString())
-                }
-                if(binding.editTextTextEmailAddress.text.toString().isNotEmpty()){//email
-                    userUpdPerfil.update("usuario", binding.editTextTextEmailAddress.text.toString())
+                if(binding.editTextUserPerfil.text.toString().isNotEmpty()){//nombre usuario
+                    userUpdPerfil.update("usuario", binding.editTextUserPerfil.text.toString())
                 }
                 if(binding.editTextPhone.text.toString().isNotEmpty()){//teléfono
                     userUpdPerfil.update("numTelef", binding.editTextPhone.text.toString())
                 }
-                if(binding.spinnerSelecCuentaPerfil.selectedItem != db.collection("usuarios").document(uid.toString()).get()){
-                    userUpdPerfil.update("tipoCuent", binding.spinnerSelecCuentaPerfil.selectedItem.toString())
-                    Log.e(tag, "ENTRO ENTRO ENTRO ENTRO\nTIPO CUENTA TIPO CUENTA    ")
-                    //BUSCAR COMO COMPARAR QUE LOS VALORES SEAN SIMILARES POR ID
-                }
+                userUpdPerfil.update("tipoCuent", binding.spinnerSelecCuentaPerfil.selectedItem.toString())
             }
         }
 
