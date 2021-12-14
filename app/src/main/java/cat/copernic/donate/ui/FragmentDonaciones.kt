@@ -2,22 +2,17 @@ package cat.copernic.donate.ui
 
 import android.os.Bundle
 import android.util.Log
-import android.view.*
 import androidx.fragment.app.Fragment
-import androidx.navigation.findNavController
-import androidx.navigation.ui.NavigationUI
 import androidx.recyclerview.widget.RecyclerView
 import cat.copernic.donate.R
 import cat.copernic.donate.ui.adapters.adapter
 import cat.copernic.donate.ui.model.donacion
-import cat.copernic.donate.R.layout.fragment_donaciones
-import cat.copernic.donate.databinding.FragmentDonaciones
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.LinearLayoutManager
-import cat.copernic.donate.databinding.ActivityLoginBinding.inflate
+import cat.copernic.donate.databinding.FragmentDonacionesBinding
 import com.google.firebase.firestore.*
 
 class FragmentDonaciones : Fragment() {
@@ -46,13 +41,13 @@ class FragmentDonaciones : Fragment() {
     }*/
 
 
-    //----------------------------------------------------------------------------------------------------
+    //----------------------------------------------------------------------------------------------
 
 
     private lateinit var postRecyclerView: RecyclerView
-    private lateinit var postArrayList: ArrayList<donacion>
-    private lateinit var postAdapter: adapter
-    private lateinit var db: FirebaseFirestore
+    private var postArrayList: ArrayList<donacion> = arrayListOf()
+    private var postAdapter: adapter = adapter()
+    private var db = FirebaseFirestore.getInstance()
 
 
     override fun onCreateView(
@@ -60,24 +55,45 @@ class FragmentDonaciones : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-        //val binding = FragmentDonaciones.inflate(layoutInflater)
+        val binding = DataBindingUtil.inflate<FragmentDonacionesBinding>(
+            inflater, R.layout.fragment_donaciones, container, false)
 
-        //postRecyclerView = binding.
-        postRecyclerView.layoutManager = LinearLayoutManager(context)
-        postRecyclerView.setHasFixedSize(true)
-        postArrayList = arrayListOf()
-        //postAdapter = postAdapter(postArrayList)
 
-        eventChangeListener()
+        //eventChangeListener()
 
-        //return binding.root
-        return null
+        binding.rvDonaciones.setHasFixedSize(true)
+        binding.rvDonaciones.layoutManager = LinearLayoutManager(requireContext())
+
+
+
+        db.collection("Donaciones").get().addOnSuccessListener {
+            documents -> postArrayList.clear()
+
+            for(document in documents) {
+                postArrayList.add(
+
+                    donacion(
+                        document.get("titulo").toString(),
+                        document.get("descripcion").toString(),
+                        document.get("fecha").toString()
+                    )
+                )
+            }
+
+            context?.let {postAdapter.donacionesRecyclerAdapter(postArrayList, it)}
+            binding.rvDonaciones.adapter = postAdapter
+        }
+
+        return binding.root
+
     }
 
-    private fun eventChangeListener() {
+    /*private fun eventChangeListener() {
+
+
 
         db = FirebaseFirestore.getInstance()
-        db.collection("posts").addSnapshotListener(object : EventListener<QuerySnapshot> {
+        db.collection("Donaciones").addSnapshotListener(object : EventListener<QuerySnapshot> {
             override fun onEvent(value: QuerySnapshot?, error: FirebaseFirestoreException?) {
                 if (error != null) {
                     Log.e("Firestore Error", error.message.toString())
@@ -92,8 +108,12 @@ class FragmentDonaciones : Fragment() {
                 postAdapter.notifyDataSetChanged()
             }
         })
-    }
+
+
+    }*/
 }
+
+
 
 
 
