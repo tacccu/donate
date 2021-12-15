@@ -55,6 +55,8 @@ class FragmentDonaciones : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
+        setHasOptionsMenu(true)
+
         val binding = DataBindingUtil.inflate<FragmentDonacionesBinding>(
             inflater, R.layout.fragment_donaciones, container, false)
 
@@ -91,7 +93,6 @@ class FragmentDonaciones : Fragment() {
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         super.onCreateOptionsMenu(menu, inflater)
         inflater.inflate(R.menu.menu_donaciones, menu)
-        setHasOptionsMenu(true)
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
