@@ -81,13 +81,15 @@ class creaPost : Fragment() {
                 && binding.timeEditText.text.isNotEmpty()
             ) {
 
-                db.collection("Donaciones").add(
+               val document = db.collection("Donaciones")
+                   document.add(
                     hashMapOf(
                         "titulo" to binding.tituloEditText.text.toString(),
                         "descripcion" to binding.descripcionEditText.text.toString(),
                         "fecha" to binding.timeEditText.text.toString()
 
                     )
+                   //onsuccessListener document.id
                 )
                 view.findNavController()
                     .navigate(creaPostDirections.actionCreaPostToFragmentDonaciones())
