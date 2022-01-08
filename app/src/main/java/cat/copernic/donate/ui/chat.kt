@@ -3,8 +3,10 @@ package cat.copernic.donate.ui
 import android.content.Intent
 import android.os.Bundle
 import android.view.*
+import android.widget.Button
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.NavigationUI
 import cat.copernic.donate.R
 
@@ -36,7 +38,14 @@ class chat : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_chat, container, false)
+        val v = inflater.inflate(R.layout.fragment_chat, container, false)
+        val btn = v.findViewById<View>(R.id.btnReportChat) as Button
+        btn.setOnClickListener {
+            val action = chatDirections.actionChatToCreateReport()
+            findNavController().navigate(action)
+        }
+
+        return v
     }
 
 
@@ -72,4 +81,5 @@ class chat : Fragment() {
                 }
             }
     }
+
 }
