@@ -28,6 +28,11 @@
         <item>Donante</item>
         <item>Donatario</item>
     </string-array>
+    <string-array name="tipoReport">
+        <item>Mensaje ofensivo</item>
+        <item>Acoso</item>
+        <item>Spam</item>
+    </string-array>
     <!-- Strings related to Chat List-->
     <string name="chatList">Chats</string>
     <!-- Strings related to Posts-->
