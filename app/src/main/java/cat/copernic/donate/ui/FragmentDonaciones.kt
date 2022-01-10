@@ -60,14 +60,13 @@ class FragmentDonaciones : Fragment() {
         val binding = DataBindingUtil.inflate<FragmentDonacionesBinding>(
             inflater, R.layout.fragment_donaciones, container, false)
 
-
-        //eventChangeListener()
-
+        //Para optimizar la creación y hacer que todas las donaciones sean del mismo tamaño
         binding.rvDonaciones.setHasFixedSize(true)
+        //El RecyclerView se mostrará en forma de lista
         binding.rvDonaciones.layoutManager = LinearLayoutManager(requireContext())
 
 
-
+        //Buscamos en la colección de Donaciones la información que desplegaremos en cada CardView
         db.collection("Donaciones").get().addOnSuccessListener {
             documents -> postArrayList.clear()
 
@@ -81,8 +80,9 @@ class FragmentDonaciones : Fragment() {
                     )
                 )
             }
-
+            //Generamos el adaptador
             context?.let {postAdapter.donacionesRecyclerAdapter(postArrayList, it)}
+            //Y asignamos el adaptador al RecyclerView
             binding.rvDonaciones.adapter = postAdapter
         }
 

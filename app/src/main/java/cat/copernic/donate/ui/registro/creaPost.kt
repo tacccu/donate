@@ -41,6 +41,8 @@ class creaPost : Fragment() {
     lateinit var storageRef: StorageReference
     lateinit var binding: FragmentCreaPostBinding
     private var latestTempUri: Uri? = null
+    var iden: String? = null
+
 
     val tomarImgResult =
         registerForActivityResult(ActivityResultContracts.TakePicture()) { isSucces ->
@@ -74,23 +76,29 @@ class creaPost : Fragment() {
             inflater, R.layout.fragment_crea_post, container, false
         )
 
-
+        //Botón para crear las donaciones
         binding.floatingActionButton.setOnClickListener { view: View ->
+            //control de variables para que no se creen documentos vacíos
             if (binding.tituloEditText.text.isNotEmpty()
                 && binding.descripcionEditText.text.isNotEmpty()
                 && binding.timeEditText.text.isNotEmpty()
             ) {
-
+               //creo una donación en la ruta de Donacioens
                val document = db.collection("Donaciones")
-                   document.add(
+                    //añadimos la información de los campos de texto
+                    document.add(
                     hashMapOf(
                         "titulo" to binding.tituloEditText.text.toString(),
                         "descripcion" to binding.descripcionEditText.text.toString(),
                         "fecha" to binding.timeEditText.text.toString()
 
                     )
-                   //onsuccessListener document.id
                 )
+                //variable con la id del documento para nombrar la imagen
+                iden = document.id
+
+                ponerImagen(view)
+
                 view.findNavController()
                     .navigate(creaPostDirections.actionCreaPostToFragmentDonaciones())
             } else {
@@ -98,16 +106,30 @@ class creaPost : Fragment() {
             }
 
         }
-
+        //botón para que salte la selección
         binding.addImage.setOnClickListener { view: View ->
-            abrirCamara()
+            seleccion()
         }
         return binding.root
     }
 
+    //función para seleccionar entre abrir la galería o abrir la cámara
+    fun seleccion() {
+        val alertDialog = AlertDialog.Builder(context).create()
+        alertDialog.setMessage("Abrir cámara o galería")
+        alertDialog.setButton(
+            AlertDialog.BUTTON_POSITIVE, "Cámara"
+        ) {dialog, wich -> abrirCamara()}
+        alertDialog.setButton(
+            AlertDialog.BUTTON_POSITIVE, "Galería"
+        ) {dialog, wich -> abrirGaleria()}
+        alertDialog.show()
+    }
 
+    //función para subir la imagen a Firebase
     fun ponerImagen(view: View) {
-        val pathReference = storageRef.child("images/donate.jpg")
+        //para el nombre de la imagen le pasaremos el identificador de la donación, de esta forma ninguna imagen se llamará igual
+        val pathReference = storageRef.child("images/${this.iden}")
         val bitmap = (imagen.drawable as BitmapDrawable).bitmap
         val baos = ByteArrayOutputStream()
 
@@ -137,16 +159,17 @@ class creaPost : Fragment() {
         if (result.resultCode == Activity.RESULT_OK) {
             val data = result.data?.data
 
-            binding?.imageView6.setImageURI(data)
+            binding?.imageView6?.setImageURI(data)
         }
     }
 
+    //función para abrir la galería
     private fun abrirGaleria() {
         val intent = Intent(Intent.ACTION_PICK)
         intent.type = "image/*"
         startActivityGal.launch(intent)
     }
-
+    //función para abrir la cámara
     private fun abrirCamara() {
         lifecycleScope.launchWhenStarted {
             getTempFile().let { uri ->
@@ -156,6 +179,7 @@ class creaPost : Fragment() {
             }
         }
     }
+
 
     private fun getTempFile(): Uri? {
         val tempFile = File.createTempFile("tmp_image_file", ".png", activity?.cacheDir).apply {

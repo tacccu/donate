@@ -13,11 +13,13 @@ class adapter : RecyclerView.Adapter<adapter.MyViewHolder>() {
     var donaciones: ArrayList<donacion> = ArrayList()
     lateinit var contxt: Context
 
+    //constructor de la clase al que le pasamos la fuente de los datos y el contexto sobre el que será mostrado
     fun donacionesRecyclerAdapter(donacionesList: ArrayList<donacion>, contxt: Context) {
         this.donaciones = donacionesList
         this.contxt = contxt
     }
 
+    //el encargado de devolver el ViewHolder configurado
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
 
         val layoutInflater = LayoutInflater.from(parent.context)
@@ -28,6 +30,7 @@ class adapter : RecyclerView.Adapter<adapter.MyViewHolder>() {
 
     }
 
+    //método encargado de pasar los objetos al ViewHolder
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
 
         with(holder){
