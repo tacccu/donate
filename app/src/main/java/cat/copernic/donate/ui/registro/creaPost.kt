@@ -7,6 +7,7 @@ import android.graphics.Bitmap
 import android.graphics.drawable.BitmapDrawable
 import android.net.Uri
 import android.os.Bundle
+import android.util.Log
 import android.view.*
 import androidx.fragment.app.Fragment
 import android.widget.ImageView
@@ -20,6 +21,7 @@ import cat.copernic.donate.R
 import cat.copernic.donate.databinding.FragmentCreaPostBinding
 import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
 import java.io.ByteArrayOutputStream
 import java.io.File
@@ -42,6 +44,7 @@ class creaPost : Fragment() {
     lateinit var binding: FragmentCreaPostBinding
     private var latestTempUri: Uri? = null
     var iden: String? = null
+    private val array : ArrayList<Uri?> = arrayListOf()
 
 
     val tomarImgResult =
@@ -121,7 +124,7 @@ class creaPost : Fragment() {
             AlertDialog.BUTTON_POSITIVE, "Cámara"
         ) {dialog, wich -> abrirCamara()}
         alertDialog.setButton(
-            AlertDialog.BUTTON_POSITIVE, "Galería"
+            AlertDialog.BUTTON_NEGATIVE, "Galería"
         ) {dialog, wich -> abrirGaleria()}
         alertDialog.show()
     }
@@ -129,8 +132,9 @@ class creaPost : Fragment() {
     //función para subir la imagen a Firebase
     fun ponerImagen(view: View) {
         //para el nombre de la imagen le pasaremos el identificador de la donación, de esta forma ninguna imagen se llamará igual
+        storageRef = FirebaseStorage.getInstance().reference
         val pathReference = storageRef.child("images/${this.iden}")
-        val bitmap = (imagen.drawable as BitmapDrawable).bitmap
+        val bitmap = (binding.imageView6.drawable as BitmapDrawable).bitmap
         val baos = ByteArrayOutputStream()
 
         bitmap.compress(Bitmap.CompressFormat.JPEG, 100, baos)
@@ -159,7 +163,14 @@ class creaPost : Fragment() {
         if (result.resultCode == Activity.RESULT_OK) {
             val data = result.data?.data
 
-            binding?.imageView6?.setImageURI(data)
+            if(data != null) {
+                Log.e("nom", "$data")
+                array.add(data)
+                binding.imageView6.setImageURI(array[0])
+            }
+
+
+
         }
     }
 
