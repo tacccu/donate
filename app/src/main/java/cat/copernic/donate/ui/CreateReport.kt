@@ -11,17 +11,8 @@ import cat.copernic.donate.databinding.FragmentCreateReportBinding
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.ktx.Firebase
+import java.util.*
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [create_report.newInstance] factory method to
- * create an instance of this fragment.
- */
 class CreateReport : Fragment() {
         private var __binding: FragmentCreateReportBinding? = null
         private val binding get() = __binding!!
@@ -42,8 +33,12 @@ class CreateReport : Fragment() {
         val spinner = binding.spinnerSelecCuentaRazonReport
 
         val user = Firebase.auth.currentUser
-        val uid = user?.uid
-        val nomUsuario = db.collection("usuarios").document(uid.toString())
+        val nomUsuario = user?.email.toString()
+
+        val currentTime = Calendar.getInstance().getTime()
+
+        //val uid = user?.uid
+        //val nomUsuario = db.collection("usuarios").document(uid.toString()).get("usuario")
 
         spinner.adapter = context?.let {
             ArrayAdapter(
@@ -54,7 +49,7 @@ class CreateReport : Fragment() {
         }
         binding.fabreport.setOnClickListener(){
             if(binding.intrDescripReport.text.isNotEmpty()){
-                db.collection("Reportes").document().set(hashMapOf("usuario" to nomUsuario.toString() ,"tipoReporte" to binding.spinnerSelecCuentaRazonReport.selectedItem.toString() ,"descripcion" to binding.intrDescripReport.text.toString()))
+                db.collection("Reportes").document().set(hashMapOf("fechaHora" to currentTime.toString(), "usuario" to nomUsuario.toString() ,"tipoReporte" to binding.spinnerSelecCuentaRazonReport.selectedItem.toString() ,"descripcion" to binding.intrDescripReport.text.toString()))
             }
         }
     }
