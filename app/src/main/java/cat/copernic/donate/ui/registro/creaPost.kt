@@ -2,10 +2,14 @@ package cat.copernic.donate.ui.registro
 
 import android.app.Activity
 import android.app.AlertDialog
+import android.app.NotificationChannel
+import android.app.NotificationManager
+import android.content.Context
 import android.content.Intent
 import android.graphics.Bitmap
 import android.graphics.drawable.BitmapDrawable
 import android.net.Uri
+import android.os.Build
 import android.os.Bundle
 import android.util.Log
 import android.view.*
@@ -13,6 +17,9 @@ import androidx.fragment.app.Fragment
 import android.widget.ImageView
 import androidx.activity.result.contract.ActivityResultContract
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.core.app.NotificationCompat
+import androidx.core.app.NotificationManagerCompat
+import androidx.core.content.ContextCompat.getSystemService
 import androidx.core.content.FileProvider
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.lifecycleScope
@@ -45,6 +52,11 @@ class creaPost : Fragment() {
     private var latestTempUri: Uri? = null
     var iden: String? = null
     private val array : ArrayList<Uri?> = arrayListOf()
+
+    private val channelId = "channelId"
+    private val channelName = "channelName"
+
+
 
 
     val tomarImgResult =
@@ -104,6 +116,9 @@ class creaPost : Fragment() {
 
                 view.findNavController()
                     .navigate(creaPostDirections.actionCreaPostToFragmentDonaciones())
+
+                createNotificationChannel()
+
             } else {
                 showAlert()
             }
@@ -113,7 +128,23 @@ class creaPost : Fragment() {
         binding.addImage.setOnClickListener { view: View ->
             seleccion()
         }
+
+
         return binding.root
+    }
+
+    private fun createNotificationChannel() {
+        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){
+            val importance = NotificationManager.IMPORTANCE_HIGH
+
+            val channel = NotificationChannel(channelId, channelName, importance).apply {
+                enableLights(true)
+            }
+
+            val manager  = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
+
+            manager.createNotificationChannel(channel)
+        }
     }
 
     //función para seleccionar entre abrir la galería o abrir la cámara
@@ -207,7 +238,11 @@ class creaPost : Fragment() {
     }
 
 
-    companion object {
+
+    }
+
+
+    private object n {
         /**
          * Use this factory method to create a new instance of
          * this fragment using the provided parameters.
@@ -228,4 +263,3 @@ class creaPost : Fragment() {
     }
 
 
-}
