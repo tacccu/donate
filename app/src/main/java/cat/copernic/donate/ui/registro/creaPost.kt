@@ -1,5 +1,6 @@
 package cat.copernic.donate.ui.registro
 
+import android.annotation.SuppressLint
 import android.app.Activity
 import android.app.AlertDialog
 import android.app.NotificationChannel
@@ -15,6 +16,7 @@ import android.util.Log
 import android.view.*
 import androidx.fragment.app.Fragment
 import android.widget.ImageView
+import androidx.activity.result.ActivityResult
 import androidx.activity.result.contract.ActivityResultContract
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.app.NotificationCompat
@@ -55,6 +57,7 @@ class creaPost : Fragment() {
 
     private val channelId = "channelId"
     private val channelName = "channelName"
+    private val notificationId = 1
 
 
 
@@ -90,6 +93,16 @@ class creaPost : Fragment() {
         binding = DataBindingUtil.inflate(
             inflater, R.layout.fragment_crea_post, container, false
         )
+        createNotificationChannel()
+
+        val notification = NotificationCompat.Builder(this, channelId)
+            .setContentTitle("Titulo")
+            .setContentText("Content")
+            .setSmallIcon(R.drawable.logoicono)
+            .setPriority(NotificationCompat.PRIORITY_HIGH)
+            .build()
+
+        val notificationManager = NotificationManagerCompat.from(this)
 
         //Botón para crear las donaciones
         binding.floatingActionButton.setOnClickListener { view: View ->
@@ -117,7 +130,8 @@ class creaPost : Fragment() {
                 view.findNavController()
                     .navigate(creaPostDirections.actionCreaPostToFragmentDonaciones())
 
-                createNotificationChannel()
+                notificationManager.notify(notificationId, notification)
+
 
             } else {
                 showAlert()
@@ -128,6 +142,7 @@ class creaPost : Fragment() {
         binding.addImage.setOnClickListener { view: View ->
             seleccion()
         }
+
 
 
         return binding.root
@@ -141,7 +156,7 @@ class creaPost : Fragment() {
                 enableLights(true)
             }
 
-            val manager  = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
+            val manager = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
 
             manager.createNotificationChannel(channel)
         }
