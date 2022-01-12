@@ -27,7 +27,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingBottom="14dp"
-                android:text="@string/titViTicket"
+                android:text="@+id/titViTicket"
                 android:textColor="@color/black"
                 android:textSize="@dimen/ticketTit" />
 
@@ -44,7 +44,7 @@
                 android:paddingTop="@dimen/ticketPadding"
                 android:paddingRight="@dimen/ticketPadding"
                 android:paddingBottom="@dimen/ticketPadding"
-                android:text="@string/userViTicket"
+                android:text="@+id/userViTicket"
 
                 android:textColor="@color/black"
                 android:textSize="@dimen/ticketText" />
@@ -63,7 +63,7 @@
                 android:paddingTop="@dimen/ticketPadding"
                 android:paddingRight="@dimen/ticketPadding"
                 android:paddingBottom="@dimen/ticketPadding"
-                android:text="@string/userRepViTicket"
+                android:text="@+id/userRepViTicket"
                 android:textColor="@color/black"
                 android:textSize="@dimen/ticketText" />
 
@@ -80,7 +80,7 @@
                 android:paddingTop="@dimen/ticketPadding"
                 android:paddingRight="@dimen/ticketPadding"
                 android:paddingBottom="@dimen/ticketPadding"
-                android:text="@string/razViTicket"
+                android:text="+id/razViTicket"
                 android:textColor="@color/black"
                 android:textSize="@dimen/ticketText" />
 
@@ -97,7 +97,7 @@
                 android:paddingTop="@dimen/ticketPadding"
                 android:paddingRight="@dimen/ticketPadding"
                 android:paddingBottom="@dimen/ticketPadding"
-                android:text="@string/descpViTicket"
+                android:text="+id/descpViTicket"
                 android:textColor="@color/black"
                 android:textSize="@dimen/ticketText" />
 
