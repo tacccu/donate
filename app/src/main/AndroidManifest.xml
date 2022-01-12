@@ -16,22 +16,23 @@
             android:theme="@style/Theme.DonAtelogin">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
-            android:name=".ui.RegistroActivity"
+            android:name=".ui.registro.RegistroActivity"
             android:exported="true"
             android:label="@string/app_name"
-            android:theme="@style/Theme.DonAtelogin">
-        </activity>
+            android:theme="@style/Theme.DonAtelogin"></activity>
         <activity
             android:name=".ui.MainActivity"
             android:exported="true"
             android:label="@string/app_name"
-            android:theme="@style/Theme.DonAte">
-        </activity>
-
+            android:theme="@style/Theme.DonAte"></activity>
+        <activity
+            android:name=".ui.DonacionesList"
+            android:exported="false" />
     </application>
 
 </manifest>
