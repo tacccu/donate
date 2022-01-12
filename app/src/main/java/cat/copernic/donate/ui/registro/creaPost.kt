@@ -95,14 +95,14 @@ class creaPost : Fragment() {
         )
         createNotificationChannel()
 
-        val notification = NotificationCompat.Builder(this, channelId)
+        val notification = NotificationCompat.Builder(this.requireContext(), channelId)
             .setContentTitle("Titulo")
             .setContentText("Content")
             .setSmallIcon(R.drawable.logoicono)
             .setPriority(NotificationCompat.PRIORITY_HIGH)
             .build()
 
-        val notificationManager = NotificationManagerCompat.from(this)
+        val notificationManager = NotificationManagerCompat.from(this.requireContext())
 
         //Botón para crear las donaciones
         binding.floatingActionButton.setOnClickListener { view: View ->
@@ -156,7 +156,7 @@ class creaPost : Fragment() {
                 enableLights(true)
             }
 
-            val manager = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
+            val manager : NotificationManager = requireActivity().getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
 
             manager.createNotificationChannel(channel)
         }
