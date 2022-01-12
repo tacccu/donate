@@ -54,7 +54,7 @@ class RegistroActivity : AppCompatActivity() {
                                 }
                             }
                     } else {
-                        showAlert2()
+                        //showAlert2()
                     }
             }
         }
