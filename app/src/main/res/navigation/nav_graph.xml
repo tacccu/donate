@@ -42,13 +42,25 @@
             app:destination="@id/FragmentDonaciones" />
     </fragment>
     <fragment
-        android:id="@+id/chatContactos"
-        android:name="cat.copernic.donate.ui.chatContactos"
-        android:label="fragment_chat_contactos"
-        tools:layout="@layout/fragment_chat_contactos" >
+        android:id="@+id/chat"
+        android:name="cat.copernic.donate.ui.chat"
+        android:label="fragment_chat"
+        tools:layout="@layout/fragment_chat" >
         <action
             android:id="@+id/action_chatContactos_to_FragmentDonaciones"
             app:destination="@id/FragmentDonaciones" />
+        <action
+            android:id="@+id/action_chat_to_create_report"
+            app:destination="@+id/create_report" />
+    </fragment>
+    <fragment
+        android:id="@+id/create_report"
+        android:name="cat.copernic.donate.ui.CreateReport"
+        android:label="create_report"
+        tools:layout="@layout/fragment_create_report" >
+        <action
+            android:id="@+id/action_create_report_to_FragmentDonaciones"
+            app:destination="@+id/FragmentDonaciones"/>
     </fragment>
     <fragment
         android:id="@+id/tltickets"

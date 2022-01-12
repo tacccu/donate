@@ -51,7 +51,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/textView12" />
 
             <EditText
-                android:id="@+id/editTextTextPersonName5"
+                android:id="@+id/editTextUserPerfil"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/distEditACostado"
@@ -67,34 +67,6 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView" />
 
-            <TextView
-                android:id="@+id/textView13"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/distEditACostado"
-                android:layout_marginTop="24dp"
-                android:text="@string/emailPerfil"
-                android:textColor="@color/morado"
-                android:textSize="@dimen/texto_general"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName5" />
-
-            <EditText
-                android:id="@+id/editTextTextEmailAddress"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/distEditACostado"
-                android:layout_marginTop="@dimen/distEditATextViewPeque"
-                android:layout_marginEnd="@dimen/distEditACostado"
-                android:ems="10"
-                android:hint="@string/emailPerfil"
-                android:inputType="textEmailAddress"
-                android:textColor="@color/black"
-                android:textColorHint="@color/gris"
-                android:textSize="@dimen/texto_pequeño"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView13" />
 
             <TextView
                 android:id="@+id/textView14"
@@ -106,7 +78,7 @@
                 android:textColor="@color/morado"
                 android:textSize="@dimen/texto_general"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/editTextTextEmailAddress" />
+                app:layout_constraintTop_toBottomOf="@+id/editTextUserPerfil" />
 
             <EditText
                 android:id="@+id/editTextPhone"

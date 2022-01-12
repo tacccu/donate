@@ -1,60 +1,80 @@
 package cat.copernic.donate.ui
 
 import android.os.Bundle
+import android.view.*
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import androidx.databinding.DataBindingUtil
+import androidx.navigation.findNavController
+import androidx.navigation.ui.NavigationUI
+import androidx.recyclerview.widget.LinearLayoutManager
 import cat.copernic.donate.R
+import cat.copernic.donate.adapters.adapterTlTickets
+import cat.copernic.donate.databinding.FragmentTlticketsBinding
+import cat.copernic.donate.model.ticket
+import com.google.firebase.firestore.FirebaseFirestore
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
 
-/**
- * A simple [Fragment] subclass.
- * Use the [tltickets.newInstance] factory method to
- * create an instance of this fragment.
- */
 class tltickets : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+    private var postArrayList: ArrayList<ticket> = arrayListOf()
+    private var postAdapter: adapterTlTickets = adapterTlTickets()
+    private var db = FirebaseFirestore.getInstance()
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
     }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_tltickets, container, false)
+        setHasOptionsMenu(true)
+
+
+
+        //val recyclerView = binding.RecyclerViewTlReport
+        val binding = DataBindingUtil.inflate<FragmentTlticketsBinding>(
+            inflater, R.layout.fragment_tltickets, container, false)
+
+        //Los objetos de la lista deben tener el mismo tamaño
+        binding.RecyclerViewTlReport.setHasFixedSize(true)
+
+        //RecyclerView se mostrará en forma de lista
+        binding.RecyclerViewTlReport.layoutManager = LinearLayoutManager(requireContext())
+
+        //Buscamos en la colección de Donaciones la información que desplegaremos en cada CardView
+        db.collection("Reportes").get().addOnSuccessListener {
+                documents -> postArrayList.clear()
+
+            for(document in documents) {
+                postArrayList.add(
+
+                    ticket(
+                        document.get("tipoReporte").toString(),
+                        document.get("descripcion").toString(),
+                        document.get("fechaHora").toString(),
+                        document.get("usuario").toString()
+                    )
+                )
+            }
+            //Generamos el adaptador
+            context?.let {postAdapter.ticketRecycleAdapter(postArrayList, it)}
+            //Y asignamos el adaptador al RecyclerView
+            binding.RecyclerViewTlReport.adapter = postAdapter
+        }
+
+
+        return binding.root
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment tltickets.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            tltickets().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        super.onCreateOptionsMenu(menu, inflater)
+        inflater.inflate(R.menu.menu_donaciones, menu)
     }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return NavigationUI.onNavDestinationSelected(item, requireView().findNavController())
+                || super.onOptionsItemSelected(item)
+    }
+
 }
