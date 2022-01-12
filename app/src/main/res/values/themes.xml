@@ -15,7 +15,7 @@
         <!-- Customize your theme here. -->
     </style>
 
-    <style name="Theme.DonAtelogin" parent="Theme.AppCompat.Light.NoActionBar">
+    <style name="Theme.DonAteDark" parent="Theme.AppCompat.DayNight">
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/azul</item>
         <item name="colorPrimaryVariant">@color/azul</item>
@@ -33,3 +33,8 @@
         <item name="android:windowBackground">@drawable/splashscreen</item>
     </style>
 </resources>
+
+
+
+
+
