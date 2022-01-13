@@ -79,4 +79,8 @@
             android:id="@+id/action_creaPost_to_FragmentDonaciones"
             app:destination="@id/FragmentDonaciones" />
     </fragment>
+    <fragment
+        android:id="@+id/chatContactos"
+        android:name="cat.copernic.donate.ui.chatContactos"
+        android:label="chatContactos" />
 </navigation>

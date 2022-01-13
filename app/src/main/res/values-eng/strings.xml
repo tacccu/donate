@@ -1,8 +1,8 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">DonAte</string>
     <string name="DescLogo">App logo</string>
-    <string name="error">Error</string>
-    <string name="success">Succes!!!</string>
+    <string name="error" tools:ignore="ExtraTranslation">Error</string>
+    <string name="success" tools:ignore="ExtraTranslation">Succes!!!</string>
 
     <!-- String Globales-->
     <string name="user">User</string>
@@ -49,14 +49,6 @@
     <string name="contentDescrip">
         Select the account type you want
     </string>
-    <!-- Strings related to visor ticket -->
-    <string name="titViTicket">The product does\'t seem to the description\'s product</string>
-    <string name="userViTicket">User: Manolo96\nTicket number: 001</string>
-    <string name="userRepViTicket">Reported user: Malex\nUser: Manolo96</string>
-    <string name="razViTicket">Reason: Product problem\nUser: Manolo96</string>
-    <string name="descpViTicket">Description: When I arrived, the product they wanted to give me doesn't match with the photo\'s product or the description one. Please check!</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <!-- Creacion de post -->
     <string name="addImage">Add a donation image</string>
     <string name="inserNomPub">Add a name to the post</string>

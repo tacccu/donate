@@ -1,11 +1,15 @@
-package cat.copernic.donate.ui
+package cat.copernic.donate.view
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.viewModels
+import androidx.lifecycle.Observer
 import cat.copernic.donate.R
+import cat.copernic.donate.databinding.FragmentAboutusBinding
+import cat.copernic.donate.viewmodel.AboutUsViewModel
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -14,13 +18,17 @@ private const val ARG_PARAM2 = "param2"
 
 /**
  * A simple [Fragment] subclass.
- * Use the [ticket_visor.newInstance] factory method to
+ * Use the [aboutus.newInstance] factory method to
  * create an instance of this fragment.
  */
-class ticket_visor : Fragment() {
+class aboutus : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
+
+    private lateinit var binding:FragmentAboutusBinding
+
+    private val aboutUsViewModel : AboutUsViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,7 +43,17 @@ class ticket_visor : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_ticket_visor, container, false)
+        binding = FragmentAboutusBinding.inflate(layoutInflater)
+
+        aboutUsViewModel.aboutUsModel.observe(viewLifecycleOwner, Observer { currentText ->
+            binding.TitleTV.text = currentText.title
+            binding.aboutUsTV.text = currentText.text
+        })
+
+        aboutUsViewModel.putText()
+
+        //setContentView(binding.root)
+        return binding.root
     }
 
     companion object {
@@ -45,12 +63,12 @@ class ticket_visor : Fragment() {
          *
          * @param param1 Parameter 1.
          * @param param2 Parameter 2.
-         * @return A new instance of fragment ticket_visor.
+         * @return A new instance of fragment aboutus.
          */
         // TODO: Rename and change types and number of parameters
         @JvmStatic
         fun newInstance(param1: String, param2: String) =
-            ticket_visor().apply {
+            aboutus().apply {
                 arguments = Bundle().apply {
                     putString(ARG_PARAM1, param1)
                     putString(ARG_PARAM2, param2)

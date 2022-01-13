@@ -96,8 +96,8 @@ class creaPost : Fragment() {
         createNotificationChannel()
 
         val notification = NotificationCompat.Builder(this.requireContext(), channelId)
-            .setContentTitle("Titulo")
-            .setContentText("Content")
+            .setContentTitle("Donación")
+            .setContentText("La donación se ha creado satisfactoriamente")
             .setSmallIcon(R.drawable.logoicono)
             .setPriority(NotificationCompat.PRIORITY_HIGH)
             .build()
@@ -188,9 +188,9 @@ class creaPost : Fragment() {
 
         val uploadTask = pathReference.putBytes(data)
         uploadTask.addOnFailureListener {
-            Snackbar.make(view, R.string.error, Snackbar.LENGTH_LONG).show()
+            Snackbar.make(view, "error", Snackbar.LENGTH_LONG).show()
         }.addOnSuccessListener {
-            Snackbar.make(view, R.string.success, Snackbar.LENGTH_LONG).show()
+            Snackbar.make(view, "success", Snackbar.LENGTH_LONG).show()
         }
     }
 
