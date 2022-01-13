@@ -12,9 +12,6 @@
             android:id="@+id/action_FragmentDonaciones_to_perfil"
             app:destination="@id/perfil" />
         <action
-            android:id="@+id/action_FragmentDonaciones_to_aboutus"
-            app:destination="@id/aboutus" />
-        <action
             android:id="@+id/action_FragmentDonaciones_to_tltickets"
             app:destination="@id/tltickets" />
         <action
@@ -23,14 +20,9 @@
         <action
             android:id="@+id/action_FragmentDonaciones_to_creaPost"
             app:destination="@id/creaPost" />
-    </fragment>
-    <fragment
-        android:id="@+id/aboutus"
-        android:name="cat.copernic.donate.ui.aboutus"
-        android:label="fragment_aboutus" >
         <action
-            android:id="@+id/action_aboutus_to_FragmentDonaciones"
-            app:destination="@id/FragmentDonaciones" />
+            android:id="@+id/action_FragmentDonaciones_to_aboutus"
+            app:destination="@id/aboutus" />
     </fragment>
     <fragment
         android:id="@+id/perfil"
@@ -83,4 +75,9 @@
         android:id="@+id/chatContactos"
         android:name="cat.copernic.donate.ui.chatContactos"
         android:label="chatContactos" />
+    <activity
+        android:id="@+id/aboutus"
+        android:name="cat.copernic.donate.ui.aboutus"
+        android:label="activity_aboutus"
+        tools:layout="@layout/activity_aboutus" />
 </navigation>
