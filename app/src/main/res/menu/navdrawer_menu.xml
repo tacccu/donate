@@ -11,18 +11,19 @@
             android:id="@+id/FragmentDonaciones"
             android:icon="@drawable/post_icon"
             android:title="@string/TLPosts" />
-        <item
-            android:id="@+id/aboutus"
-            android:icon="@drawable/aboutus_icon"
-            android:title="@string/AboutUsTitle" />
+
         <item
             android:id="@+id/perfil"
             android:icon="@drawable/profile_icon"
             android:title="@string/Perfil" />
         <item
-            android:id="@id/tltickets"
+            android:id="@+id/tltickets"
             android:icon="@drawable/ticket"
             android:title="Reports"/>
+        <item
+            android:id="@+id/aboutus"
+            android:icon="@drawable/aboutus_icon"
+            android:title="AboutUs"/>
     </group>
 
 

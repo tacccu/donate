@@ -10,12 +10,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.DonAte">
         <activity
+            android:name=".ui.aboutus"
+            android:exported="false" />
+        <activity
             android:name=".ui.LoginActivity"
             android:exported="true"
             android:label="@string/app_name"
             android:theme="@style/Theme.DonAte">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -23,23 +27,22 @@
             android:name=".ui.registro.RegistroActivity"
             android:exported="true"
             android:label="@string/app_name"
-            android:theme="@style/Theme.DonAte">
-        </activity>
+            android:theme="@style/Theme.DonAte"></activity>
         <activity
             android:name=".ui.MainActivity"
             android:exported="true"
             android:label="@string/app_name"
-            android:theme="@style/Theme.DonAte">
-        </activity>
-    <provider
-        android:authorities="cat.copernic.donate.provider"
-        android:name="androidx.core.content.FileProvider"
-        android:exported="false"
-        android:grantUriPermissions="true">
-        <meta-data
-            android:name="android.support.FILE_PROVIDER_PATHS"
-            android:resource="@xml/provider_paths" />
-    </provider>
+            android:theme="@style/Theme.DonAte"></activity>
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="cat.copernic.donate.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths" />
+        </provider>
     </application>
 
 </manifest>
