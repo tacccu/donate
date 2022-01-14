@@ -125,7 +125,7 @@ class creaPost : Fragment() {
                 //variable con la id del documento para nombrar la imagen
                 iden = document.id
 
-                ponerImagen(view)
+                //ponerImagen(view)
 
                 view.findNavController()
                     .navigate(creaPostDirections.actionCreaPostToFragmentDonaciones())

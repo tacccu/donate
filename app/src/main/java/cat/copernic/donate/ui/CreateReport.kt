@@ -22,6 +22,7 @@ class CreateReport : Fragment() {
             inflater: LayoutInflater, container: ViewGroup?,
             savedInstanceState: Bundle?
         ): View? {
+            (activity as MainActivity).supportActionBar?.title = "Crea tu donación"
 
             __binding = FragmentCreateReportBinding.inflate(inflater, container, false)
 
@@ -30,6 +31,8 @@ class CreateReport : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+
         val spinner = binding.spinnerSelecCuentaRazonReport
 
         val user = Firebase.auth.currentUser

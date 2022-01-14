@@ -22,7 +22,7 @@
                 android:id="@+id/imagenCard"
                 android:layout_width="wrap_content"
                 android:layout_height="238dp"
-                app:srcCompat="@drawable/captura" />
+                app:srcCompat="@drawable/donacion" />
 
             <LinearLayout
                 android:layout_width="wrap_content"

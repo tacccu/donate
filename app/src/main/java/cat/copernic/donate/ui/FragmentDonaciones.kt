@@ -55,6 +55,8 @@ class FragmentDonaciones : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
+        (activity as MainActivity).supportActionBar?.title = "Donaciones"
+
         setHasOptionsMenu(true)
 
         val binding = DataBindingUtil.inflate<FragmentDonacionesBinding>(
