@@ -43,6 +43,8 @@ class LoginActivity : AppCompatActivity() {
 
     private fun setup(){
 
+        title = "Login"
+
         binding.buttonRegister.setOnClickListener {
             intent = Intent(this, RegistroActivity::class.java)
             startActivity(intent)
