@@ -37,7 +37,6 @@ class adapter : RecyclerView.Adapter<adapter.MyViewHolder>() {
             with(donaciones[position]) {
                 binding.titleCtv.text = this.cardTitle
                 binding.descCtv.text = this.cardDesc
-
             }
         }
 
