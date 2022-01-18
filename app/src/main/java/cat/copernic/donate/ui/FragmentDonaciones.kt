@@ -13,7 +13,9 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.NavigationUI
 import androidx.recyclerview.widget.LinearLayoutManager
 import cat.copernic.donate.databinding.FragmentDonacionesBinding
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.*
+import com.google.firebase.ktx.Firebase
 
 class FragmentDonaciones : Fragment() {
 
@@ -98,8 +100,20 @@ class FragmentDonaciones : Fragment() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return NavigationUI.onNavDestinationSelected(item, requireView().findNavController())
-                || super.onOptionsItemSelected(item)
+
+        return when (item.itemId){
+            R.id.loginActivity -> {
+                FirebaseAuth.getInstance().signOut()
+
+                NavigationUI.onNavDestinationSelected(item, requireView().findNavController())
+                        || super.onOptionsItemSelected(item)
+            }
+
+            else -> NavigationUI.onNavDestinationSelected(item, requireView().findNavController())
+                    || super.onOptionsItemSelected(item)
+        }
+
+
     }
 
     /*private fun eventChangeListener() {
