@@ -1,5 +1,6 @@
 package cat.copernic.donate.ui
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.*
@@ -44,6 +45,7 @@ class FragmentDonaciones : Fragment() {
 
 
     //----------------------------------------------------------------------------------------------
+
 
 
     private lateinit var postRecyclerView: RecyclerView
@@ -100,21 +102,11 @@ class FragmentDonaciones : Fragment() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-
-        return when (item.itemId){
-            R.id.loginActivity -> {
-                FirebaseAuth.getInstance().signOut()
-
-                NavigationUI.onNavDestinationSelected(item, requireView().findNavController())
-                        || super.onOptionsItemSelected(item)
-            }
-
-            else -> NavigationUI.onNavDestinationSelected(item, requireView().findNavController())
+        return NavigationUI.onNavDestinationSelected(item, requireView().findNavController())
                     || super.onOptionsItemSelected(item)
-        }
-
-
     }
+
+
 
     /*private fun eventChangeListener() {
 

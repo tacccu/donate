@@ -23,12 +23,19 @@ import kotlinx.coroutines.*
 class LoginActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityLoginBinding
-    var fbAuth = FirebaseAuth.getInstance()
+    var auth = FirebaseAuth.getInstance()
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         Thread.sleep(2000)
         setTheme(R.style.Theme_DonAte)
+
+        if(auth.currentUser != null){
+            startActivity(Intent(this, MainActivity::class.java))
+            finish()
+        } else {
+            setContentView(R.layout.activity_login)
+        }
         binding = DataBindingUtil.setContentView(this, R.layout.activity_login)
 
         super.onCreate(savedInstanceState)
