@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<layout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="com.example.android.navigation.creacionPost">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.post">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -24,33 +25,16 @@
                 android:background="@drawable/contraint_box"
                 android:backgroundTint="@color/azul">
 
-
                 <ImageView
-                    android:id="@+id/imageView6"
+                    android:id="@+id/imageView3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:contentDescription="@string/addImage"
+                    android:src="@drawable/donacion"
                     android:visibility="invisible"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    tools:srcCompat="@tools:sample/avatars" />
-
-                <Button
-                    android:id="@+id/addImage"
-                    android:layout_width="48dp"
-                    android:layout_height="48dp"
-                    android:layout_marginStart="150dp"
-                    android:layout_marginBottom="24dp"
-                    android:background="@drawable/ic_plus_add_image"
-                    android:tint="@android:color/black"
-                    app:iconSize="65dp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.8"
-                    app:layout_constraintStart_toStartOf="parent"
-                    tools:ignore="SpeakableTextPresentCheck" />
+                    app:layout_constraintTop_toTopOf="parent" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
@@ -65,64 +49,40 @@
                 android:elevation="20dp">
 
 
-                <EditText
-                    android:id="@+id/tituloEditText"
-                    android:layout_width="0dp"
-                    android:layout_height="48dp"
+                <TextView
+                    android:id="@+id/title2"
+                    android:layout_width="match_parent"
+                    android:layout_height="46dp"
                     android:layout_marginStart="6dp"
                     android:layout_marginTop="24dp"
                     android:layout_marginEnd="6dp"
-                    android:background="@drawable/border_text_field"
-                    android:ems="10"
-                    android:gravity="start"
-                    android:hint="@string/inserNomPub"
-                    android:inputType="textPersonName"
-                    android:textSize="@dimen/texto_general"
+                    android:fontFamily="sans-serif"
+                    android:text="titulo"
+                    android:textSize="20sp"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.476"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
-                <EditText
-                    android:id="@+id/descripcionEditText"
+                <TextView
+                    android:id="@+id/textView3"
                     android:layout_width="0dp"
                     android:layout_height="181dp"
                     android:layout_marginStart="6dp"
                     android:layout_marginTop="12dp"
                     android:layout_marginEnd="6dp"
-                    android:background="@drawable/border_text_field"
-                    android:ems="10"
-                    android:gravity="start"
-                    android:hint="@string/insertDescriPost"
-                    android:inputType="textPersonName"
-                    android:textSize="@dimen/texto_general"
+                    android:text="text"
+                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.645"
+                    app:layout_constraintHorizontal_bias="1.0"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/tituloEditText" />
-
-                <EditText
-                    android:id="@+id/timeEditText"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="6dp"
-                    android:layout_marginTop="24dp"
-                    android:layout_marginEnd="6dp"
-                    android:background="@drawable/border_text_field"
-                    android:ems="10"
-                    android:hint="@string/insertUbiHora"
-                    android:inputType="time"
-                    android:minHeight="48dp"
-                    android:textSize="@dimen/texto_general"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/descripcionEditText" />
+                    app:layout_constraintTop_toBottomOf="@+id/title2"
+                    app:layout_constraintVertical_bias="0.073" />
 
                 <com.google.android.material.floatingactionbutton.FloatingActionButton
                     android:id="@+id/floatingActionButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/distEditATextViewGrande"
+                    android:layout_marginTop="24dp"
                     android:layout_marginEnd="16dp"
                     android:layout_marginBottom="16dp"
                     android:clickable="true"
@@ -130,9 +90,25 @@
                     android:src="@android:drawable/ic_menu_send"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/timeEditText"
+                    app:layout_constraintTop_toBottomOf="@+id/textView7"
                     tools:ignore="SpeakableTextPresentCheck" />
+
+                <TextView
+                    android:id="@+id/textView7"
+                    android:layout_width="0dp"
+                    android:layout_height="46dp"
+                    android:layout_marginStart="6dp"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginEnd="6dp"
+                    android:text="TextView"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
             </androidx.constraintlayout.widget.ConstraintLayout>
+
         </LinearLayout>
     </ScrollView>
-</layout>
+
+</FrameLayout>

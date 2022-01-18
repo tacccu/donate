@@ -21,7 +21,7 @@ class aboutus : AppCompatActivity() {
 
         AboutUsViewModel.aboutUsModel.observe(this, Observer {
             binding.TitleTV.text = it.title
-            binding.aboutUsTV.text = it.text
+            binding.aboutUsTv.text = it.text
             binding.version.text = it.version
         })
 

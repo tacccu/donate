@@ -1,10 +1,15 @@
 package cat.copernic.donate.ui.adapters
 
 import android.content.Context
+import android.os.Bundle
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
+import cat.copernic.donate.R
 import cat.copernic.donate.databinding.CardBinding
+import cat.copernic.donate.ui.FragmentDonacionesDirections
 import cat.copernic.donate.ui.model.donacion
 
 
@@ -37,8 +42,32 @@ class adapter : RecyclerView.Adapter<adapter.MyViewHolder>() {
             with(donaciones[position]) {
                 binding.titleCtv.text = this.cardTitle
                 binding.descCtv.text = this.cardDesc
+
             }
+
+            holder.itemView.setOnClickListener{
+
+                val bundle = Bundle()
+
+                bundle.putSerializable("title2", donaciones[position].cardTitle)
+
+                holder.itemView.findNavController().navigate(
+                    R.id.action_FragmentDonaciones_to_post, bundle
+                )
+            }
+
         }
+
+        /*holder.itemView.setOnClickListener{
+
+            val bundle = Bundle()
+
+            bundle.putSerializable("title2", donaciones[position].cardTitle)
+
+            holder.itemView.findNavController().navigate(
+                R.id.action_FragmentDonaciones_to_post, bundle
+            )
+        }*/
 
 
         val currentPost = donaciones[position]

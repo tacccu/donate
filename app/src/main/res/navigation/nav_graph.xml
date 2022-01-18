@@ -26,6 +26,9 @@
         <action
             android:id="@+id/action_FragmentDonaciones_to_loginActivity"
             app:destination="@id/loginActivity" />
+        <action
+            android:id="@+id/action_FragmentDonaciones_to_post"
+            app:destination="@id/post" />
     </fragment>
     <fragment
         android:id="@+id/perfil"
@@ -87,4 +90,9 @@
         android:id="@+id/loginActivity"
         android:name="cat.copernic.donate.ui.LoginActivity"
         android:label="LoginActivity" />
+    <fragment
+        android:id="@+id/post"
+        android:name="cat.copernic.donate.ui.post"
+        android:label="fragment_post"
+        tools:layout="@layout/fragment_post" />
 </navigation>
