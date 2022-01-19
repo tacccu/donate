@@ -49,7 +49,8 @@ class adapter : RecyclerView.Adapter<adapter.MyViewHolder>() {
 
                 val bundle = Bundle()
 
-                bundle.putSerializable("title2", donaciones[position].cardTitle)
+                bundle.putSerializable("tituloDonacion", donaciones[position].cardTitle)
+                bundle.putSerializable("descripcionDonacion", donaciones[position].cardDesc)
 
                 holder.itemView.findNavController().navigate(
                     R.id.action_FragmentDonaciones_to_post, bundle
