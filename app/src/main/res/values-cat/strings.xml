@@ -61,4 +61,8 @@
     <string name="telefPerfil">Insereixi un telèfon</string>
     <!-- MISC -->
     <string name="dona">Donacions</string>
+    <!-- Recuperar contraseña -->
+    <string name="titReContra">Introdueixi un mail per a rebre una contrasenya nova</string>
+    <string name="hintReContra">Email per a recuperar</string>
+    <string name="botReContra">Recuperar</string>
 </resources>

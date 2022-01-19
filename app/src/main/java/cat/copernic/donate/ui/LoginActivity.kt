@@ -3,19 +3,16 @@ package cat.copernic.donate.ui
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import android.widget.Button
 import android.widget.ProgressBar
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
-import androidx.lifecycle.ViewModelProvider
 import cat.copernic.donate.R
 import cat.copernic.donate.databinding.ActivityLoginBinding
-import cat.copernic.donate.ui.MainActivity
-import cat.copernic.donate.ui.ProviderType
+import cat.copernic.donate.ui.ReContraActivity.ReContraActivity
 import cat.copernic.donate.ui.registro.RegistroActivity
-import cat.copernic.donate.viewmodel.LoginActivityViewModel
-import com.github.dhaval2404.colorpicker.util.setVisibility
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.coroutines.*
 
@@ -74,7 +71,8 @@ class LoginActivity : AppCompatActivity() {
         }
 
         binding.olvidadoContra.setOnClickListener {
-
+            intent = Intent(this, ReContraActivity::class.java)
+            startActivity(intent)
         }
     }
 
@@ -96,7 +94,7 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun create(time: Int, but : Button, bar : ProgressBar) = GlobalScope.launch(Dispatchers.Main) {
-        bar.setVisibility(true)
+        bar.setVisibility(View.VISIBLE)
         bar.progress = 0
 
         withContext(Dispatchers.IO) {

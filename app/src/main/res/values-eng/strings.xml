@@ -58,8 +58,10 @@
     <string name="nombrePerfil">Add a new username</string>
     <string name="emailPerfil">Add a new email</string>
     <string name="telefPerfil">Add a new phone</string>
-
-
     <!-- MISC -->
     <string name="dona">Donations</string>
+    <!-- Recuperar contraseña -->
+    <string name="titReContra">Enter an email to receive a new password</string>
+    <string name="hintReContra">Email to retrieve</string>
+    <string name="botReContra">Recover</string>
 </resources>

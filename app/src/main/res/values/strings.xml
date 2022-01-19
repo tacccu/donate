@@ -62,6 +62,8 @@
     <string name="telefPerfil">Inserte un teléfono</string>
     <!-- MISC -->
     <string name="dona">Donaciones</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <!-- Recuperar contraseña -->
+    <string name="titReContra">Introduzca un mail para recibir una contraseña nueva</string>
+    <string name="hintReContra">Email para recuperar</string>
+    <string name="botReContra">Recuperar</string>
 </resources>
