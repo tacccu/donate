@@ -1,16 +1,16 @@
 package cat.copernic.donate.ui
-/*
+
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.lifecycle.Observer
 import cat.copernic.donate.R
 import cat.copernic.donate.databinding.ActivityAboutusBinding
-import cat.copernic.donate.viewmodel.aboutUsViewModel
+//import cat.copernic.donate.viewmodel.aboutUsViewModel
 
 class aboutus : AppCompatActivity() {
 
-    private lateinit var binding : ActivityAboutusBinding
+    /*private lateinit var binding : ActivityAboutusBinding
 
     private val aboutUsViewModel : aboutUsViewModel by viewModels()
 
@@ -26,5 +26,5 @@ class aboutus : AppCompatActivity() {
         })
 
         aboutUsViewModel.getText()
-    }
-}*/
+    }*/
+}

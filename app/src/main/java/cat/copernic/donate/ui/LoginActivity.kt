@@ -11,7 +11,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import cat.copernic.donate.R
 import cat.copernic.donate.databinding.ActivityLoginBinding
-import cat.copernic.donate.ui.ReContraActivity.ReContraActivity
+import cat.copernic.donate.ui.ReContraActivity
 import cat.copernic.donate.ui.registro.RegistroActivity
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.coroutines.*
