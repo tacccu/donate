@@ -29,6 +29,7 @@ import androidx.navigation.findNavController
 import cat.copernic.donate.R
 import cat.copernic.donate.databinding.FragmentCreaPostBinding
 import com.google.android.material.snackbar.Snackbar
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
@@ -118,7 +119,9 @@ class creaPost : Fragment() {
                     hashMapOf(
                         "titulo" to binding.tituloEditText.text.toString(),
                         "descripcion" to binding.descripcionEditText.text.toString(),
-                        "fecha" to binding.timeEditText.text.toString()
+                        "fecha" to binding.timeEditText.text.toString(),
+                        //siempre habrá un usuario, por lo que, aunque haya un ?, siempre devolverá un email
+                        "email" to FirebaseAuth.getInstance().currentUser?.email
 
                     )
                 )
