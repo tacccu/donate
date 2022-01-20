@@ -29,6 +29,8 @@ class Perfil : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        (activity as MainActivity).supportActionBar?.title = "Perfil"
+
         __binding = FragmentPerfilBinding.inflate(inflater, container, false)
 
         // Inflate the layout for this fragment

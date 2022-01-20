@@ -55,6 +55,7 @@
         <entry key="app/src/main/res/layout/fragment_creacion_post.xml" value="0.18" />
         <entry key="app/src/main/res/layout/fragment_donaciones.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment_perfil.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/fragment_recuperacontra.xml" value="0.12" />
         <entry key="app/src/main/res/layout/fragment_ticket_visor.xml" value="0.5" />
         <entry key="app/src/main/res/layout/fragment_tldonaciones.xml" value="0.2" />
         <entry key="app/src/main/res/layout/fragment_tltickets.xml" value="0.25" />

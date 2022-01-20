@@ -28,6 +28,9 @@ class tltickets : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+
+        (activity as MainActivity).supportActionBar?.title = "Reportes"
+
         setHasOptionsMenu(true)
 
 

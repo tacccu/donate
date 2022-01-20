@@ -43,12 +43,12 @@ class RegistroActivity : AppCompatActivity() {
                 && binding.editTextTelef.text.isNotEmpty()
                 && binding.editTextContra.text.isNotEmpty()
                 && binding.editTextContraAgain.text.isNotEmpty()){
-                    if (binding.editTextContra.text.toString() == binding.editTextContraAgain.toString()){
+                    if (binding.editTextContra.text.toString() == binding.editTextContraAgain.text.toString()){
                         FirebaseAuth.getInstance()
-                            .createUserWithEmailAndPassword(binding.editTextUser.text.toString(), binding.editTextContra.text.toString())
+                            .createUserWithEmailAndPassword(binding.intrEmailRegist.text.toString(), binding.editTextContra.text.toString())
                             .addOnCompleteListener{
                                 if(it.isSuccessful) {
-                                    showMainR(it.result?.user?.email ?: "", ProviderType.BASIC)
+                                    showMainR(it.result?.user?.email?: "", ProviderType.BASIC)
                                 } else {
                                     showAlert()
                                 }

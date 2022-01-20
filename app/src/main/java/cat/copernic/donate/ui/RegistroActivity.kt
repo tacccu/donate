@@ -13,8 +13,7 @@ import cat.copernic.donate.databinding.ActivityRegistroBinding
 import cat.copernic.donate.ui.ProviderType
 import com.google.firebase.auth.FirebaseAuth
 
-class
-RegistroActivity : AppCompatActivity() {
+class RegistroActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityRegistroBinding
 

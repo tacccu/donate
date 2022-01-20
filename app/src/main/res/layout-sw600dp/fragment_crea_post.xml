@@ -17,7 +17,7 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="250dp"
+                android:layout_height="308dp"
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="5dp"
                 android:layout_marginRight="20dp"
@@ -56,7 +56,7 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/container1"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="534dp"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
                 android:layout_marginBottom="10dp"
@@ -84,7 +84,7 @@
                 <EditText
                     android:id="@+id/descripcionEditText"
                     android:layout_width="0dp"
-                    android:layout_height="181dp"
+                    android:layout_height="222dp"
                     android:layout_marginTop="20dp"
                     android:background="@drawable/border_text_field"
                     android:ems="10"
@@ -119,14 +119,14 @@
                     android:layout_marginTop="@dimen/distEditATextViewGrande"
                     android:layout_marginEnd="16dp"
                     android:layout_marginBottom="16dp"
+                    android:background="@drawable/buttons"
                     android:clickable="true"
                     android:focusable="true"
                     android:src="@android:drawable/ic_menu_send"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/timeEditText"
-                    tools:ignore="SpeakableTextPresentCheck"
-                    android:background="@drawable/buttons"/>
+                    tools:ignore="SpeakableTextPresentCheck" />
             </androidx.constraintlayout.widget.ConstraintLayout>
         </LinearLayout>
     </ScrollView>
