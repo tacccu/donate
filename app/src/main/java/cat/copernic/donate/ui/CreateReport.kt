@@ -22,7 +22,7 @@ class CreateReport : Fragment() {
             inflater: LayoutInflater, container: ViewGroup?,
             savedInstanceState: Bundle?
         ): View? {
-            (activity as MainActivity).supportActionBar?.title = "Crea tu donación"
+            (activity as MainActivity).supportActionBar?.title = "Crea tu reporte"
 
             __binding = FragmentCreateReportBinding.inflate(inflater, container, false)
 

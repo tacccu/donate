@@ -94,5 +94,9 @@
         android:id="@+id/post"
         android:name="cat.copernic.donate.ui.post"
         android:label="fragment_post"
-        tools:layout="@layout/fragment_post" />
+        tools:layout="@layout/fragment_post" >
+        <action
+            android:id="@+id/action_post_to_create_report"
+            app:destination="@id/create_report" />
+    </fragment>
 </navigation>
