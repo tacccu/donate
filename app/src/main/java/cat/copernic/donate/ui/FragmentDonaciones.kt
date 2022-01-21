@@ -21,33 +21,6 @@ import com.google.firebase.ktx.Firebase
 class FragmentDonaciones : Fragment() {
 
 
-    /*override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
-
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        setHasOptionsMenu(true)
-        return inflater.inflate(R.layout.fragment_donaciones, container, false)
-    }
-
-    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
-        super.onCreateOptionsMenu(menu, inflater)
-        inflater.inflate(R.menu.menu_donaciones, menu)
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return NavigationUI.onNavDestinationSelected(item, requireView().findNavController())
-                || super.onOptionsItemSelected(item)
-    }*/
-
-
-    //----------------------------------------------------------------------------------------------
-
-
-
     private lateinit var postRecyclerView: RecyclerView
     private var postArrayList: ArrayList<donacion> = arrayListOf()
     private var postAdapter: adapter = adapter()
@@ -74,7 +47,7 @@ class FragmentDonaciones : Fragment() {
 
         //Buscamos en la colección de Donaciones la información que desplegaremos en cada CardView
         db.collection("Donaciones").get().addOnSuccessListener {
-            documents -> postArrayList.clear()
+                documents -> postArrayList.clear()
 
             for(document in documents) {
                 postArrayList.add(
@@ -82,7 +55,8 @@ class FragmentDonaciones : Fragment() {
                     donacion(
                         document.get("titulo").toString(),
                         document.get("descripcion").toString(),
-                        document.get("fecha").toString()
+                        document.get("fecha").toString(),
+                        document.get("email").toString()
                     )
                 )
             }
@@ -103,7 +77,7 @@ class FragmentDonaciones : Fragment() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return NavigationUI.onNavDestinationSelected(item, requireView().findNavController())
-                    || super.onOptionsItemSelected(item)
+                || super.onOptionsItemSelected(item)
     }
 
 

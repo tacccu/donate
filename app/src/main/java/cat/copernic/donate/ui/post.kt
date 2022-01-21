@@ -9,6 +9,7 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.NavigationUI
 import cat.copernic.donate.R
 import cat.copernic.donate.databinding.FragmentPostBinding
+import com.google.firebase.auth.FirebaseAuth
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -23,6 +24,7 @@ private const val ARG_PARAM2 = "param2"
 
 var tituloDonacion : String? = null
 var descripcionDonacion : String? = null
+var emailDonacion : String? = null
 
 
 class post : Fragment() {
@@ -52,10 +54,12 @@ lateinit var binding : FragmentPostBinding
 
         tituloDonacion = arguments?.getSerializable("tituloDonacion") as String?
         descripcionDonacion = arguments?.getSerializable("descripcionDonacion") as String?
+        emailDonacion = arguments?.getSerializable("emailDonacion") as String?
 
 
         binding.title2.text = tituloDonacion
         binding.descripcion2.text = descripcionDonacion
+        binding.textView7.text = emailDonacion
 
 
         return binding.root
@@ -64,6 +68,14 @@ lateinit var binding : FragmentPostBinding
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         super.onCreateOptionsMenu(menu, inflater)
         inflater.inflate(R.menu.menu_post, menu)
+
+        val deletePost : MenuItem = menu.findItem(R.id.delete_post)
+        val createReport : MenuItem = menu.findItem(R.id.create_report)
+
+        if(FirebaseAuth.getInstance().currentUser?.email == emailDonacion.toString()){
+            deletePost.setVisible(true)
+            createReport.setVisible(false)
+        }
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
