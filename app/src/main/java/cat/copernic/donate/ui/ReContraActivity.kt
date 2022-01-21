@@ -18,7 +18,7 @@ class ReContraActivity : AppCompatActivity() {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_recontra)
 
         val emailAddress = binding.emailReContra.text.toString()
-        if(emailAddress != null ){
+        if(emailAddress != null && emailAddress.isNotEmpty()){
             Firebase.auth.sendPasswordResetEmail(emailAddress)
                 .addOnCompleteListener { task ->
                     if (task.isSuccessful) {

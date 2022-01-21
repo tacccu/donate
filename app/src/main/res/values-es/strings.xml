@@ -62,4 +62,8 @@
     <string name="telefPerfil">Inserte un teléfono</string>
     <!-- MISC -->
     <string name="dona">Donaciones</string>
+    <!-- Recuperar contraseña -->
+    <string name="titReContra">Introduce un mail para recuperar su contraseña</string>
+    <string name="hintReContra">Email para recuperar</string>
+    <string name="botReContra">Recuperar</string>
 </resources>
