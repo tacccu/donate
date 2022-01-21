@@ -9,6 +9,8 @@ import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import cat.copernic.donate.R
 import cat.copernic.donate.databinding.FragmentPerfilBinding
+import cat.copernic.donate.viewmodel.fragmentDonacionesViewModel
+import cat.copernic.donate.viewmodel.perfilViewModel
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.auth.ktx.userProfileChangeRequest
@@ -19,6 +21,7 @@ import com.google.firebase.ktx.Firebase
 class Perfil : Fragment() {
     private var __binding: FragmentPerfilBinding? = null
     private val binding get() = __binding!!
+    private lateinit var viewModel: perfilViewModel
     private var db = FirebaseFirestore.getInstance()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -53,17 +56,7 @@ class Perfil : Fragment() {
                 if(binding.editTextPhone.text.toString().isNotEmpty()){//teléfono
                     userUpdPerfil.update("numTelef", binding.editTextPhone.text.toString())
                 }
-                userUpdPerfil.update("tipoCuent", binding.spinnerSelecCuentaPerfil.selectedItem.toString())
             }
-        }
-
-        val spinner = binding.spinnerSelecCuentaPerfil
-        spinner.adapter = context?.let {
-            ArrayAdapter(
-                it,
-                R.layout.spinner_dropdown_item,
-                resources.getStringArray(R.array.tipoCuenta)
-            )
         }
     }
 
