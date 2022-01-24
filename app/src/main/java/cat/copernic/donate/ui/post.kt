@@ -1,7 +1,9 @@
 package cat.copernic.donate.ui
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.*
+import androidx.core.app.ShareCompat
 import androidx.fragment.app.Fragment
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
@@ -62,7 +64,27 @@ lateinit var binding : FragmentPostBinding
         binding.textView7.text = emailDonacion
 
 
+        //Mandar email
+        //if(FirebaseAuth.getInstance().currentUser?.email != emailDonacion){
+            //binding.floatingActionButton.setOnClickListener(
+                //shareDonation()
+            //)
+        //}
+
+
         return binding.root
+    }
+
+    private fun share() : Intent {
+        val shareIntent = Intent(Intent.ACTION_SEND)
+        shareIntent.setType("text/plain")
+            .putExtra(Intent.EXTRA_TEXT, R.string.share)
+
+        return shareIntent
+    }
+
+    private fun shareDonation() {
+        startActivity(share())
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
@@ -71,16 +93,20 @@ lateinit var binding : FragmentPostBinding
 
         val deletePost : MenuItem = menu.findItem(R.id.delete_post)
         val createReport : MenuItem = menu.findItem(R.id.create_report)
+        val shareButton : MenuItem = menu.findItem(R.id.share)
 
         if(FirebaseAuth.getInstance().currentUser?.email == emailDonacion.toString()){
             deletePost.setVisible(true)
             createReport.setVisible(false)
+            shareButton.setVisible(false)
         }
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return NavigationUI.onNavDestinationSelected(item, requireView().findNavController())
-                || super.onOptionsItemSelected(item)
+        when(item.itemId){
+            R.id.share -> shareDonation()
+        }
+        return super.onOptionsItemSelected(item)
     }
 
     companion object {

@@ -63,4 +63,7 @@
     <!-- MISC -->
     <string name="dona">Donaciones</string>
     <string name="prueba">prueba</string>
+
+    <!-- Compartir -->
+    <string name="share">¡Estoy interesado en la Donación!</string>
 </resources>
