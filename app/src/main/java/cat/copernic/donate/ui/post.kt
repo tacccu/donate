@@ -12,6 +12,7 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.NavigationUI
 import cat.copernic.donate.R
 import cat.copernic.donate.databinding.FragmentPostBinding
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.firebase.auth.FirebaseAuth
 
 // TODO: Rename parameter arguments, choose names that match
@@ -65,12 +66,15 @@ lateinit var binding : FragmentPostBinding
         binding.textView7.text = emailDonacion
 
 
+        val fab : FloatingActionButton = binding.floatingActionButton
+
+
         //Mandar email
-        //if(FirebaseAuth.getInstance().currentUser?.email != emailDonacion){
-            //binding.floatingActionButton.setOnClickListener(
-                //share()
-            //)
-        //}
+        if(FirebaseAuth.getInstance().currentUser?.email != emailDonacion){
+            fab.setOnClickListener( View.OnClickListener() {
+                share()
+            })
+        }
 
 
         return binding.root
@@ -96,20 +100,16 @@ lateinit var binding : FragmentPostBinding
 
         val deletePost : MenuItem = menu.findItem(R.id.delete_post)
         val createReport : MenuItem = menu.findItem(R.id.create_report)
-        val shareButton : MenuItem = menu.findItem(R.id.share)
 
         if(FirebaseAuth.getInstance().currentUser?.email == emailDonacion.toString()){
             deletePost.setVisible(true)
             createReport.setVisible(false)
-            shareButton.setVisible(false)
         }
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        when(item.itemId){
-            R.id.share -> share()
-        }
-        return super.onOptionsItemSelected(item)
+        return NavigationUI.onNavDestinationSelected(item, requireView().findNavController())
+                || super.onOptionsItemSelected(item)
     }
 
     companion object {
