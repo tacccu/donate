@@ -22,7 +22,7 @@ class CreateReport : Fragment() {
             inflater: LayoutInflater, container: ViewGroup?,
             savedInstanceState: Bundle?
         ): View? {
-            (activity as MainActivity).supportActionBar?.title = "Crea tu donación"
+            (activity as MainActivity).supportActionBar?.title = "Crea un ticket"
 
             __binding = FragmentCreateReportBinding.inflate(inflater, container, false)
 
@@ -40,9 +40,6 @@ class CreateReport : Fragment() {
 
         val currentTime = Calendar.getInstance().getTime()
 
-        //val uid = user?.uid
-        //val nomUsuario = db.collection("usuarios").document(uid.toString()).get("usuario")
-
         spinner.adapter = context?.let {
             ArrayAdapter(
                 it,
@@ -51,7 +48,7 @@ class CreateReport : Fragment() {
             )
         }
         binding.fabreport.setOnClickListener(){
-            if(binding.intrDescripReport.text.isNotEmpty()){
+            if(binding.intrDescripReport.text.isNotEmpty()){//añadimos los datos introducidos a nuestra bd
                 db.collection("Reportes").document().set(hashMapOf("fechaHora" to currentTime.toString(), "usuario" to nomUsuario.toString() ,"tipoReporte" to binding.spinnerSelecCuentaRazonReport.selectedItem.toString() ,"descripcion" to binding.intrDescripReport.text.toString()))
             }
         }

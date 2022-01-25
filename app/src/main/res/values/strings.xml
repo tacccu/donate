@@ -44,6 +44,7 @@
     \n\nPor un altre costat volem posar remei als aliments que serien rebutjats perquè el ciutadà no vegi un aprofitament d\'aquests.</string>
     <!-- Strings related to perfil-->
     <string name="Perfil">Perfil</string>
+    <string name="logoutPerfil" translatable="false">Logout</string>
     <!-- Strings related to TL Tickets-->
     <string name="report">Report</string>
     <string name="TUsuario">Usuari: (usuari)</string>

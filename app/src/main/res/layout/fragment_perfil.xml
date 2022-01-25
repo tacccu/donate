@@ -60,6 +60,7 @@
                 android:ems="10"
                 android:hint="@string/nombrePerfil"
                 android:inputType="textPersonName"
+                android:minHeight="48dp"
                 android:textColor="@color/black"
                 android:textColorHint="@color/gris"
                 android:textSize="@dimen/texto_pequeño"
@@ -90,6 +91,7 @@
                 android:ems="10"
                 android:hint="@string/telefPerfil"
                 android:inputType="phone"
+                android:minHeight="48dp"
                 android:textColor="@color/black"
                 android:textColorHint="@color/gris"
                 android:textSize="@dimen/texto_pequeño"
@@ -97,47 +99,29 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView14" />
 
-            <TextView
-                android:id="@+id/textView15"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/distEditACostado"
-                android:layout_marginTop="@dimen/distEditATextViewGrande"
-                android:text="@string/selec_cuenta"
-                android:textColor="@color/morado"
-                android:textSize="@dimen/texto_general"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/editTextPhone"
-                tools:layout_editor_absoluteX="36dp" />
-
-            <Spinner
-                android:id="@+id/spinnerSelecCuentaPerfil"
-                style="@style/Widget.AppCompat.Spinner.DropDown"
-                android:layout_width="266dp"
-                android:layout_height="45dp"
-                android:layout_marginStart="72dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="72dp"
-                android:contentDescription="@string/contentDescrip"
-                android:minHeight="48dp"
-                android:text="@string/selec_cuenta"
-                android:textSize="@dimen/texto_general"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView15" />
-
             <com.google.android.material.floatingactionbutton.FloatingActionButton
                 android:id="@+id/sendUpdateButton"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/distEditATextViewGrande"
-                android:layout_marginEnd="@dimen/distEditACostado"
+                android:layout_marginEnd="76dp"
                 android:layout_marginBottom="@dimen/distEditATextViewGrande"
                 android:clickable="true"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/spinnerSelecCuentaPerfil"
-                app:srcCompat="@android:drawable/ic_menu_send" />
+                app:layout_constraintTop_toBottomOf="@+id/editTextPhone"
+                app:srcCompat="@android:drawable/ic_menu_send"
+                tools:ignore="SpeakableTextPresentCheck" />
+
+            <Button
+                android:id="@+id/userLogout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="80dp"
+                android:text="@string/logoutPerfil"
+                app:layout_constraintEnd_toStartOf="@+id/sendUpdateButton"
+                app:layout_constraintHorizontal_bias="0.376"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/editTextPhone" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
 
