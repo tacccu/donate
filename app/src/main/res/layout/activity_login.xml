@@ -99,7 +99,7 @@
             android:inputType="textPassword"
             android:minHeight="48dp"
             android:singleLine="true"
-            android:textColor="#757575"
+            android:textColor="@color/gris"
             android:textColorHint="@color/gris_hint"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.906"
@@ -173,6 +173,7 @@
 
         <Button
             android:id="@+id/olvidadoContra"
+            style="@style/buttons"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="32dp"

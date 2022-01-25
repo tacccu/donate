@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="buttons" parent="TextAppearance.AppCompat">
+        <item name="android:color"> @color/morado </item>
+    </style>
+
+    <style name="titles" parent="TextAppearance.AppCompat">
+        <item name="android:textColor"> @color/morado_oscuro </item>
+        <item name="android:textSize"> 16dp </item>
+    </style>
+
+    <style name="text" parent="TextAppearance.AppCompat">
+        <item name="android:textColor"> @color/gris</item>
+        <item name="android:textColorHint"> @color/gris_hint</item>
+    </style>
+</resources>
