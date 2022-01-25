@@ -1,6 +1,7 @@
 package cat.copernic.donate.ui
 
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.view.*
 import androidx.core.app.ShareCompat
@@ -67,7 +68,7 @@ lateinit var binding : FragmentPostBinding
         //Mandar email
         //if(FirebaseAuth.getInstance().currentUser?.email != emailDonacion){
             //binding.floatingActionButton.setOnClickListener(
-                //shareDonation()
+                //share()
             //)
         //}
 
@@ -75,16 +76,18 @@ lateinit var binding : FragmentPostBinding
         return binding.root
     }
 
-    private fun share() : Intent {
+    private fun share() {
         val shareIntent = Intent(Intent.ACTION_SEND)
+        val mail = arrayOf(emailDonacion)
+
+        shareIntent.setData(Uri.parse("send to:"))
         shareIntent.setType("text/plain")
-            .putExtra(Intent.EXTRA_TEXT, R.string.share)
 
-        return shareIntent
-    }
+        shareIntent.putExtra(android.content.Intent.EXTRA_EMAIL, mail)
+        shareIntent.putExtra(Intent.EXTRA_SUBJECT, tituloDonacion)
+        shareIntent.putExtra(Intent.EXTRA_TEXT, getString(R.string.share))
 
-    private fun shareDonation() {
-        startActivity(share())
+        startActivity(Intent.createChooser(shareIntent, "send"))
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
@@ -104,7 +107,7 @@ lateinit var binding : FragmentPostBinding
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when(item.itemId){
-            R.id.share -> shareDonation()
+            R.id.share -> share()
         }
         return super.onOptionsItemSelected(item)
     }
