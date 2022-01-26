@@ -1,9 +1,12 @@
 package cat.copernic.donate.ui
 
 import android.content.Intent
+import android.graphics.drawable.Drawable
 import android.net.Uri
 import android.os.Bundle
+import android.util.Log
 import android.view.*
+import androidx.appcompat.content.res.AppCompatResources.getDrawable
 import androidx.core.app.ShareCompat
 import androidx.fragment.app.Fragment
 import androidx.databinding.DataBindingUtil
@@ -12,8 +15,14 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.NavigationUI
 import cat.copernic.donate.R
 import cat.copernic.donate.databinding.FragmentPostBinding
+import com.bumptech.glide.Glide
+import com.bumptech.glide.request.target.Target
+import com.github.dhaval2404.colorpicker.util.setVisibility
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.storage.FirebaseStorage
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.runBlocking
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -53,6 +62,8 @@ lateinit var binding : FragmentPostBinding
         savedInstanceState: Bundle?
     ): View? {
 
+        (activity as MainActivity).supportActionBar?.title = arguments?.getSerializable("tituloDonacion") as String?
+
         setHasOptionsMenu(true)
         // Inflate the layout for this fragment
         binding = FragmentPostBinding.inflate(layoutInflater)
@@ -73,13 +84,31 @@ lateinit var binding : FragmentPostBinding
 
         //Mandar email
         if(FirebaseAuth.getInstance().currentUser?.email != emailDonacion){
+            fab.setVisibility(true)
             fab.setOnClickListener( View.OnClickListener() {
                 share()
             })
         }
 
+        setImage()
+
 
         return binding.root
+    }
+
+    private fun setImage(){
+        FirebaseStorage.getInstance()
+            .reference.child("images/${emailDonacion}/${tituloDonacion}")
+            .listAll().addOnSuccessListener {
+               for(i in it.items) {
+                   i.downloadUrl.addOnSuccessListener { itUri ->
+                       Glide.with(this).load(itUri).centerInside()
+                           .fitCenter().into(binding.imageView3)
+                   }
+               }
+            }
+
+
     }
 
     private fun share() {
@@ -113,6 +142,7 @@ lateinit var binding : FragmentPostBinding
         return NavigationUI.onNavDestinationSelected(item, requireView().findNavController())
                 || super.onOptionsItemSelected(item)
     }
+
 
     companion object {
         /**
