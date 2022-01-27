@@ -1,5 +1,7 @@
 package cat.copernic.donate.model
 
+import cat.copernic.donate.R
+
 class aboutUsProvider {
     companion object{
         fun getAboutUs(): aboutUsModel {
@@ -7,9 +9,9 @@ class aboutUsProvider {
         }
 
         private val aboutus = listOf<aboutUsModel>(
-                aboutUsModel( "DonAte", "El objetivo principal del proyecto es llevar la solidaridad a un punto más  cercano en la vida cotidiana, pretendemos ayudar a la gente que sufre necesidades alimenticias con una propuesta que acerca la caridad, una solución rápida y sencilla para realizar donaciones." +
-                        "    Ofrecemos una solución ante una situación precaria de algunas personas como es no poder adquirir una variedad de alimentos básicos y la dificultad que les supone hacerlo." +
-                        "    Por otro lado queremos poner remedio a los alimentos que serían desechados porque el ciudadano no vea un aprovechamiento de los mismos.")
+                aboutUsModel( "DonAte", "\n L\'objectiu principal del projecte és portar la solidaritat a un punt més pròxim en la vida quotidiana, pretenem ajudar a la gent que sofreix necessitats alimentoses amb una proposta que acosta la caritat, una solució ràpida i senzilla per a realitzar donacions."
+                    + "\n\nOfrecemos una solució davant una situació precària d\'algunes persones com és no poder adquirir una varietat d\'aliments bàsics i la dificultat que els suposa fer-ho."
+        + "\n\nPor un altre costat volem posar remei als aliments que serien rebutjats perquè el ciutadà no vegi un aprofitament d\'aquests.", "version: 1.4.0")
         )
     }
 

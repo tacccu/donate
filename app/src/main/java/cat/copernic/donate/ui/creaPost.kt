@@ -12,10 +12,12 @@ import android.graphics.drawable.BitmapDrawable
 import android.net.Uri
 import android.os.Build
 import android.os.Bundle
+import android.provider.MediaStore
 import android.util.Log
 import android.view.*
 import androidx.fragment.app.Fragment
 import android.widget.ImageView
+import android.widget.Toast
 import androidx.activity.result.ActivityResult
 import androidx.activity.result.contract.ActivityResultContract
 import androidx.activity.result.contract.ActivityResultContracts
@@ -29,6 +31,7 @@ import androidx.navigation.findNavController
 import cat.copernic.donate.R
 import cat.copernic.donate.databinding.FragmentCreaPostBinding
 import com.google.android.material.snackbar.Snackbar
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
@@ -53,23 +56,12 @@ class creaPost : Fragment() {
     lateinit var binding: FragmentCreaPostBinding
     private var latestTempUri: Uri? = null
     var iden: String? = null
-    private val array : ArrayList<Uri?> = arrayListOf()
+    private val array: ArrayList<Uri?> = arrayListOf()
 
     private val channelId = "channelId"
     private val channelName = "channelName"
     private val notificationId = 1
 
-
-
-
-    val tomarImgResult =
-        registerForActivityResult(ActivityResultContracts.TakePicture()) { isSucces ->
-            if (isSucces) {
-                latestTempUri?.let { uri ->
-                    binding.imageView6.setImageURI(uri)
-                }
-            }
-        }
 
     // TODO: Rename and change types of parameters
     private var param1: String? = null
@@ -110,32 +102,47 @@ class creaPost : Fragment() {
             if (binding.tituloEditText.text.isNotEmpty()
                 && binding.descripcionEditText.text.isNotEmpty()
                 && binding.timeEditText.text.isNotEmpty()
+                && binding.editTextDate.text.isNotEmpty()
             ) {
-               //creo una donación en la ruta de Donacioens
-               val document = db.collection("Donaciones")
-                    //añadimos la información de los campos de texto
-                    document.add(
+                //creo una donación en la ruta de Donacioens
+                val document = db.collection("Donaciones")
+                //añadimos la información de los campos de texto
+                document.add(
                     hashMapOf(
                         "titulo" to binding.tituloEditText.text.toString(),
                         "descripcion" to binding.descripcionEditText.text.toString(),
-                        "fecha" to binding.timeEditText.text.toString()
+                        "fecha" to binding.timeEditText.text.toString(),
+                        "dia" to binding.editTextDate.text.toString(),
+                        //siempre habrá un usuario, por lo que, aunque haya un ?, siempre devolverá un email
+                        "email" to FirebaseAuth.getInstance().currentUser?.email
 
                     )
                 )
                 //variable con la id del documento para nombrar la imagen
                 iden = document.id
 
-                //ponerImagen(view)
-
                 view.findNavController()
                     .navigate(creaPostDirections.actionCreaPostToFragmentDonaciones())
 
                 notificationManager.notify(notificationId, notification)
+                val currUser = FirebaseAuth.getInstance().currentUser?.email
+                val currTit = binding.tituloEditText.text.toString()
+                val storage = FirebaseStorage.getInstance().reference
+                val path = storage.child("images/$currUser/$currTit/$currTit.jpg")
+                val bitmap =
+                    MediaStore.Images.Media.getBitmap(requireActivity().contentResolver, array[0])
+                val baos = ByteArrayOutputStream()
+
+                bitmap.compress(Bitmap.CompressFormat.JPEG, 100, baos)
+                val data = baos.toByteArray()
+                val uploadTask = path.putBytes(data)
+                uploadTask.addOnSuccessListener { }
 
 
             } else {
                 showAlert()
             }
+
 
         }
         //botón para que salte la selección
@@ -149,14 +156,15 @@ class creaPost : Fragment() {
     }
 
     private fun createNotificationChannel() {
-        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             val importance = NotificationManager.IMPORTANCE_HIGH
 
             val channel = NotificationChannel(channelId, channelName, importance).apply {
                 enableLights(true)
             }
 
-            val manager : NotificationManager = requireActivity().getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
+            val manager: NotificationManager =
+                requireActivity().getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
 
             manager.createNotificationChannel(channel)
         }
@@ -168,30 +176,11 @@ class creaPost : Fragment() {
         alertDialog.setMessage("Abrir cámara o galería")
         alertDialog.setButton(
             AlertDialog.BUTTON_POSITIVE, "Cámara"
-        ) {dialog, wich -> abrirCamara()}
+        ) { dialog, wich -> abrirCamara() }
         alertDialog.setButton(
             AlertDialog.BUTTON_NEGATIVE, "Galería"
-        ) {dialog, wich -> abrirGaleria()}
+        ) { dialog, wich -> abrirGaleria() }
         alertDialog.show()
-    }
-
-    //función para subir la imagen a Firebase
-    fun ponerImagen(view: View) {
-        //para el nombre de la imagen le pasaremos el identificador de la donación, de esta forma ninguna imagen se llamará igual
-        storageRef = FirebaseStorage.getInstance().reference
-        val pathReference = storageRef.child("images/${this.iden}")
-        val bitmap = (binding.imageView6.drawable as BitmapDrawable).bitmap
-        val baos = ByteArrayOutputStream()
-
-        bitmap.compress(Bitmap.CompressFormat.JPEG, 100, baos)
-        val data = baos.toByteArray()
-
-        val uploadTask = pathReference.putBytes(data)
-        uploadTask.addOnFailureListener {
-            Snackbar.make(view, "error", Snackbar.LENGTH_LONG).show()
-        }.addOnSuccessListener {
-            Snackbar.make(view, "success", Snackbar.LENGTH_LONG).show()
-        }
     }
 
     private fun showAlert() {
@@ -208,16 +197,28 @@ class creaPost : Fragment() {
     ) { result ->
         if (result.resultCode == Activity.RESULT_OK) {
             val data = result.data?.data
+            Log.e("i", "$data")
 
-            if(data != null) {
+            if (data != null) {
                 Log.e("nom", "$data")
                 array.add(data)
                 binding.imageView6.setImageURI(array[0])
             }
 
 
-
         }
+    }
+
+    private val tomarImgResult = registerForActivityResult(
+        ActivityResultContracts.TakePicture()
+    ) { isSucces ->
+        if (isSucces) {
+            latestTempUri?.let { uri ->
+                array.add(uri)
+                binding.imageView6.setImageURI(uri)
+            }
+        }
+
     }
 
     //función para abrir la galería
@@ -226,11 +227,13 @@ class creaPost : Fragment() {
         intent.type = "image/*"
         startActivityGal.launch(intent)
     }
+
     //función para abrir la cámara
     private fun abrirCamara() {
         lifecycleScope.launchWhenStarted {
             getTempFile().let { uri ->
                 latestTempUri = uri
+
 
                 tomarImgResult.launch(uri)
             }
@@ -253,28 +256,27 @@ class creaPost : Fragment() {
     }
 
 
+}
 
-    }
 
-
-    private object n {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment creaPost.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            creaPost().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
+private object n {
+    /**
+     * Use this factory method to create a new instance of
+     * this fragment using the provided parameters.
+     *
+     * @param param1 Parameter 1.
+     * @param param2 Parameter 2.
+     * @return A new instance of fragment creaPost.
+     */
+    // TODO: Rename and change types and number of parameters
+    @JvmStatic
+    fun newInstance(param1: String, param2: String) =
+        creaPost().apply {
+            arguments = Bundle().apply {
+                putString(ARG_PARAM1, param1)
+                putString(ARG_PARAM2, param2)
             }
-    }
+        }
+}
 
 

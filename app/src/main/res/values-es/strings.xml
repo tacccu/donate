@@ -1,6 +1,8 @@
 <resources>
     <string name="app_name">DonAte</string>
     <string name="DescLogo">Logo de la app</string>
+    <string name="error">Error</string>
+    <string name="success">Succes!!!</string>
     <!-- String Globales-->
     <string name="user">Usuario</string>
     <string name="email">usuario@email.com</string>
@@ -56,25 +58,21 @@
     <string name="inserNomPub">Inserte un nombre para la publicación</string>
     <string name="insertDescriPost">Inserte una decripción para el post</string>
     <string name="insertUbiHora">Inserte una hora</string>
+    <string name="insertDate">Inserte un día</string>
     <!-- Creacion de perfil -->
     <string name="nombrePerfil">Inserte un nuevo nombre de usuario</string>
     <string name="emailPerfil">Inserte una dirección de email</string>
     <string name="telefPerfil">Inserte un teléfono</string>
-    <string name="successAñadidoPerfil">Datos añadidos</string>
-    <string name="failurePerfil">Datos añadidos</string>
     <!-- MISC -->
     <string name="dona">Donaciones</string>
+    <string name="prueba">prueba</string>
+
+    <!-- Compartir -->
+    <string name="share">¡Estoy interesado en la Donación!</string>
+
     <!-- Recuperar contraseña -->
-    <string name="titReContra">Introduce un mail para recuperar su contraseña</string>
+    <string name="titReContra">Introduzca un mail para recibir una contraseña nueva</string>
     <string name="hintReContra">Email para recuperar</string>
     <string name="botReContra">Recuperar</string>
-    <!-- Recomendaciones donaciones -->
-    <string name="reDonaciones">Recomendación de alimentos para donar:
-        \nFrutas y vegetales enteros, en buen estado
-        \nEl envase debe estar íntegro y no estar deteriorado
-        \mQue no rebase la fecha de caducidad
-        \nEl alimento debe estar correctamente identificado y etiquetado
-        \n\nAlimentos que no deberían ser donados:
-        \nCarne y derivados no envasados
-        \nComidas preparadas no envasadas</string>
+
 </resources>

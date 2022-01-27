@@ -1,5 +1,6 @@
 package cat.copernic.donate.ui
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.*
@@ -23,38 +24,13 @@ import com.google.firebase.ktx.Firebase
 class FragmentDonaciones : Fragment() {
 
 
-    /*override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
-
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        setHasOptionsMenu(true)
-        return inflater.inflate(R.layout.fragment_donaciones, container, false)
-    }
-
-    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
-        super.onCreateOptionsMenu(menu, inflater)
-        inflater.inflate(R.menu.menu_donaciones, menu)
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return NavigationUI.onNavDestinationSelected(item, requireView().findNavController())
-                || super.onOptionsItemSelected(item)
-    }*/
-
-
-    //----------------------------------------------------------------------------------------------
-
-
     private lateinit var postRecyclerView: RecyclerView
     private var postArrayList: ArrayList<donacion> = arrayListOf()
     private var postAdapter: adapter = adapter()
     private var db = FirebaseFirestore.getInstance()
-    val user = Firebase.auth.currentUser
-    val uid = user?.uid
+
+    private val user = Firebase.auth.currentUser
+    private val uid = user?.uid
 
 
     override fun onCreateView(
@@ -74,6 +50,7 @@ class FragmentDonaciones : Fragment() {
         }
         navUserEmail.text = FirebaseAuth.getInstance().currentUser?.email
 
+
         (activity as MainActivity).supportActionBar?.title = "Donaciones"
 
         setHasOptionsMenu(true)
@@ -89,7 +66,7 @@ class FragmentDonaciones : Fragment() {
 
         //Buscamos en la colección de Donaciones la información que desplegaremos en cada CardView
         db.collection("Donaciones").get().addOnSuccessListener {
-            documents -> postArrayList.clear()
+                documents -> postArrayList.clear()
 
             for(document in documents) {
                 postArrayList.add(
@@ -97,7 +74,10 @@ class FragmentDonaciones : Fragment() {
                     donacion(
                         document.get("titulo").toString(),
                         document.get("descripcion").toString(),
-                        document.get("fecha").toString()
+                        document.get("fecha").toString(),
+                        document.get("email").toString(),
+                        document.get("dia").toString()
+
                     )
                 )
             }
@@ -120,30 +100,6 @@ class FragmentDonaciones : Fragment() {
         return NavigationUI.onNavDestinationSelected(item, requireView().findNavController())
                 || super.onOptionsItemSelected(item)
     }
-
-    /*private fun eventChangeListener() {
-
-
-
-        db = FirebaseFirestore.getInstance()
-        db.collection("Donaciones").addSnapshotListener(object : EventListener<QuerySnapshot> {
-            override fun onEvent(value: QuerySnapshot?, error: FirebaseFirestoreException?) {
-                if (error != null) {
-                    Log.e("Firestore Error", error.message.toString())
-                    return
-                }
-                for (dc: DocumentChange in value?.documentChanges!!) {
-                    if (dc.type == DocumentChange.Type.ADDED) {
-                        postArrayList.add(dc.document.toObject(donacion::class.java))
-
-                    }
-                }
-                postAdapter.notifyDataSetChanged()
-            }
-        })
-
-
-    }*/
 }
 
 

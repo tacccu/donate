@@ -23,6 +23,12 @@
         <action
             android:id="@+id/action_FragmentDonaciones_to_aboutus"
             app:destination="@id/aboutus" />
+        <action
+            android:id="@+id/action_FragmentDonaciones_to_loginActivity"
+            app:destination="@id/loginActivity" />
+        <action
+            android:id="@+id/action_FragmentDonaciones_to_post"
+            app:destination="@id/post" />
     </fragment>
     <fragment
         android:id="@+id/perfil"
@@ -80,4 +86,17 @@
         android:name="cat.copernic.donate.ui.aboutus"
         android:label="activity_aboutus"
         tools:layout="@layout/activity_aboutus" />
+    <activity
+        android:id="@+id/loginActivity"
+        android:name="cat.copernic.donate.ui.LoginActivity"
+        android:label="LoginActivity" />
+    <fragment
+        android:id="@+id/post"
+        android:name="cat.copernic.donate.ui.post"
+        android:label="fragment_post"
+        tools:layout="@layout/fragment_post" >
+        <action
+            android:id="@+id/action_post_to_create_report"
+            app:destination="@id/create_report" />
+    </fragment>
 </navigation>

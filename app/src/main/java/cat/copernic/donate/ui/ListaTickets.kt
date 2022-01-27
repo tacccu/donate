@@ -8,7 +8,7 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.NavigationUI
 import androidx.recyclerview.widget.LinearLayoutManager
 import cat.copernic.donate.R
-import cat.copernic.donate.adapters.adapterTlTickets
+import cat.copernic.donate.ui.adapters.adapterTlTickets
 import cat.copernic.donate.databinding.FragmentTlticketsBinding
 import cat.copernic.donate.model.ticket
 import com.google.firebase.firestore.FirebaseFirestore
@@ -68,16 +68,6 @@ class ListaTickets : Fragment() {
 
 
         return binding.root
-    }
-
-    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
-        super.onCreateOptionsMenu(menu, inflater)
-        inflater.inflate(R.menu.menu_donaciones, menu)
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return NavigationUI.onNavDestinationSelected(item, requireView().findNavController())
-                || super.onOptionsItemSelected(item)
     }
 
 }

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/create_report"
+        android:enabled="true"
+        android:icon="@drawable/report"
+        android:title="@string/dona"
+        android:visible="true"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/delete_post"
+        android:enabled="true"
+        android:icon="@drawable/delete_icon"
+        android:title="@string/dona"
+        android:visible="false"
+        app:showAsAction="ifRoom" />
+
+</menu>

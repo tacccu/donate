@@ -1,8 +1,8 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">DonAte</string>
     <string name="DescLogo">App logo</string>
-    <string name="error" tools:ignore="ExtraTranslation">Error</string>
-    <string name="success" tools:ignore="ExtraTranslation">Succes!!!</string>
+    <string name="error">Error</string>
+    <string name="success">Succes!!!</string>
 
     <!-- String Globales-->
     <string name="user">User</string>
@@ -53,26 +53,24 @@
     <string name="addImage">Add a donation image</string>
     <string name="inserNomPub">Add a name to the post</string>
     <string name="insertDescriPost">Add a description to the post</string>
-    <string name="insertUbiHora">Add a date</string>
+    <string name="insertUbiHora">Add a time</string>
+    <string name="insertDate">Add a date</string>
     <!-- Creacion de perfil -->
     <string name="nombrePerfil">Add a new username</string>
     <string name="emailPerfil">Add a new email</string>
     <string name="telefPerfil">Add a new phone</string>
-    <string name="successAñadidoPerfil">Added data</string>
-    <string name="failurePerfil">Failed adding data</string>
+
+
     <!-- MISC -->
     <string name="dona">Donations</string>
+    <string name="prueba">test</string>
+
+    <!-- Compartir -->
+    <string name="share">I\'m interested in the donation!</string>
+
     <!-- Recuperar contraseña -->
     <string name="titReContra">Enter an email to receive a new password</string>
     <string name="hintReContra">Email to retrieve</string>
     <string name="botReContra">Recover</string>
-    <!-- Recomendaciones donaciones -->
-    <string name="reDonaciones">Recommendation of food to donate:
-         \nWhole fruits and vegetables, in good condition
-         \nThe container must be intact and not damaged
-         \mDo not exceed the expiration date
-         \nThe food must be correctly identified and labeled
-         \n\nFood that should not be donated:
-         \nUnpackaged meat and derivatives
-         \nPrepared unpackaged mealss</string>
+
 </resources>

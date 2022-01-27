@@ -3,16 +3,20 @@ package cat.copernic.donate.ui
 
 import android.content.Intent
 import android.os.Bundle
-import android.view.View
 import android.widget.Button
 import android.widget.ProgressBar
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.ViewModelProvider
 import cat.copernic.donate.R
 import cat.copernic.donate.databinding.ActivityLoginBinding
+import cat.copernic.donate.ui.MainActivity
+import cat.copernic.donate.ui.ProviderType
 import cat.copernic.donate.ui.ReContraActivity
 import cat.copernic.donate.ui.registro.RegistroActivity
+import cat.copernic.donate.viewmodel.LoginActivityViewModel
+import com.github.dhaval2404.colorpicker.util.setVisibility
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.coroutines.*
 
@@ -20,20 +24,28 @@ import kotlinx.coroutines.*
 class LoginActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityLoginBinding
-    var fbAuth = FirebaseAuth.getInstance()
+    var auth = FirebaseAuth.getInstance()
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         Thread.sleep(2000)
         setTheme(R.style.Theme_DonAte)
+
+        if(auth.currentUser != null){
+            startActivity(Intent(this, MainActivity::class.java))
+            finish()
+        } else {
+            setContentView(R.layout.activity_login)
+        }
         binding = DataBindingUtil.setContentView(this, R.layout.activity_login)
 
+        binding.olvidadoContra.setOnClickListener {
+            intent = Intent(this, ReContraActivity::class.java)
+            startActivity(intent)
+        }
+
+
         super.onCreate(savedInstanceState)
-
-        // Get the viewModel
-        //var viewModel = ViewModelProvider(this).get(LoginActivityViewModel::class.java)
-
-        //setup
         setup()
 
     }
@@ -46,10 +58,6 @@ class LoginActivity : AppCompatActivity() {
             intent = Intent(this, RegistroActivity::class.java)
             startActivity(intent)
 
-        }
-        binding.olvidadoContra.setOnClickListener {
-            intent = Intent(this, ReContraActivity::class.java)
-            startActivity(intent)
         }
 
         var cr : Job? = null
@@ -93,7 +101,7 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun create(time: Int, but : Button, bar : ProgressBar) = GlobalScope.launch(Dispatchers.Main) {
-        bar.setVisibility(View.VISIBLE)
+        bar.setVisibility(true)
         bar.progress = 0
 
         withContext(Dispatchers.IO) {
