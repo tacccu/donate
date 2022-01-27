@@ -12,6 +12,7 @@ import androidx.fragment.app.Fragment
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.navigation.findNavController
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.NavigationUI
 import cat.copernic.donate.R
 import cat.copernic.donate.databinding.FragmentPostBinding
@@ -39,6 +40,7 @@ var tituloDonacion : String? = null
 var descripcionDonacion : String? = null
 var emailDonacion : String? = null
 var dateDonacion : String? = null
+var fechaDonacion : String? = null
 
 
 class post : Fragment() {
@@ -72,11 +74,13 @@ lateinit var binding : FragmentPostBinding
         descripcionDonacion = arguments?.getSerializable("descripcionDonacion") as String?
         emailDonacion = arguments?.getSerializable("emailDonacion") as String?
         dateDonacion = arguments?.getSerializable("dateDonacion") as String?
+        fechaDonacion = arguments?.getSerializable("fechaDonacion") as String?
 
 
         binding.title2.text = tituloDonacion
         binding.descripcion2.text = descripcionDonacion
         binding.textView7.text = dateDonacion
+        binding.fecha.text = fechaDonacion
 
 
         val fab : FloatingActionButton = binding.floatingActionButton
@@ -139,8 +143,18 @@ lateinit var binding : FragmentPostBinding
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return NavigationUI.onNavDestinationSelected(item, requireView().findNavController())
-                || super.onOptionsItemSelected(item)
+        val bundle = Bundle()
+
+        bundle.putSerializable("emailDonacion", emailDonacion)
+        bundle.putSerializable("tituloDonacion", tituloDonacion)
+
+        when(item.itemId){
+            R.id.create_report -> findNavController().navigate(
+                R.id.action_post_to_create_report, bundle
+            )
+        }
+
+        return super.onOptionsItemSelected(item)
     }
 
 

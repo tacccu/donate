@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.*
+import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
 import cat.copernic.donate.R
@@ -14,7 +15,9 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.NavigationUI
 import androidx.recyclerview.widget.LinearLayoutManager
 import cat.copernic.donate.databinding.FragmentDonacionesBinding
+import com.google.android.material.navigation.NavigationView
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.*
 import com.google.firebase.ktx.Firebase
 
@@ -26,11 +29,27 @@ class FragmentDonaciones : Fragment() {
     private var postAdapter: adapter = adapter()
     private var db = FirebaseFirestore.getInstance()
 
+    private val user = Firebase.auth.currentUser
+    private val uid = user?.uid
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+
+        val navigationView : NavigationView = requireActivity().findViewById(R.id.navView)
+        val headerView : View = navigationView.getHeaderView(0)
+        val navUsername : TextView = headerView.findViewById(R.id.textView4)
+        val navUserEmail : TextView = headerView.findViewById(R.id.textView9)
+
+        //Obtenemos los datos de usuario y email para mostrarlo los textview en el header del menú
+        db.collection("usuarios").document(uid.toString()).get().addOnSuccessListener {
+            var nom  = it.data?.get("usuario").toString()
+            navUsername.text = nom
+        }
+        navUserEmail.text = FirebaseAuth.getInstance().currentUser?.email
+
 
         (activity as MainActivity).supportActionBar?.title = "Donaciones"
 
@@ -56,7 +75,9 @@ class FragmentDonaciones : Fragment() {
                         document.get("titulo").toString(),
                         document.get("descripcion").toString(),
                         document.get("fecha").toString(),
-                        document.get("email").toString()
+                        document.get("email").toString(),
+                        document.get("dia").toString()
+
                     )
                 )
             }
@@ -79,32 +100,6 @@ class FragmentDonaciones : Fragment() {
         return NavigationUI.onNavDestinationSelected(item, requireView().findNavController())
                 || super.onOptionsItemSelected(item)
     }
-
-
-
-    /*private fun eventChangeListener() {
-
-
-
-        db = FirebaseFirestore.getInstance()
-        db.collection("Donaciones").addSnapshotListener(object : EventListener<QuerySnapshot> {
-            override fun onEvent(value: QuerySnapshot?, error: FirebaseFirestoreException?) {
-                if (error != null) {
-                    Log.e("Firestore Error", error.message.toString())
-                    return
-                }
-                for (dc: DocumentChange in value?.documentChanges!!) {
-                    if (dc.type == DocumentChange.Type.ADDED) {
-                        postArrayList.add(dc.document.toObject(donacion::class.java))
-
-                    }
-                }
-                postAdapter.notifyDataSetChanged()
-            }
-        })
-
-
-    }*/
 }
 
 

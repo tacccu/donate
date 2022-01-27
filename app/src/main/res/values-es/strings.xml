@@ -1,6 +1,8 @@
 <resources>
     <string name="app_name">DonAte</string>
     <string name="DescLogo">Logo de la app</string>
+    <string name="error">Error</string>
+    <string name="success">Succes!!!</string>
     <!-- String Globales-->
     <string name="user">Usuario</string>
     <string name="email">usuario@email.com</string>
@@ -56,6 +58,7 @@
     <string name="inserNomPub">Inserte un nombre para la publicación</string>
     <string name="insertDescriPost">Inserte una decripción para el post</string>
     <string name="insertUbiHora">Inserte una hora</string>
+    <string name="insertDate">Inserte un día</string>
     <!-- Creacion de perfil -->
     <string name="nombrePerfil">Inserte un nuevo nombre de usuario</string>
     <string name="emailPerfil">Inserte una dirección de email</string>
@@ -66,4 +69,10 @@
 
     <!-- Compartir -->
     <string name="share">¡Estoy interesado en la Donación!</string>
+
+    <!-- Recuperar contraseña -->
+    <string name="titReContra">Introduzca un mail para recibir una contraseña nueva</string>
+    <string name="hintReContra">Email para recuperar</string>
+    <string name="botReContra">Recuperar</string>
+
 </resources>

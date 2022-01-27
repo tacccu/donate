@@ -102,6 +102,7 @@ class creaPost : Fragment() {
             if (binding.tituloEditText.text.isNotEmpty()
                 && binding.descripcionEditText.text.isNotEmpty()
                 && binding.timeEditText.text.isNotEmpty()
+                && binding.editTextDate.text.isNotEmpty()
             ) {
                 //creo una donación en la ruta de Donacioens
                 val document = db.collection("Donaciones")
@@ -111,6 +112,7 @@ class creaPost : Fragment() {
                         "titulo" to binding.tituloEditText.text.toString(),
                         "descripcion" to binding.descripcionEditText.text.toString(),
                         "fecha" to binding.timeEditText.text.toString(),
+                        "dia" to binding.editTextDate.text.toString(),
                         //siempre habrá un usuario, por lo que, aunque haya un ?, siempre devolverá un email
                         "email" to FirebaseAuth.getInstance().currentUser?.email
 

@@ -13,6 +13,9 @@ import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.ktx.Firebase
 import java.util.*
 
+var emailDon : String? = null
+var tituloDon : String? = null
+
 class CreateReport : Fragment() {
         private var __binding: FragmentCreateReportBinding? = null
         private val binding get() = __binding!!
@@ -33,6 +36,9 @@ class CreateReport : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
 
+        emailDon = arguments?.getSerializable("emailDonacion") as String?
+        tituloDon = arguments?.getSerializable("tituloDonacion") as String?
+
         val spinner = binding.spinnerSelecCuentaRazonReport
 
         val user = Firebase.auth.currentUser
@@ -52,7 +58,12 @@ class CreateReport : Fragment() {
         }
         binding.fabreport.setOnClickListener(){
             if(binding.intrDescripReport.text.isNotEmpty()){
-                db.collection("Reportes").document().set(hashMapOf("fechaHora" to currentTime.toString(), "usuario" to nomUsuario.toString() ,"tipoReporte" to binding.spinnerSelecCuentaRazonReport.selectedItem.toString() ,"descripcion" to binding.intrDescripReport.text.toString()))
+                db.collection("Reportes").document().set(hashMapOf("fechaHora" to currentTime.toString(),
+                    "usuario" to nomUsuario,
+                    "tipoReporte" to binding.spinnerSelecCuentaRazonReport.selectedItem.toString() ,
+                    "descripcion" to binding.intrDescripReport.text.toString(),
+                    "usuarioReportado" to emailDonacion,
+                    "donacionReportada" to tituloDon))
             }
         }
     }

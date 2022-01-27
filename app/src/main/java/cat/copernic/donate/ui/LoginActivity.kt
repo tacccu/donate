@@ -13,6 +13,7 @@ import cat.copernic.donate.R
 import cat.copernic.donate.databinding.ActivityLoginBinding
 import cat.copernic.donate.ui.MainActivity
 import cat.copernic.donate.ui.ProviderType
+import cat.copernic.donate.ui.ReContraActivity
 import cat.copernic.donate.ui.registro.RegistroActivity
 import cat.copernic.donate.viewmodel.LoginActivityViewModel
 import com.github.dhaval2404.colorpicker.util.setVisibility
@@ -38,12 +39,13 @@ class LoginActivity : AppCompatActivity() {
         }
         binding = DataBindingUtil.setContentView(this, R.layout.activity_login)
 
+        binding.olvidadoContra.setOnClickListener {
+            intent = Intent(this, ReContraActivity::class.java)
+            startActivity(intent)
+        }
+
+
         super.onCreate(savedInstanceState)
-
-        // Get the viewModel
-        //var viewModel = ViewModelProvider(this).get(LoginActivityViewModel::class.java)
-
-        //setup
         setup()
 
     }
@@ -78,10 +80,6 @@ class LoginActivity : AppCompatActivity() {
                         }
                     }
             }
-        }
-
-        binding.olvidadoContra.setOnClickListener {
-
         }
     }
 

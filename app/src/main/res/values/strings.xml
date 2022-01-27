@@ -1,6 +1,8 @@
 <resources>
     <string name="app_name">DonAte</string>
     <string name="DescLogo">Logo de l\'app</string>
+    <string name="error">Error</string>
+    <string name="success">Succes!!!</string>
 
     <!-- String Globales-->
     <string name="user">usuari</string>
@@ -55,6 +57,7 @@
     <string name="inserNomPub">Insereixi un nom per a la publicació</string>
     <string name="insertDescriPost">Insereixi una decripción per al post</string>
     <string name="insertUbiHora">Insereixi una hora</string>
+    <string name="insertDate">Insereixi una data</string>
     <!-- Creacion de perfil -->
     <string name="nombrePerfil">Insereixi un nou nom d\'usuari</string>
     <string name="emailPerfil">Insereixi una direcció d\'email</string>
@@ -65,4 +68,10 @@
 
     <!-- Compartir -->
     <string name="share">Estic interessat en la donació!</string>
+
+    <!-- Recuperar contraseña -->
+    <string name="titReContra">Introdueixi un mail per a rebre una contrasenya nova</string>
+    <string name="hintReContra">Email per a recuperar</string>
+    <string name="botReContra">Recuperar</string>
+
 </resources>

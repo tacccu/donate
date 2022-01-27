@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.DonAte">
         <activity
+            android:name=".ui.ReContraActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.aboutus"
             android:exported="false" />
         <activity
@@ -27,13 +30,12 @@
             android:name=".ui.registro.RegistroActivity"
             android:exported="true"
             android:label="@string/app_name"
-            android:theme="@style/Theme.DonAte"></activity>
+            android:theme="@style/Theme.DonAte" />
         <activity
-
             android:name=".ui.MainActivity"
             android:exported="true"
             android:label="@string/app_name"
-            android:theme="@style/Theme.DonAte"></activity>
+            android:theme="@style/Theme.DonAte" />
 
         <provider
             android:name="androidx.core.content.FileProvider"

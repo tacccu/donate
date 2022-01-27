@@ -70,6 +70,7 @@ class adapter : RecyclerView.Adapter<adapter.MyViewHolder>() {
                 bundle.putSerializable("descripcionDonacion", donaciones[position].cardDesc)
                 bundle.putSerializable("emailDonacion", donaciones[position].cardEmail)
                 bundle.putSerializable("dateDonacion", donaciones[position].cardTime)
+                bundle.putSerializable("fechaDonacion", donaciones[position].cardFecha)
 
                 holder.itemView.findNavController().navigate(
                     R.id.action_FragmentDonaciones_to_post, bundle
@@ -86,7 +87,6 @@ class adapter : RecyclerView.Adapter<adapter.MyViewHolder>() {
                 if (d.items.size > 0) {
                     d.items[0].downloadUrl.addOnSuccessListener { u ->
                         holder.imagen.background = getDrawable(u)
-                        Log.e("asdasdas", "${getDrawable(u)}")
                     }
                 } else {
                     holder.imagen.background = contxt.getDrawable(R.drawable.donacion)
