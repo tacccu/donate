@@ -3,6 +3,7 @@ package cat.copernic.donate.ui
 import android.os.Bundle
 import android.util.Log
 import android.view.*
+import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
 import cat.copernic.donate.R
@@ -13,7 +14,11 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.NavigationUI
 import androidx.recyclerview.widget.LinearLayoutManager
 import cat.copernic.donate.databinding.FragmentDonacionesBinding
+import com.google.android.material.navigation.NavigationView
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.*
+import com.google.firebase.ktx.Firebase
 
 class FragmentDonaciones : Fragment() {
 
@@ -48,12 +53,28 @@ class FragmentDonaciones : Fragment() {
     private var postArrayList: ArrayList<donacion> = arrayListOf()
     private var postAdapter: adapter = adapter()
     private var db = FirebaseFirestore.getInstance()
+    val user = Firebase.auth.currentUser
+    val uid = user?.uid
 
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+
+        val navigationView : NavigationView = requireActivity().findViewById(R.id.navView)
+        val headerView : View = navigationView.getHeaderView(0)
+        val navUsername : TextView = headerView.findViewById(R.id.textView4)
+        val navUserEmail : TextView = headerView.findViewById(R.id.textView9)
+
+        db.collection("usuarios").document(uid.toString()).get().addOnSuccessListener {
+            var nom  = it.data?.get("usuario").toString()
+            navUsername.text = nom
+            /*binding.editTextUserPerfil.hint = nom
+            binding.nomUsuari?.text = nom*/
+        }
+
+        navUserEmail.text = FirebaseAuth.getInstance().currentUser?.email
 
         (activity as MainActivity).supportActionBar?.title = "Donaciones"
 

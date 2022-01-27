@@ -60,6 +60,8 @@
     <string name="nombrePerfil">Insereixi un nou nom d\'usuari</string>
     <string name="emailPerfil">Insereixi una direcció d\'email</string>
     <string name="telefPerfil">Insereixi un telèfon</string>
+    <string name="successAñadidoPerfil">Datos añadidos</string>
+    <string name="failurePerfil">Error afegint dades</string>
     <!-- MISC -->
     <string name="dona">Donacions</string>
     <!-- Recuperar contraseña -->

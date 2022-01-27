@@ -60,6 +60,8 @@
     <string name="nombrePerfil">Inserte un nuevo nombre de usuario</string>
     <string name="emailPerfil">Inserte una dirección de email</string>
     <string name="telefPerfil">Inserte un teléfono</string>
+    <string name="successAñadidoPerfil">Datos añadidos</string>
+    <string name="failurePerfil">Datos añadidos</string>
     <!-- MISC -->
     <string name="dona">Donaciones</string>
     <!-- Recuperar contraseña -->

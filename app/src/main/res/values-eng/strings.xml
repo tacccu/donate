@@ -58,6 +58,8 @@
     <string name="nombrePerfil">Add a new username</string>
     <string name="emailPerfil">Add a new email</string>
     <string name="telefPerfil">Add a new phone</string>
+    <string name="successAñadidoPerfil">Added data</string>
+    <string name="failurePerfil">Failed adding data</string>
     <!-- MISC -->
     <string name="dona">Donations</string>
     <!-- Recuperar contraseña -->

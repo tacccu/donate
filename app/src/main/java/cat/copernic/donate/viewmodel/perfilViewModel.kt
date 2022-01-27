@@ -9,9 +9,9 @@ import com.google.firebase.ktx.Firebase
 
 class perfilViewModel : ViewModel() {
 
-    private val db = FirebaseFirestore.getInstance()
+    /*private val db = FirebaseFirestore.getInstance()
     val user = Firebase.auth.currentUser
-    val uid = user?.uid
+    //val uid = user?.uid
     val userUpdPerfil = db.collection("usuarios").document(uid.toString())
 
     var nomUser = ""
@@ -22,6 +22,6 @@ class perfilViewModel : ViewModel() {
         lateinit var database: DatabaseReference
         database = Firebase.database.reference
         //database.child("usuaris").child()
-    }
+    }*/
 
 }
