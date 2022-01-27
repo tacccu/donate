@@ -29,8 +29,8 @@ class Perfil : Fragment() {
     private var __binding: FragmentPerfilBinding? = null
     private val binding get() = __binding!!
     private var db = FirebaseFirestore.getInstance()
-    val user = Firebase.auth.currentUser
-    val uid = user?.uid
+    private val user = FirebaseAuth.getInstance().currentUser
+    private val uid = user?.uid.toString()
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -46,13 +46,13 @@ class Perfil : Fragment() {
         var database: DatabaseReference = Firebase.database.reference
 
 
-        db.collection("usuarios").document(uid.toString()).get().addOnSuccessListener {
+        db.collection("usuarios").document(uid).get().addOnSuccessListener {
             var nom  = it.data?.get("usuario").toString()
             binding.editTextUserPerfil.hint = nom
             binding.nomUsuari?.text = nom
         }
 
-        db.collection("usuarios").document(uid.toString()).get().addOnSuccessListener {
+        db.collection("usuarios").document(uid).get().addOnSuccessListener {
             var telefon  = it.data?.get("numTelef").toString()
             binding.editTextPhone.hint = telefon
 
@@ -61,7 +61,7 @@ class Perfil : Fragment() {
         __binding = FragmentPerfilBinding.inflate(inflater, container, false)
 
         //binding.editTextUserPerfil.setHint(database.child("usuarios").child(uid.toString()).child("usuario").get().toString())
-        binding.editTextUserPerfil.setHint(database.child("numTelef").child(uid.toString()).get().toString())
+        binding.editTextUserPerfil.setHint(database.child("numTelef").child(uid).get().toString())
 
 
         // Inflate the layout for this fragment
@@ -73,7 +73,7 @@ class Perfil : Fragment() {
 
         binding.sendUpdateButton.setOnClickListener() {
             if (user != null ) {// si hay un usuario logeado podremos modificar su información de perfil
-                val userUpdPerfil = db.collection("usuarios").document(uid.toString())
+                val userUpdPerfil = db.collection("usuarios").document(user?.email.toString())
                 val textSuccess: String = getString(R.string.success)
                 val textFailure: String = getString(R.string.error)
 

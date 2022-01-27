@@ -29,8 +29,7 @@ class FragmentDonaciones : Fragment() {
     private var postAdapter: adapter = adapter()
     private var db = FirebaseFirestore.getInstance()
 
-    private val user = Firebase.auth.currentUser
-    private val uid = user?.uid
+    private val uid = FirebaseAuth.getInstance().currentUser?.uid.toString()
 
 
     override fun onCreateView(
@@ -38,13 +37,15 @@ class FragmentDonaciones : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
+        setHasOptionsMenu(true)
+
         val navigationView : NavigationView = requireActivity().findViewById(R.id.navView)
         val headerView : View = navigationView.getHeaderView(0)
         val navUsername : TextView = headerView.findViewById(R.id.textView4)
         val navUserEmail : TextView = headerView.findViewById(R.id.textView9)
 
         //Obtenemos los datos de usuario y email para mostrarlo los textview en el header del menú
-        db.collection("usuarios").document(uid.toString()).get().addOnSuccessListener {
+        db.collection("usuarios").document(uid).get().addOnSuccessListener {
             var nom  = it.data?.get("usuario").toString()
             navUsername.text = nom
         }
@@ -53,7 +54,9 @@ class FragmentDonaciones : Fragment() {
 
         (activity as MainActivity).supportActionBar?.title = "Donaciones"
 
-        setHasOptionsMenu(true)
+
+
+
 
         val binding = DataBindingUtil.inflate<FragmentDonacionesBinding>(
             inflater, R.layout.fragment_donaciones, container, false)
@@ -94,6 +97,16 @@ class FragmentDonaciones : Fragment() {
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         super.onCreateOptionsMenu(menu, inflater)
         inflater.inflate(R.menu.menu_donaciones, menu)
+
+        val creaPost : MenuItem = menu.findItem(R.id.creaPost)
+
+        db.collection("usuarios").document(uid).get().addOnSuccessListener {
+            var spinner  = it.data?.get("spinner").toString()
+
+            if(spinner.equals(R.string.spinner)){
+                creaPost.setVisible(false)
+            }
+        }
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {

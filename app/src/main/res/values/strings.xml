@@ -7,6 +7,7 @@
     <!-- String Globales-->
     <string name="user">usuari</string>
     <string name="email">usuario@email.com</string>
+    <string name="spinner">Donatari</string>
     <!-- Strings related to login -->
     <string name="prompt_user">Usuari:</string>
     <string name="prompt_password">Contrasenya:</string>
