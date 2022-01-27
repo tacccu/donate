@@ -66,4 +66,13 @@
     <string name="titReContra">Enter an email to receive a new password</string>
     <string name="hintReContra">Email to retrieve</string>
     <string name="botReContra">Recover</string>
+    <!-- Recomendaciones donaciones -->
+    <string name="reDonaciones">Recommendation of food to donate:
+         \nWhole fruits and vegetables, in good condition
+         \nThe container must be intact and not damaged
+         \mDo not exceed the expiration date
+         \nThe food must be correctly identified and labeled
+         \n\nFood that should not be donated:
+         \nUnpackaged meat and derivatives
+         \nPrepared unpackaged mealss</string>
 </resources>

@@ -67,13 +67,11 @@ class FragmentDonaciones : Fragment() {
         val navUsername : TextView = headerView.findViewById(R.id.textView4)
         val navUserEmail : TextView = headerView.findViewById(R.id.textView9)
 
+        //Obtenemos los datos de usuario y email para mostrarlo los textview en el header del menú
         db.collection("usuarios").document(uid.toString()).get().addOnSuccessListener {
             var nom  = it.data?.get("usuario").toString()
             navUsername.text = nom
-            /*binding.editTextUserPerfil.hint = nom
-            binding.nomUsuari?.text = nom*/
         }
-
         navUserEmail.text = FirebaseAuth.getInstance().currentUser?.email
 
         (activity as MainActivity).supportActionBar?.title = "Donaciones"
