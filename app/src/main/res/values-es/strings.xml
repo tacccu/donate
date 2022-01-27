@@ -75,4 +75,13 @@
     <string name="hintReContra">Email para recuperar</string>
     <string name="botReContra">Recuperar</string>
 
+    <!-- Recomendaciones donaciones -->
+    <string name="reDonaciones">Recomendación de alimentos para donar:
+        \nFrutas y vegetales enteros, en buen estado
+        \nEl envase debe estar íntegro y no estar deteriorado
+        \mQue no rebase la fecha de caducidad
+        \nEl alimento debe estar correctamente identificado y etiquetado
+        \n\nAlimentos que no deberían ser donados:
+        \nCarne y derivados no envasados
+        \nComidas preparadas no envasadas</string>
 </resources>

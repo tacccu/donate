@@ -8,14 +8,9 @@ import android.widget.ProgressBar
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
-import androidx.lifecycle.ViewModelProvider
 import cat.copernic.donate.R
 import cat.copernic.donate.databinding.ActivityLoginBinding
-import cat.copernic.donate.ui.MainActivity
-import cat.copernic.donate.ui.ProviderType
-import cat.copernic.donate.ui.ReContraActivity
 import cat.copernic.donate.ui.registro.RegistroActivity
-import cat.copernic.donate.viewmodel.LoginActivityViewModel
 import com.github.dhaval2404.colorpicker.util.setVisibility
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.coroutines.*

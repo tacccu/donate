@@ -5,10 +5,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/azul"
-    tools:context=".ui.ReDonacionesActivity">
+    tools:context=".ui.ReDonacionesActivity"
+    tools:ignore="ExtraText">
 
-
-<androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="263dp"
         android:layout_height="579dp"
         android:layout_marginStart="@dimen/distEditACostado"
@@ -20,17 +19,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <TextView
-            android:id="@+id/textView3"
-            android:layout_width="253dp"
-            android:layout_height="573dp"
-            android:background="@color/azul_claro"
-            android:text="@string/reDonaciones"
-            android:textColor="#455A64"
-            android:textSize="@dimen/texto_general"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="253dp"
+        android:layout_height="573dp"
+        android:background="@color/azul_claro"
+        android:text="@string/reDonaciones"
+        android:textColor="#455A64"
+        android:textSize="@dimen/texto_general"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

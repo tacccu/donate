@@ -74,4 +74,13 @@
     <string name="hintReContra">Email per a recuperar</string>
     <string name="botReContra">Recuperar</string>
 
+    <!-- Recomendaciones donaciones -->
+    <string name="reDonaciones">Recomanació d\'aliments per a donar:
+        \nFruites i vegetals sencers, en bon estat
+        \nL\'envàs ha d\'estar íntegre i no estar deteriorat
+        \nQue no depassi la data de caducitat
+        \nL'aliment ha d'estar correctament identificat i etiquetat
+        \nAliments que no haurien de ser donats:
+        \nCarn i derivats no envasats
+        \nMenjars preparats no envasades</string>
 </resources>
