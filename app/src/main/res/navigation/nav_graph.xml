@@ -65,7 +65,7 @@
     </fragment>
     <fragment
         android:id="@+id/tltickets"
-        android:name="cat.copernic.donate.ui.tltickets"
+        android:name="cat.copernic.donate.ui.ListaTickets"
         android:label="fragment_tltickets"
         tools:layout="@layout/fragment_tltickets" >
         <action

@@ -13,9 +13,6 @@ import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.ktx.Firebase
 import java.util.*
 
-var emailDon : String? = null
-var tituloDon : String? = null
-
 class CreateReport : Fragment() {
         private var __binding: FragmentCreateReportBinding? = null
         private val binding get() = __binding!!
@@ -25,7 +22,7 @@ class CreateReport : Fragment() {
             inflater: LayoutInflater, container: ViewGroup?,
             savedInstanceState: Bundle?
         ): View? {
-            (activity as MainActivity).supportActionBar?.title = "Crea tu reporte"
+            (activity as MainActivity).supportActionBar?.title = "Crea un ticket"
 
             __binding = FragmentCreateReportBinding.inflate(inflater, container, false)
 
@@ -36,18 +33,12 @@ class CreateReport : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
 
-        emailDon = arguments?.getSerializable("emailDonacion") as String?
-        tituloDon = arguments?.getSerializable("tituloDonacion") as String?
-
         val spinner = binding.spinnerSelecCuentaRazonReport
 
         val user = Firebase.auth.currentUser
         val nomUsuario = user?.email.toString()
 
         val currentTime = Calendar.getInstance().getTime()
-
-        //val uid = user?.uid
-        //val nomUsuario = db.collection("usuarios").document(uid.toString()).get("usuario")
 
         spinner.adapter = context?.let {
             ArrayAdapter(
@@ -57,13 +48,8 @@ class CreateReport : Fragment() {
             )
         }
         binding.fabreport.setOnClickListener(){
-            if(binding.intrDescripReport.text.isNotEmpty()){
-                db.collection("Reportes").document().set(hashMapOf("fechaHora" to currentTime.toString(),
-                    "usuario" to nomUsuario,
-                    "tipoReporte" to binding.spinnerSelecCuentaRazonReport.selectedItem.toString() ,
-                    "descripcion" to binding.intrDescripReport.text.toString(),
-                    "usuarioReportado" to emailDonacion,
-                    "donacionReportada" to tituloDon))
+            if(binding.intrDescripReport.text.isNotEmpty()){//añadimos los datos introducidos a nuestra bd
+                db.collection("Reportes").document().set(hashMapOf("fechaHora" to currentTime.toString(), "usuario" to nomUsuario.toString() ,"tipoReporte" to binding.spinnerSelecCuentaRazonReport.selectedItem.toString() ,"descripcion" to binding.intrDescripReport.text.toString()))
             }
         }
     }

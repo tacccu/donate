@@ -47,9 +47,9 @@ class Perfil : Fragment() {
 
 
         db.collection("usuarios").document(uid.toString()).get().addOnSuccessListener {
-            var nom  = it.data?.get("usuario").toString()
-            binding.editTextUserPerfil.hint = nom
-            binding.nomUsuari?.text = nom
+           var nom  = it.data?.get("usuario").toString()
+             binding.editTextUserPerfil.hint = nom
+             binding.nomUsuari?.text = nom
         }
 
         db.collection("usuarios").document(uid.toString()).get().addOnSuccessListener {
@@ -74,8 +74,8 @@ class Perfil : Fragment() {
         binding.sendUpdateButton.setOnClickListener() {
             if (user != null ) {// si hay un usuario logeado podremos modificar su información de perfil
                 val userUpdPerfil = db.collection("usuarios").document(uid.toString())
-                val textSuccess: String = getString(R.string.success)
-                val textFailure: String = getString(R.string.error)
+                val textSuccess: String = getString(R.string.successAñadidoPerfil)
+                val textFailure: String = getString(R.string.failurePerfil)
 
 
                 if(binding.editTextUserPerfil.text.toString().isNotEmpty()){//nombre usuario

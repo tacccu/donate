@@ -12,9 +12,9 @@ import cat.copernic.donate.ui.model.ticket
 import com.google.firebase.firestore.FirebaseFirestore
 
 
-class tltickets : Fragment() {
-    private var postArrayList: ArrayList<ticket> = arrayListOf()
-    private var postAdapter: adapterTlTickets = adapterTlTickets()
+class ListaTickets : Fragment() {
+    private var ticketArrayList: ArrayList<ticket> = arrayListOf()
+    private var ticketAdapter: adapterTlTickets = adapterTlTickets()
     private var db = FirebaseFirestore.getInstance()
 
 
@@ -43,12 +43,12 @@ class tltickets : Fragment() {
         //RecyclerView se mostrará en forma de lista
         binding.RecyclerViewTlReport.layoutManager = LinearLayoutManager(requireContext())
 
-        //Buscamos en la colección de Donaciones la información que desplegaremos en cada CardView
+        //Buscamos en la colección de Reportes la información que desplegaremos en cada CardView
         db.collection("Reportes").get().addOnSuccessListener {
-                documents -> postArrayList.clear()
+                documents -> ticketArrayList.clear()
 
             for(document in documents) {
-                postArrayList.add(
+                ticketArrayList.add(
 
                     ticket(
                         document.get("tipoReporte").toString(),
@@ -61,9 +61,9 @@ class tltickets : Fragment() {
                 )
             }
             //Generamos el adaptador
-            context?.let {postAdapter.ticketRecycleAdapter(postArrayList, it)}
+            context?.let {ticketAdapter.ticketRecycleAdapter(ticketArrayList, it)}
             //Y asignamos el adaptador al RecyclerView
-            binding.RecyclerViewTlReport.adapter = postAdapter
+            binding.RecyclerViewTlReport.adapter = ticketAdapter
         }
 
 
