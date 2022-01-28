@@ -7,34 +7,6 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <ImageView
-                android:id="@+id/imageView"
-                android:layout_width="149dp"
-                android:layout_height="149dp"
-                android:layout_marginStart="32dp"
-                android:layout_marginTop="32dp"
-                android:layout_marginEnd="32dp"
-                android:contentDescription="@string/DescLogo"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/logoicono" />
-
-            <TextView
-                android:id="@+id/TitleTV"
-                android:layout_width="318dp"
-                android:layout_height="45dp"
-                android:layout_marginStart="50dp"
-                android:layout_marginEnd="50dp"
-                android:text="@string/prueba"
-                android:textAlignment="center"
-                android:textSize="34sp"
-                android:textStyle="bold"
-                app:layout_constraintBottom_toTopOf="@+id/scrollView2"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/imageView" />
-
             <ScrollView
                 android:id="@+id/scrollView2"
                 android:layout_width="319dp"
@@ -63,6 +35,34 @@
             </ScrollView>
 
             <TextView
+                android:id="@+id/TitleTV"
+                android:layout_width="318dp"
+                android:layout_height="45dp"
+                android:layout_marginStart="50dp"
+                android:layout_marginEnd="50dp"
+                android:text="@string/prueba"
+                android:textAlignment="center"
+                android:textSize="34sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@+id/scrollView2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="149dp"
+                android:layout_height="149dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginEnd="32dp"
+                android:contentDescription="@string/DescLogo"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/logoicono" />
+
+            <TextView
                 android:id="@+id/version"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -74,6 +74,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/scrollView2"
                 app:layout_constraintVertical_bias="0.157" />
+
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

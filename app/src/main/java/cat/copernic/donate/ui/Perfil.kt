@@ -96,6 +96,7 @@ class Perfil : Fragment() {
                 view.findNavController().navigate(PerfilDirections.actionPerfilToFragmentDonaciones())
             }
         }
+
     }
 
     override fun onDestroyView(){

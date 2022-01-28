@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.post">
+    tools:context=".ui.model.ticket">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -17,26 +17,9 @@
             android:orientation="vertical">
 
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="250dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="5dp"
-                android:layout_marginRight="20dp"
-                android:background="@drawable/contraint_box"
-                android:backgroundTint="@color/azul">
-
-                <ImageView
-                    android:id="@+id/imageView3"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    tools:layout_editor_absoluteX="122dp" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-            <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/container1"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
                 android:layout_marginBottom="10dp"
@@ -46,51 +29,45 @@
 
 
                 <TextView
-                    android:id="@+id/title2"
+                    android:id="@+id/tipoReporte"
                     android:layout_width="match_parent"
                     android:layout_height="46dp"
                     android:layout_marginStart="6dp"
                     android:layout_marginTop="24dp"
                     android:layout_marginEnd="6dp"
                     android:fontFamily="sans-serif"
-                    android:text="titulo"
                     android:textSize="20sp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/descripcion2"
+                    android:id="@+id/donacionReportada"
+                    android:layout_width="0dp"
+                    android:layout_height="46dp"
+                    android:layout_marginStart="6dp"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginEnd="6dp"
+                    android:textSize="16sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tipoReporte" />
+
+                <TextView
+                    android:id="@+id/descripcion"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="6dp"
                     android:layout_marginTop="12dp"
                     android:layout_marginEnd="6dp"
-                    android:text="text"
                     android:textSize="16sp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="1.0"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/title2"
+                    app:layout_constraintTop_toBottomOf="@+id/donacionReportada"
                     app:layout_constraintVertical_bias="0.073" />
-
-                <com.google.android.material.floatingactionbutton.FloatingActionButton
-                    android:id="@+id/floatingActionButton"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="24dp"
-                    android:layout_marginEnd="16dp"
-                    android:layout_marginBottom="16dp"
-                    android:backgroundTint="@color/morado_oscuro"
-                    android:clickable="true"
-                    android:focusable="true"
-                    android:src="@android:drawable/ic_dialog_email"
-                    android:visibility="invisible"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textView7"
-                    tools:ignore="SpeakableTextPresentCheck" />
+                >
 
                 <TextView
                     android:id="@+id/fecha"
@@ -99,24 +76,34 @@
                     android:layout_marginStart="6dp"
                     android:layout_marginTop="24dp"
                     android:layout_marginEnd="6dp"
-                    android:text="TextView"
                     android:textSize="16dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/descripcion2" />
+                    app:layout_constraintTop_toBottomOf="@+id/descripcion" />
 
                 <TextView
-                    android:id="@+id/textView7"
+                    android:id="@+id/usuario"
                     android:layout_width="0dp"
                     android:layout_height="46dp"
                     android:layout_marginStart="6dp"
                     android:layout_marginTop="24dp"
                     android:layout_marginEnd="6dp"
-                    android:text="TextView"
                     android:textSize="16sp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/fecha" />
+
+                <TextView
+                    android:id="@+id/usuarioreportado"
+                    android:layout_width="0dp"
+                    android:layout_height="46dp"
+                    android:layout_marginStart="6dp"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginEnd="6dp"
+                    android:textSize="16sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/usuario" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -44,7 +44,6 @@ class LoginActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-
         super.onCreate(savedInstanceState)
         setup()
 

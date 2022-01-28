@@ -29,8 +29,7 @@ class FragmentDonaciones : Fragment() {
     private var postAdapter: adapter = adapter()
     private var db = FirebaseFirestore.getInstance()
 
-    private val user = Firebase.auth.currentUser
-    private val uid = user?.uid
+    private val uid = FirebaseAuth.getInstance().currentUser?.uid.toString()
 
 
     override fun onCreateView(
@@ -94,6 +93,16 @@ class FragmentDonaciones : Fragment() {
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         super.onCreateOptionsMenu(menu, inflater)
         inflater.inflate(R.menu.menu_donaciones, menu)
+
+        val creaPost : MenuItem = menu.findItem(R.id.creaPost)
+
+        db.collection("usuarios").document(uid).get().addOnSuccessListener {
+            var spinner  = it.data?.get("spinner").toString()
+
+            if(spinner.equals("Donatari")){
+                creaPost.setVisible(false)
+            }
+        }
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {

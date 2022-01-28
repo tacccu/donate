@@ -104,6 +104,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="76dp"
                 android:layout_marginBottom="@dimen/distEditATextViewGrande"
+                android:backgroundTint="@color/morado_oscuro"
                 android:clickable="true"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"

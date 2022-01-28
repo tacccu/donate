@@ -3,6 +3,7 @@ package cat.copernic.donate.ui
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.Menu
 import android.view.MenuInflater
 import android.view.MenuItem
@@ -18,6 +19,8 @@ import androidx.navigation.ui.NavigationUI
 import cat.copernic.donate.R
 import cat.copernic.donate.databinding.ActivityMainBinding
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FirebaseFirestore
+import kotlin.math.log
 
 
 private lateinit var drawerLayout: DrawerLayout
@@ -28,6 +31,8 @@ enum class ProviderType {
 
 class MainActivity : AppCompatActivity() {
 
+    private var db = FirebaseFirestore.getInstance()
+    private val uid = FirebaseAuth.getInstance().currentUser?.uid.toString()
     private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState : Bundle?){
@@ -50,6 +55,13 @@ class MainActivity : AppCompatActivity() {
             true
         }
 
+        db.collection("usuarios").document(uid.toString()).get().addOnSuccessListener {
+            val spinner =  it.data?.get("spinner").toString()
+
+            if(spinner == "Administrador"){
+                binding.navView.menu.getItem(2).setVisible(true)
+            }
+        }
     }
 
     override fun onSupportNavigateUp(): Boolean {

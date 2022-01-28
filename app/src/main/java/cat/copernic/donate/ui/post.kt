@@ -16,12 +16,11 @@ import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.NavigationUI
 import cat.copernic.donate.R
 import cat.copernic.donate.databinding.FragmentPostBinding
-import com.bumptech.glide.Glide
-import com.bumptech.glide.request.target.Target
 import com.github.dhaval2404.colorpicker.util.setVisibility
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.storage.FirebaseStorage
+import com.bumptech.glide.Glide
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.runBlocking
 
@@ -122,7 +121,7 @@ lateinit var binding : FragmentPostBinding
         shareIntent.setData(Uri.parse("send to:"))
         shareIntent.setType("text/plain")
 
-        shareIntent.putExtra(android.content.Intent.EXTRA_EMAIL, mail)
+        shareIntent.putExtra(Intent.EXTRA_EMAIL, mail)
         shareIntent.putExtra(Intent.EXTRA_SUBJECT, tituloDonacion)
         shareIntent.putExtra(Intent.EXTRA_TEXT, getString(R.string.share))
 

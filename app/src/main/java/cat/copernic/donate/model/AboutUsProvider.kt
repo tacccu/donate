@@ -1,6 +1,5 @@
 package cat.copernic.donate.model
 
-import cat.copernic.donate.R
 
 class aboutUsProvider {
     companion object{

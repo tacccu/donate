@@ -4,13 +4,11 @@ import android.os.Bundle
 import android.view.*
 import androidx.fragment.app.Fragment
 import androidx.databinding.DataBindingUtil
-import androidx.navigation.findNavController
-import androidx.navigation.ui.NavigationUI
 import androidx.recyclerview.widget.LinearLayoutManager
 import cat.copernic.donate.R
 import cat.copernic.donate.ui.adapters.adapterTlTickets
 import cat.copernic.donate.databinding.FragmentTlticketsBinding
-import cat.copernic.donate.model.ticket
+import cat.copernic.donate.ui.model.ticket
 import com.google.firebase.firestore.FirebaseFirestore
 
 
@@ -56,7 +54,9 @@ class tltickets : Fragment() {
                         document.get("tipoReporte").toString(),
                         document.get("descripcion").toString(),
                         document.get("fechaHora").toString(),
-                        document.get("usuario").toString()
+                        document.get("usuario").toString(),
+                        document.get("usuarioReportado").toString(),
+                        document.get("donacionReportada").toString()
                     )
                 )
             }

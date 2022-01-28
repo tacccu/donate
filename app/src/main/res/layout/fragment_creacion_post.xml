@@ -125,6 +125,7 @@
                     android:layout_marginTop="@dimen/distEditATextViewGrande"
                     android:layout_marginEnd="16dp"
                     android:layout_marginBottom="16dp"
+                    android:backgroundTint="@color/morado_oscuro"
                     android:clickable="true"
                     android:focusable="true"
                     android:src="@android:drawable/ic_menu_send"

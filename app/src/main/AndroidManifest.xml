@@ -13,6 +13,9 @@
             android:name=".ui.ReContraActivity"
             android:exported="false" />
         <activity
+            android:name=".ui.ReDonacionesActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.aboutus"
             android:exported="false" />
         <activity

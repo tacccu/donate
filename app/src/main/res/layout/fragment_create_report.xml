@@ -84,6 +84,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginEnd="24dp"
                             android:layout_marginBottom="24dp"
+                            android:backgroundTint="@color/morado_oscuro"
                             android:clickable="true"
                             android:focusable="true"
                             android:src="@android:drawable/ic_menu_send"

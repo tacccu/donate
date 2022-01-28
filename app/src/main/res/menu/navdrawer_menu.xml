@@ -4,10 +4,6 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/chat"
-            android:icon="@drawable/chat_icon"
-            android:title="@string/chatList" />
-        <item
             android:id="@+id/FragmentDonaciones"
             android:icon="@drawable/post_icon"
             android:title="@string/TLPosts" />
@@ -19,11 +15,17 @@
         <item
             android:id="@+id/tltickets"
             android:icon="@drawable/ticket"
-            android:title="Reports"/>
+            android:title="Reports"
+            android:visible="false" />
         <item
             android:id="@+id/aboutus"
             android:icon="@drawable/aboutus_icon"
             android:title="AboutUs"/>
+        <!-- donaciones reomendadas -->
+        <item
+            android:id="@+id/reDonacionesActivity"
+            android:icon="@android:drawable/ic_dialog_info"
+            android:title="info" />
         <item
             android:id="@+id/loginActivity"
             android:icon="@drawable/logout_icon"

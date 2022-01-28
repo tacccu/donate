@@ -12,10 +12,12 @@ import cat.copernic.donate.R
 import cat.copernic.donate.databinding.ActivityRegistroBinding
 import cat.copernic.donate.ui.ProviderType
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FirebaseFirestore
 
 class RegistroActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityRegistroBinding
+    private var db = FirebaseFirestore.getInstance()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,9 +30,11 @@ class RegistroActivity : AppCompatActivity() {
 
         spinner.adapter = adaptador
 
+
         //setup
         setupR()
     }
+
 
 
     private fun setupR() {
@@ -43,19 +47,21 @@ class RegistroActivity : AppCompatActivity() {
                 && binding.editTextTelef.text.isNotEmpty()
                 && binding.editTextContra.text.isNotEmpty()
                 && binding.editTextContraAgain.text.isNotEmpty()){
-                    if (binding.editTextContra.text.toString() == binding.editTextContraAgain.text.toString()){
-                        FirebaseAuth.getInstance()
-                            .createUserWithEmailAndPassword(binding.intrEmailRegist.text.toString(), binding.editTextContra.text.toString())
-                            .addOnCompleteListener{
-                                if(it.isSuccessful) {
-                                    showMainR(it.result?.user?.email?: "", ProviderType.BASIC)
-                                } else {
-                                    showAlert()
-                                }
+                if (binding.editTextContra.text.toString() == binding.editTextContraAgain.text.toString()){
+                    FirebaseAuth.getInstance()
+                        .createUserWithEmailAndPassword(binding.intrEmailRegist.text.toString(), binding.editTextContra.text.toString())
+                        .addOnCompleteListener{
+                            if(it.isSuccessful) {
+                                showMainR(it.result?.user?.email?: "", ProviderType.BASIC)
+                            } else {
+                                showAlert()
                             }
-                    } else {
-                        showAlert2()
-                    }
+                        }
+
+
+                } else {
+                    showAlert2()
+                }
             }
         }
     }
@@ -83,6 +89,18 @@ class RegistroActivity : AppCompatActivity() {
             putExtra("email", email)
             putExtra("provider", provider.name)
         }
+
+        val uid = FirebaseAuth.getInstance().currentUser!!.uid
+
+        db.collection("usuarios").document(uid).set(
+            hashMapOf(
+                "numTelef" to binding.editTextTelef.text.toString(),
+                "usuario" to binding.editTextUser.text.toString(),
+                "email" to binding.intrEmailRegist.text.toString(),
+                "spinner" to binding.spinnerSelecCuenta.selectedItem.toString()
+
+            )
+        )
         startActivity(intent)
     }
 

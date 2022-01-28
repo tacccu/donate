@@ -29,6 +29,9 @@
         <action
             android:id="@+id/action_FragmentDonaciones_to_post"
             app:destination="@id/post" />
+        <action
+            android:id="@+id/action_FragmentDonaciones_to_reDonacionesActivity"
+            app:destination="@id/reDonacionesActivity" />
     </fragment>
     <fragment
         android:id="@+id/perfil"
@@ -68,6 +71,9 @@
         <action
             android:id="@+id/action_tltickets_to_FragmentDonaciones"
             app:destination="@id/FragmentDonaciones" />
+        <action
+            android:id="@+id/action_tltickets_to_fragmentTicket2"
+            app:destination="@id/fragmentTicket" />
     </fragment>
     <fragment
         android:id="@+id/creaPost"
@@ -99,4 +105,13 @@
             android:id="@+id/action_post_to_create_report"
             app:destination="@id/create_report" />
     </fragment>
+    <activity
+        android:id="@+id/reDonacionesActivity"
+        android:name="cat.copernic.donate.ui.ReDonacionesActivity"
+        android:label="activity_donaciones_recomendadas"
+        tools:layout="@layout/activity_donaciones_recomendadas" />
+    <fragment
+        android:id="@+id/fragmentTicket"
+        android:name="cat.copernic.donate.ui.FragmentTicket"
+        android:label="FragmentTicket" />
 </navigation>
