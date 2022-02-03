@@ -82,4 +82,6 @@
          \n\nFood that should not be donated:
          \nUnpackaged meat and derivatives
          \nPrepared unpackaged mealss</string>
+    <string name="successAñadidoPerfil">Modified data</string>
+    <string name="failurePerfil">Error: Data not modified</string>
 </resources>

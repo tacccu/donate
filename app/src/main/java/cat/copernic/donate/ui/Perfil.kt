@@ -1,24 +1,15 @@
 package cat.copernic.donate.ui
 
-import android.app.Activity
-import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ArrayAdapter
-import android.widget.EditText
 import android.widget.Toast
 import androidx.navigation.findNavController
 import cat.copernic.donate.R
 import cat.copernic.donate.databinding.FragmentPerfilBinding
-import cat.copernic.donate.viewmodel.fragmentDonacionesViewModel
-import cat.copernic.donate.viewmodel.perfilViewModel
-import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
-import com.google.firebase.auth.ktx.userProfileChangeRequest
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.ktx.database
 import com.google.firebase.firestore.FirebaseFirestore

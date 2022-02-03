@@ -84,4 +84,6 @@
         \n\nAlimentos que no deberían ser donados:
         \nCarne y derivados no envasados
         \nComidas preparadas no envasadas</string>
+    <string name="successAñadidoPerfil">Datos modificados</string>
+    <string name="failurePerfil">Error: Datos no modificados</string>
 </resources>

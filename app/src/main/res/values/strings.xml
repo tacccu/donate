@@ -46,6 +46,7 @@
     \n\nPor un altre costat volem posar remei als aliments que serien rebutjats perquè el ciutadà no vegi un aprofitament d\'aquests.</string>
     <!-- Strings related to perfil-->
     <string name="Perfil">Perfil</string>
+    <string name="failurePerfil">Error: Dades no modificades</string>
     <!-- Strings related to TL Tickets-->
     <string name="report">Report</string>
     <string name="TUsuario">Usuari: (usuari)</string>
@@ -83,4 +84,5 @@
         \nAliments que no haurien de ser donats:
         \nCarn i derivats no envasats
         \nMenjars preparats no envasades</string>
+    <string name="successAñadidoPerfil">Dades modificades</string>
 </resources>
